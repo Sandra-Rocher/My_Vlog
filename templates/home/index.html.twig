@@ -1,0 +1,48 @@
+{# Page home : the enter of the vlog website wih mp4 #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}My Vlog{% endblock %}
+
+{% block body %}
+<style>
+   #cadre{
+        display:flex;
+        flex-direction:column;
+        position:relative;
+        height:100vh;
+        width:100%;
+        overflow:hidden;
+    }
+
+    #cadre video{
+        position:absolute;
+        min-width:100%;
+        min-height:100%;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        -webkit-transform:translate(-50%, -50%);
+        -moz-transform:translate(-50%, -50%);
+        -ms-transform:translate(-50%, -50%);
+        -o-transform:translate(-50%, -50%);
+        z-index:-1;
+    }
+
+    .first{
+        z-index:1111;
+        margin-top:50px;
+    }
+
+    .second{
+        margin-top:15px;
+    }
+</style>
+
+    <div class="general-div" id="cadre">
+        <video autoplay muted loop src="{{ asset('usa_monument-valley.mp4') }}"></video>
+            <h1 class="first">Bonjour et bienvenue !</h1>
+            <h2 class="mt-5">Plus de  {{ hours }}H{{ minutes }}mn{{ seconds }}s de vidéos.</h2>
+            <h4 class="second mt-5">Découvrez ici les road-trips américains réalisés : trois semaines d'aventure dans l'Ouest et deux semaines en Floride.</h4>
+    </div>
+{% endblock %}

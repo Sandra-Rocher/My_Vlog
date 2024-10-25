@@ -1,0 +1,66 @@
+{# Page search result of one or more videos #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultats de recherche{% endblock %}
+
+{% block body %}
+
+<style>
+    h1 {
+        margin-bottom: 50px;
+    }
+    .card{
+        transition: all linear 200ms;
+    }
+
+    .card:hover{
+        transform: scale(1.1);
+        transition: all linear 200ms;
+        z-index: 1;
+        box-shadow: 1px 1px 10px #65b868;
+        cursor: pointer;
+    }
+
+    .btn{
+        background-color:#65b868;
+    }
+
+    .more{
+        height: 50vh;
+    }
+</style>
+
+<div class="general-div">
+    <h1>Résultats de recherche pour "{{ searchTerm }}"</h1>
+        
+         <div class="container">
+            <div class="row d-flex flex-wrap justify-content-center">
+              {# Boucle foreach videos #}
+                {% if videos is empty %}
+                <li class="more">Aucun résultat trouvé.</li>
+                {% else %}
+                {% for video in videos %}
+                    <div class="card mx-2 mb-3 col-lg-3 text-bg-dark">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ video.slug }}</h5>
+                            <div class="video-container">
+                                <iframe width="100%" height="100%" src="{{ video.link }}" 
+                                    title="YouTube video player" 
+                                    frameborder="0" 
+                                    allow="accelerometer; 
+                                    autoplay; clipboard-write; 
+                                    encrypted-media; gyroscope; 
+                                    picture-in-picture; web-share" 
+                                    referrerpolicy="strict-origin-when-cross-origin" 
+                                    allowfullscreen></iframe>
+                            </div>
+                            <a href="{{ url('location.showId', {slug: video.slug, id: video.id}) }}" class="btn">Voir cette vidéo</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% endif %}
+            </div>  
+        </div>  
+</div>
+{% endblock %}

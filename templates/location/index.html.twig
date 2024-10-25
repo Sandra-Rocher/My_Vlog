@@ -1,0 +1,60 @@
+{# Page home of all USA videos #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des vidéos USA :{% endblock %}
+
+{% block body %}
+<style>
+    h1 {
+        margin-bottom: 50px;
+    }
+    .card{
+        transition: all linear 200ms;
+    }
+
+    .card:hover{
+        transform: scale(1.1);
+        transition: all linear 200ms;
+        z-index: 1;
+        box-shadow: 1px 1px 10px #65b868;
+        cursor: pointer;
+    }
+
+    .btn{
+        background-color:#65b868;
+    }
+</style>
+
+<div class="general-div">
+    <h1>Voici la liste de toutes les vidéos sur les USA</h1>
+        
+         <div class="container">
+            <div class="row d-flex flex-wrap justify-content-center">
+                {# Boucle foreach videos #}
+                {% for Video in Videos %}
+                    <div class="card mx-2 mb-3 col-lg-3 text-bg-dark">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3">{{ Video.slug }}</h5>
+                            <div class="video-container">
+                                <iframe width="100%" height="100%" src="{{ Video.link }}" 
+                                    title="YouTube video player" 
+                                    frameborder="0" 
+                                    allow="accelerometer; 
+                                    autoplay; clipboard-write; 
+                                    encrypted-media; gyroscope; 
+                                    picture-in-picture; web-share" 
+                                    referrerpolicy="strict-origin-when-cross-origin" 
+                                    allowfullscreen></iframe>
+                            </div>
+                            <a href="{{ url('location.showId', {slug: Video.slug, id: Video.id}) }}" class="btn mt-2">Voir cette vidéo</a>
+                            {# <a href="{{ url('location.showId', {slug: Video.slug | replace({' ': '-'}) , id: Video.id}) }}" class="btn mt-2">Voir cette vidéo</a> #}
+
+
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>  
+        </div>  
+</div>
+{% endblock %}

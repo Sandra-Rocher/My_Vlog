@@ -1,0 +1,33 @@
+{# Page for update a video #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire de modification vidéo :{% endblock %}
+
+{% block body %}
+<style>
+    h1 {
+        margin-bottom: 50px;
+    }
+
+    .btn{
+        background-color:#65b868;
+    }
+</style>
+
+<div class="general-div">
+    <h1>Formulaire de modification :</h1>
+
+    {{ form_start(form) }}
+        <div class="d-flex justify-content-evenly"> 
+            {{ form_row(form.slug) }}
+            {{ form_row(form.state) }}
+        </div>
+        <div class="d-flex justify-content-evenly"> 
+            {{ form_row(form.duration) }}
+            {{ form_row(form.category) }}
+            {{ form_row(form.calendar) }}
+        </div>
+    {{ form_end(form) }}
+</div>
+{% endblock %}

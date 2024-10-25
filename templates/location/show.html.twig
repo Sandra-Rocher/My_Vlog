@@ -1,0 +1,71 @@
+{# Page show one video selected #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %} My_Vlog Vidéo de : {{video.slug}} {% endblock %}
+
+{% block body %}
+<style>
+    .video-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .sub {
+        margin-top: 40px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .com {
+        font-size:17px;
+        margin-top: 50px;
+        text-align: start;
+    }
+
+    .onRight {
+        text-align: right;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="general-div">
+   
+    <h1> {{ video.slug }} </h1>
+
+    <div class="sub">
+        <p>Lieux marquants à voir : {{ video.subtitle }} </p>
+    </div>
+
+    <div class="video-container my-4"> 
+        <iframe width="950" height="650" src=" {{ video.link }} " 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; 
+            autoplay; clipboard-write; 
+            encrypted-media; gyroscope; 
+            picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen></iframe>
+    </div>
+
+    <div class="com">
+        <p>{{ video.comm | nl2br }} </p>
+    </div>
+
+    <p class="onRight"> {{ video.state }} / {{ video.calendar|date('d-m-Y') }} </p>
+
+    <a href="{{ path('location.index') }}" class="btn btn-secondary mt-5">Retour à la liste des vidéos</a>
+
+</div>
+{% endblock %}
+
+
+{# Explication des options :
+accelerometer : Autorise l'utilisation de l'accéléromètre de l'appareil (utile pour certaines interactions basées sur le mouvement).
+autoplay : Permet la lecture automatique de la vidéo une fois chargée.
+clipboard-write : Autorise l'accès à la fonction d'écriture dans le presse-papiers (pour copier du texte, par exemple).
+encrypted-media : Permet la lecture de contenu multimédia protégé par DRM (Digital Rights Management).
+gyroscope : Autorise l'accès au gyroscope de l'appareil, souvent utilisé pour les applications de réalité augmentée ou d'autres effets basés sur le mouvement.
+picture-in-picture : Permet l'affichage de la vidéo en mode Picture-in-Picture (mode où la vidéo s'affiche dans une petite fenêtre flottante sur l'écran).
+allowfullscreen : Permet d'afficher la vidéo en plein écran (full-screen mode). #}

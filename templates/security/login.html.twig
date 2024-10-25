@@ -1,0 +1,62 @@
+{# Page for form connexion #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Page Connexion{% endblock %}
+
+{% block body %}
+<style>
+    h1 {
+        margin-bottom: 50px;
+    }
+
+    .btn{
+        background-color:#65b868;
+    }
+</style>
+
+<div class="general-div">
+    <form method="post">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+         <h1 class="mb-5">Connexion</h1>
+
+        {% if app.user %}
+            <div class="mb-5">
+                Vous êtes connecté en tant que  {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+            </div>
+        {% endif %}
+
+        {# {% if app.user %}
+            <form method="post" action="{{ path('app_logout') }}">
+                <div class="mb-5">
+                    Vous êtes connecté en tant que {{ app.user.userIdentifier }}
+                    <button type="submit" class="btn btn-sm btn-danger">Se déconnecter</button>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('logout') }}">
+                </div>
+            </form>
+        {% endif %}  TODO #}
+
+        <div class="mb-5 container col-lg-3"> 
+            <div class="row">
+                <label for="inputUsername" class="mb-3">Nom</label>
+                <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control mb-3" autocomplete="username" required autofocus>
+                
+                <label for="inputPassword" class="mb-3">Mot de passe</label>
+                <input type="password" name="password" id="inputPassword" class="form-control mb-3" autocomplete="current-password" required>
+
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                <div class="checkbox mb-5">
+                    <label>
+                        <input type="checkbox" name="_remember_me">Se souvenir de moi
+                    </label>
+                </div>
+            </div>
+                <button class="btn btn-lg btn-primary" type="submit">Envoyer</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
