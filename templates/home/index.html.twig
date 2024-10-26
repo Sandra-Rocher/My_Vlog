@@ -6,6 +6,18 @@
 
 {% block body %}
 <style>
+    /* Special general div custom */
+    .general-div2 {
+    position: relative;
+    overflow: hidden;
+    /* margin: 1em auto; */
+    /* margin-top: 3rem; */
+    margin-bottom: 3rem;
+    /* width: 75%; */
+    text-align: center;
+    }
+
+    /* Mp4 Index background */
    #cadre{
         display:flex;
         flex-direction:column;
@@ -16,6 +28,10 @@
     }
 
     #cadre video{
+        width: 100%;
+        height: auto;
+        display: block;
+
         position:absolute;
         min-width:100%;
         min-height:100%;
@@ -29,20 +45,228 @@
         z-index:-1;
     }
 
+    /* H1 custom : Bonjour bienvenue ! */
     .first{
         z-index:1111;
         margin-top:50px;
     }
 
-    .second{
-        margin-top:15px;
+    /* Brand Carousel Logos */
+    .logos {
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 20px 0;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .logos:before,
+    .logos:after {
+        position: absolute;
+        top: 0;
+        width: 100px;
+        height: 100%;
+        content: '';
+        z-index: 2;
+    }
+
+    .logos:before {
+        left: 0;
+        background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+    }
+
+    .logos:after {
+        right: 0;
+        background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+    }
+
+    .logo_items {
+        /* display: inline-block; */
+        display: inline-flex;
+        white-space: nowrap;
+        animation: slides 35s linear infinite;
+    }
+
+    .logo_items img {
+        height: 90px;
+        margin: 0 15px;
+    }
+
+    .logos:hover .logo_items {
+        animation-play-state: paused;
+    }
+
+    @keyframes slides {
+        from { transform: translateX(20%); }
+        to { transform: translateX(-100%); }
+    } 
+
+    /* Time calculator for hours minutes and seconds videos */
+    .custom-container * {
+        box-sizing: border-box;
+    }
+
+    .custom-body {
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Poppins';
+        color: #fff;
+        font-size: 8px;
+    }
+
+    .custom-heading {
+        text-align: center;
+        margin-top: 14rem;
+        font-size: 2rem;
+    }
+
+    .cd-timer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .cd-unit .time {
+        font-weight: bold;
+        padding: 1rem 2rem;
+        font-size: 2rem;
+        border: 2px solid #65b868;
+        box-shadow: 1px 1px 10px #65b868;
+        border-radius: 1rem;
+        margin: 0 1rem;
+    }
+
+    .cd-unit span {
+        font-size: 1rem;
+        /* font-weight: bold; */
+        color: #fff;
     }
 </style>
 
-    <div class="general-div" id="cadre">
+
+    <div class="general-div2" id="cadre">
         <video autoplay muted loop src="{{ asset('usa_monument-valley.mp4') }}"></video>
-            <h1 class="first">Bonjour et bienvenue !</h1>
-            <h2 class="mt-5">Plus de  {{ hours }}H{{ minutes }}mn{{ seconds }}s de vidéos.</h2>
-            <h4 class="second mt-5">Découvrez ici les road-trips américains réalisés : trois semaines d'aventure dans l'Ouest et deux semaines en Floride.</h4>
+        <h1 class="first">Bonjour et bienvenue !</h1>
+
+        <div class="logos">
+            <div class="logo_items">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/antelope.png') }}" alt="image Antelope Canyon">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/JoshuaTreeNP.png') }}" alt="image Joshua Tree">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/arches.png') }}" alt="image Arches">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/goldengate.png') }}" alt="image Golden Gate Bridge">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/dv.png') }}" alt="image Death Valley">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/Kings_Canyon.png') }}" alt="image Kings canyon">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/GrandCanyon.png') }}" alt="image Grand Canyon">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/lasvegas.png') }}" alt="image Las Vegas">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/zion.png') }}" alt="image Zion">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/valleyFire.jpg') }}" alt="image Valley of Fire">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/route66.png') }}" alt="image Route 66">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/petrifiedF.png') }}" alt="image Petrified forest">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/yosemite.png') }}" alt="image Yosemite">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/monument-valley-utah.png') }}" alt="image Monument Valley">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/bodie.jpg') }}" alt="image Bodie">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/hb.png') }}" alt="image Horseshoe Bend">
+                <img src="{{ asset('Index_Page_logo+img/Logo_USA/meteorcrater.png') }}" alt="image Meteor Crater">
+            </div>
+        </div>
+    </div>
+
+    <div class="custom-container text-center mb-5">
+        <div class="time-text mb-3">- Temps de vidéos présent sur le site -</div>
+            <div class="cd-timer">
+                <div class="cd-unit">
+                    {# <div class="time day">100</div>
+                    <span class="time-text">Days</span> #}
+                </div>
+                <div class="cd-unit">
+                    <div class="time hour">{{ hours }}</div>
+                    <span class="time-text">Heures</span>
+                </div>
+                <div class="cd-unit">
+                    <div class="time minute">{{ minutes }}</div>
+                    <span class="time-text">Minutes</span>
+                </div>
+                <div class="cd-unit">
+                    <div class="time second">{{ seconds }}</div>
+                    <span class="time-text">Secondes</span>
+                </div>
+            </div>
+        </div>
+
+    <div class="container">
+        <!-- Première ligne : Image à gauche, texte à droite -->
+        <div class="row align-items-center mb-5">
+            <div class="col-12 col-md-6 mb-2">
+                <img src="{{ asset('Index_Page_logo+img/Img_USA/IMG_20190904_173601.jpg') }}" class="img-fluid rounded" alt="Image Grand Canyon">
+            </div>
+            <div class="col-12 col-md-6">
+                <p>Commençons par le Grand Canyon, la première chose qui frappe dans ce lieu, c'est le silence qui y règne.</p>
+                <p>Ce jour-là, il y avait pourtant beaucoup de monde, mais vu l'immensité du lieu, la seule chose qu'on entend,
+                 c'est les aigles qui chassent, le vent léger et une personne qui écoutait de la musique indienne locale.</p>
+            </div>
+        </div>
+        
+        <!-- Deuxième ligne : Texte à gauche, image à droite -->
+        <div class="row align-items-center mb-5">
+            <div class="col-12 col-md-6 order-md-2 mb-2">
+                <img src="{{ asset('Index_Page_logo+img/Img_USA/IMG_20190918_132116.jpg') }}" class="img-fluid rounded" alt="Image Séquoias Park">
+            </div>
+            <div class="col-12 col-md-6">
+                <p>Dans le parc des séquoias géants et centenaires.</p>
+                <p>Certains arbres couchés forment des tunnels pour les humains, celui-ci est pour la voiture !</p>
+                <p>Certains ont des racines géantes ; une fois l'arbre couché et le temps passé, cela devient une 
+                véritable œuvre d'art.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class ="container">
+        <div class ="row d-flex justify-content-center mb-5">
+            <div class ="col-12 col-sm-6 col-md-4 mb-3 text-center">
+                    <img src="{{ asset('Index_Page_logo+img/Img_USA/daytonabeachcamaro.jpg') }}" class="img-fluid rounded mx-auto" alt="image Daytona Beach camaro">
+            </div>
+            <div class ="col-12 col-sm-6 col-md-4 mb-3 text-center">
+                    <img src="{{ asset('Index_Page_logo+img/Img_USA/angelslanding.jpg') }}" class="img-fluid rounded mx-auto" alt="image Angels Landing">
+            </div>
+            <div class ="col-12 col-sm-6 col-md-4 mb-3 text-center">
+                    <img src="{{ asset('Index_Page_logo+img/Img_USA/horseshoebend.jpg') }}" class="img-fluid rounded mx-auto" alt="image Horseshoe Bend">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <!-- Première ligne : Image à gauche, texte à droite -->
+        <div class="row align-items-center mb-5">
+            <div class="col-12 col-md-6 mb-2">
+                <img src="{{ asset('Index_Page_logo+img/Img_USA/IMG_20190920_163603.jpg') }}" class="img-fluid rounded" alt="image Golden Gate Bridge">
+            </div>
+            <div class="col-12 col-md-6">
+                <p>Le Golden Gate Bridge à San Francisco est tristement célèbre pour ses nombreux suicides, car les courants 
+                marins situés en dessous sont extrêmes.</p>
+                <p>C'est ce qui explique en partie pourquoi la prison d'Alcatraz est réputée pour son caractère imprenable et 
+                son histoire fascinante.</p>
+            </div>
+        </div>
+        
+        <!-- Deuxième ligne : Texte à gauche, image à droite -->
+        <div class="row align-items-center mb-5">
+            <div class="col-12 col-md-6 order-md-2 mb-2">
+                <img src="{{ asset('Index_Page_logo+img/Img_USA/IMG_20190921_145037.jpg') }}" class="img-fluid rounded" alt="Image Facebook Silicon Valley">
+            </div>
+            <div class="col-12 col-md-6">
+                <p>Dans la Silicon Valley, devant le siège de Facebook. Ici, les entreprises sont géantes, comme Apple Park, 
+                où 12 000 personnes travaillent.</p>
+                <p>Il y a environ 11 500 entreprises high-tech qui emploient 420 000 personnes et réalisent environ 100 
+                milliards de dollars de chiffre d'affaires.</p>
+            </div>
+        </div>
     </div>
 {% endblock %}

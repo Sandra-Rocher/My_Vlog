@@ -3,6 +3,166 @@
 } */
 
 
-/* TODO : test de mettre le style de base twig ici !!?
 
-et le brand carousel de code pen aussi */
+/* Brand Carousel : code pen : https://codepen.io/Navneet-Dwivedi/details/LYXbvVL */
+
+
+/* HTML conseillé :
+<div class="general-div" id="cadre">
+    <video autoplay muted loop src="{{ asset('usa_monument-valley.mp4') }}"></video>
+    <h1 class="first">Bonjour et bienvenue !</h1>
+    <h2 class="mt-5">Plus de {{ hours }}H{{ minutes }}mn{{ seconds }}s de vidéos.</h2>
+    <h4 class="second mt-5">
+        Découvrez ici les road-trips américains réalisés : trois semaines d'aventure dans l'Ouest et deux semaines en Floride.
+    </h4>
+
+    <div class="logos">
+        <div class="logo_items">
+            <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" alt="logo1">
+            <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" alt="logo2">
+            <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" alt="logo3">
+            <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" alt="logo4">
+            <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" alt="logo5">
+        </div>
+    </div>
+</div>
+ */
+
+
+/* CSS original :
+@keyframes slides {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .logos {
+    overflow: hidden;
+    padding: 30px 0px;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .logos:before, .logos:after {
+    position: absolute;
+    top: 0;
+    content: '';
+    width: 250px;
+    height: 100%;
+    z-index: 2;
+  }
+  
+  .logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0), rgb(255, 255, 255));
+  }
+  
+  .logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0), rgb(255, 255, 255));
+  }
+  
+  .logo_items {
+    display: inline-block;
+    animation: 35s slides infinite linear;
+  }
+  
+  .logos:hover .logo_items {
+    animation-play-state: paused;
+  }
+  
+  .logo_items img{
+    height: 100px;
+  } 
+    
+  
+  @media (max-width: 768px) {
+    .logo_items img {
+      height: 70px;
+    }
+  }
+    
+  @media (max-width: 480px) {
+    .logo_items img {
+       height: 50px;
+    }
+  }
+
+  
+  
+  
+
+
+
+  
+  
+  
+
+
+
+
+/* ici : normalement c est bon */
+
+/* .general-div {
+  position: relative;
+  overflow: hidden;
+}
+
+#cadre video {
+  width: 100%;
+  height: auto;
+  display: block;
+} */
+
+ .logos {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  content: '';
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+.logo_items {
+  display: inline-block;
+  white-space: nowrap;
+  animation: slides 35s linear infinite;
+}
+
+.logo_items img {
+  height: 50px;
+  margin: 0 15px;
+}
+
+.logos:hover .logo_items {
+  animation-play-state: paused;
+}
+
+@keyframes slides {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+} 
