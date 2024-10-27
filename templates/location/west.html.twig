@@ -27,7 +27,7 @@
 </style>
 
 <div class="general-div">
-    <h1>Road Trip sur la côte Ouest des USA</h1>
+    <h1>Road Trip sur la Côte Ouest des USA</h1>
         
          <div class="container">
             <div class="row d-flex flex-wrap justify-content-center">
@@ -54,5 +54,11 @@
                 {% endfor %}
             </div>  
         </div>  
+        
+    {# Pagination : Video is sended by LocationController on the render 'Videos' => $videos #} 
+    <div class="d-flex justify-content-center my-3">
+        {{ knp_pagination_render(Videos) }}
+    </div>
+
 </div>
 {% endblock %}

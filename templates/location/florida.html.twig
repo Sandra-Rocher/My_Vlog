@@ -54,5 +54,11 @@
                 {% endfor %}
             </div>  
         </div>  
+        
+    {# Pagination : Video is sended by LocationController on the render 'Videos' => $videos #} 
+    <div class="d-flex justify-content-center my-3">
+        {{ knp_pagination_render(Videos) }}
+    </div>
+
 </div>
 {% endblock %}

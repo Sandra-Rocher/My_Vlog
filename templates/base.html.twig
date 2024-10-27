@@ -15,7 +15,7 @@
         {# a tester lorsqu'il sera publié, un autre favicon.ico du même nom existe sur le bureau aux dimensions différentes TODO #}
         <link rel="icon" type="image/x-icon" href="../public/favicon.ico" />
 
-        <title>{% block title %}Bonjour My_Vlog!{% endblock %}</title>
+        <title>{% block title %}My_Vlog{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         
         {# Bootstrap Link #}
@@ -135,6 +135,25 @@
             .navbar-toggler-icon{
               background-color: #28a745;
             }
+
+            /* Pagination colors */
+            .pagination .page-link {
+              background-color: #000;
+              color: #65b868;
+              border: 1px solid #65b868;
+              box-shadow: 1px 1px 10px #65b868;
+            }
+
+            .pagination .page-link:hover {
+              background-color: #fff;
+              color: #65b868;
+            }
+
+            .pagination .page-item.active .page-link {
+              background-color: #fff;
+              color: #65b868;
+              border: 1px solid #65b868;
+            }
         </style>
         {% endblock %}
 
@@ -168,18 +187,6 @@
                 </ul>
             </li>
 
-            {# <li class="nav-item">
-              <a class="nav-link text-white" href="{{ path ('location.index') }}">Voyage</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link text-white {{app.current_route == 'location.west.index' ? 'active'}}" href="{{ path ('location.west.index') }}">Côte Ouest</a>
-            </li> 
-
-            <li class="nav-item">
-              <a class="nav-link text-white {{app.current_route == 'location.florida.index' ? 'active'}}" href="{{ path ('location.florida.index') }}">Floride</a>
-            </li>  #}
-
             {# here for the future page of Motor sport TODO #}
 
             {# here for the future page of WW2 TODO #}
@@ -198,13 +205,12 @@
           </ul>
           {# SearchTerm for search by state, subtitle, or slug #}
           <form class="d-flex" role="searchTerm" method="GET" action="{{ path('location.searchTerm') }}">
-            <input class="form-control me-2" name="searchTerm" type="search" placeholder="Rechercher" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Valider</button>
+              <input class="form-control me-2" name="searchTerm" type="search" placeholder="Rechercher" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Valider</button>
           </form>
         </div>
     </div>
   </nav>
-
 
 {# Arrow up (green) #}
 <a href="#" id="back-to-top" title="Back to top"><i class="bi bi-arrow-up"></i></a>

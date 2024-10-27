@@ -5,15 +5,19 @@ namespace App\Repository;
 use App\Entity\Video;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\PaginatorInterface;
+use Knp\Component\Pager\Pagination\PaginationInterface;
 
 /**
  * @extends ServiceEntityRepository<Video>
  */
 class VideoRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    //SR Constructor basic :
+    // public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $registry, private PaginatorInterface $paginator)
     {
-        parent::__construct($registry, Video::class);
+         parent::__construct($registry, Video::class);
     }
 
     //    /**
@@ -90,6 +94,36 @@ class VideoRepository extends ServiceEntityRepository
                 ->setParameter('states', $states)
                 ->getQuery()
                 ->getResult();
+        }
+
+        
+        //KNP Paginator basic without states
+        //  public function paginateVideos(int $page): PaginationInterface
+        //  {
+        //         return $this->paginator->paginate(
+        //             $this->createQueryBuilder('v'),
+        //             $page, 
+        //             9
+        //         );
+        //  }
+
+
+        //KNP Paginator with or without states parameters
+        public function paginateVideos(int $page, ?array $state = null): PaginationInterface
+        {
+            //For pagination with state (if it's west or florida) or without state (for all videos)
+            $queryBuilder = $this->createQueryBuilder('v');
+
+            if ($state) {
+                $queryBuilder->where('v.state IN (:state)')
+                    ->setParameter('state', $state);
+                }
+
+            return $this->paginator->paginate(
+                $queryBuilder,
+                $page,
+                6 // number of videos per page
+            );
         }
 
         

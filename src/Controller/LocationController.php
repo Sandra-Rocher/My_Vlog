@@ -29,22 +29,41 @@ class LocationController extends AbstractController
     // }
 
 
-
-    // //Browse all videos
+    //Browse all videos with pagination
     #[Route('/Voyage', name: 'location.index')]
     public function index(Request $request, VideoRepository $repository): Response
     {
-        $locations = $repository->findAll();
+        //Paginator
+        $page = $request->query->getInt('page', 1);
+        $videos = $repository->paginateVideos($page);
 
        // Browse each video and capitalise the first letter of the title (slug)
-        foreach ($locations as $video) {
+        foreach ($videos as $video) {
             $video->setSlug(ucwords($video->getSlug()));
         }
 
         return $this->render('location/index.html.twig', [
-            'Videos' => $locations,
+            'Videos' => $videos,
         ]);
     } 
+
+
+    // //Browse all videos without pagination
+    // #[Route('/Voyage', name: 'location.index')]
+    // public function index(Request $request, VideoRepository $repository): Response
+    // {
+    //     $videos = $repository->findAll();
+
+    //    // Browse each video and capitalise the first letter of the title (slug)
+    //     foreach ($videos as $video) {
+    //         $video->setSlug(ucwords($video->getSlug()));
+    //     }
+
+    //     return $this->render('location/index.html.twig', [
+    //         'Videos' => $videos,
+    //     ]);
+    // } 
+
 
 
     //Browse all videos of WEST COAST USA
@@ -55,15 +74,19 @@ class LocationController extends AbstractController
         // States filter
         $states = ['california', 'utah', 'nevada', 'arizona'];
 
-        $locations = $repository->findByStates($states);
+        $videos = $repository->findByStates($states);
+
+        //Paginator
+        $page = $request->query->getInt('page', 1);
+        $videos = $repository->paginateVideos($page, $states);
 
        // Browse each video and capitalise the first letter of the title (slug)
-        foreach ($locations as $video) {
+        foreach ($videos as $video) {
             $video->setSlug(ucwords($video->getSlug()));
         }
 
         return $this->render('location/west.html.twig', [
-            'Videos' => $locations,
+            'Videos' => $videos,
         ]);
     } 
 
@@ -75,15 +98,19 @@ class LocationController extends AbstractController
         // States filter
         $states = ['florida'];
 
-        $locations = $repository->findByStates($states);
+        $videos = $repository->findByStates($states);
+
+        //Paginator
+        $page = $request->query->getInt('page', 1);
+        $videos = $repository->paginateVideos($page, $states);
 
        // Browse each video and capitalise the first letter of the title (slug)
-        foreach ($locations as $video) {
+        foreach ($videos as $video) {
             $video->setSlug(ucwords($video->getSlug()));
         }
 
         return $this->render('location/florida.html.twig', [
-            'Videos' => $locations,
+            'Videos' => $videos,
         ]);
     } 
 
@@ -108,7 +135,7 @@ class LocationController extends AbstractController
             return $this->redirectToRoute('location.showId', [
                 'slug' => $formattedSlug,
                 'id' => $id
-            ], 301);  //Permanent redirection (code 301)
+            ], 301);  //Permanent redirection for navigator URL (code 301)
         }
 
         //Capitalise the first letter of each word in the subtitle and state
@@ -123,7 +150,7 @@ class LocationController extends AbstractController
         return $this->render('location/show.html.twig', [
             'controller_name' => 'LocationController',
             
-            'video' => $video,
+            'Video' => $video,
         ]);
     }
 
@@ -144,7 +171,7 @@ class LocationController extends AbstractController
         }
 
         return $this->render('location/searchTerm.html.twig', [
-            'videos' => $videos,
+            'Videos' => $videos,
             'searchTerm' => $searchTerm,
         ]);
     }

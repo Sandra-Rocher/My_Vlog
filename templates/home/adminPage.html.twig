@@ -26,10 +26,14 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Titres</th>
-                    <th>Catégorie</th>
-                    <th>Région</th>
+                    {# <th>ID</th> #}
+                    <th>{{knp_pagination_sortable(videos, 'ID', 'v.id')}}</th>
+                    {# <th>Titres</th> #}
+                    <th>{{knp_pagination_sortable(videos, 'Slug', 'v.slug')}}</th>
+                    {# <th>Catégorie</th> #}
+                    <th>{{knp_pagination_sortable(videos, 'Catégorie', 'v.category')}}</th>
+                    {# <th>Région</th> #}
+                    <th>{{knp_pagination_sortable(videos, 'Région', 'v.state')}}</th>
                     <th>Durée</th>
                     <th>Actions</th>
                 </tr>

@@ -15,6 +15,8 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use App\Entity\User;
 //use App\Controller\EntityManagerInterface;
 use Doctrine\ORM\EntityManagerInterface;
+// use App\Pagination\PaginatorInterface;
+use Knp\Component\Pager\PaginatorInterface;
 
 class HomeController extends AbstractController
 {
@@ -46,25 +48,53 @@ class HomeController extends AbstractController
     }
 
 
-     //Route for admin page
-     #[Route('/Admin', name: 'home.adminPage')]
-     public function adminConnexion(Request $request, VideoRepository $repository): Response
-     {
+     //Route for admin page without pagination 
+    //  #[Route('/Admin', name: 'home.adminPage')]
+    //  public function adminConnexion(Request $request, VideoRepository $repository): Response
+    //  {
 
+    //     //Need to be connected and have an admin-role for access
+    //     $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+    //     $videos = $repository->findAll();
+
+    //     // Browse each video and capitalise the first letter of the title (slug)
+    //     foreach ($videos as $video) {
+    //         $video->setSlug(ucwords($video->getSlug()));
+    //     }
+
+    //      return $this->render('home/adminPage.html.twig', [
+    //          'videos' => $videos,
+    //      ]);
+    //  }
+
+
+    //Route for admin page with pagination sortable for sort ID and SLUG
+     #[Route('/Admin', name: 'home.adminPage')]
+    public function adminConnexion(Request $request, VideoRepository $repository, PaginatorInterface $paginator): Response
+    {
         //Need to be connected and have an admin-role for access
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
-        $videos = $repository->findAll();
+        // Find all videos
+        $query = $repository->createQueryBuilder('v')->getQuery();
+
+        // Oblige to do pagination for use knp_pagination_sortable
+        $videos = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            100 // max videos to show on each page
+        );
 
         // Browse each video and capitalise the first letter of the title (slug)
         foreach ($videos as $video) {
             $video->setSlug(ucwords($video->getSlug()));
         }
 
-         return $this->render('home/adminPage.html.twig', [
-             'videos' => $videos,
-         ]);
-     }
+        return $this->render('home/adminPage.html.twig', [
+            'videos' => $videos,
+        ]);
+    }
 
 
 

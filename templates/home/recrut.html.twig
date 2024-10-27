@@ -8,65 +8,94 @@
 <style>
     p {
         text-align:left;
-        margin-bottom:17px;
-    }
-
-    h1, h2 {
         margin-bottom:20px;
     }
+
+    /* h1, h3 {
+        margin-top:30px;
+        margin-bottom:30px;
+    } */
 </style>
 
 <div class="general-div">
-    <h1>Bonjour</h1>
+    <h1 class="mb-4">Page spéciale à l'attention des recruteurs</h1>
 
-    <h2>Voici l'envers du décor ainsi que quelques explications :</h2>
+    <h3 class="mb-4 my-3">Voici l'envers du décor ainsi que quelques explications :</h3>
 
-    <p>L'entrée du site My Vlog se fait sur la page /Home, sur cette page un fond d'écran en mp4 anime 
-    l'indice du total des heures de vidéos présentes sur le site.</p>
+        <p>L'entrée du site My Vlog se fait sur la page /Home, sur cette page une vidéo en mp4 anime le fond, une brand-carousel défile pour montrer les logos des différents parc nationnaux et villes visitées au cour du road trip. 
+        Un indice du total des heures, minutes et secondes de vidéos présentes sur le site est aussi affiché. </p>
 
-    <h3> En parcourant la navbar : </h3>
+    <h3 class="mb-4 my-3">En parcourant la navbar :</h3>
 
-    <p>La page /Voyage contient toutes les vidéos sur le thème Voyage (ici, aux usa). Ils peuvent être classé par 
-    ordre de date croissante, décroissante, ou par ordre alphabétique.</p>
-    <p>Au click sur une vidéo voici le chemin crée : /Voyage/Titre de la vidéo sélectionnée.</p>
+        <p>La page /Voyage contient toutes les vidéos sur le thème Voyage (ici, aux usa). Ils peuvent être classé par 
+        ordre de date croissante, décroissante, ou par ordre alphabétique.</p>
+        <p>Au click sur une vidéo voici le chemin crée : /Voyage/Titre de la vidéo sélectionnée.</p>
 
-     {# <p>La page /Sport contient toutes les vidéos sur le thème Sport (tournée sur la moto). Ils peuvent être classé par 
-    ordre de date croissante, décroissante, ou par ordre alphabétique.</p> TODO #}
+        {# <p>La page /Sport contient toutes les vidéos sur le thème Sport (tournée sur la moto). Ils peuvent être classé par 
+        ordre de date croissante, décroissante, ou par ordre alphabétique.</p> TODO #}
 
-     {# <p>La page /WW2 contient toutes les vidéos sur le thème WW2 (activitées d'une association). Ils peuvent être classé par 
-    ordre de date croissante, décroissante, ou par ordre alphabétique.</p> TODO #}
+        {# <p>La page /WW2 contient toutes les vidéos sur le thème WW2 (activitées d'une association). Ils peuvent être classé par 
+        ordre de date croissante, décroissante, ou par ordre alphabétique.</p> TODO #}
 
+
+        <p>L'administrateur dispose de pages spécifiques qui lui sont réservées. La page /Admin renvoie à une connexion 
+        obligatoire (/Connexion). Une fois connecté, l'administrateur a accès au tableau de bord, lui permettant de publier 
+        une vidéo, ainsi que de modifier ou supprimer celles déjà présentes. Il existe aussi la page Déconnexion (/Deconnexion).</p>
+
+        <p>Pour une utilisation plus ergonomique et intuitive, le tableau de bord est conçu avec KnpPaginator Sortable, ce qui permet 
+        un tri simple, rapide et facile des vidéos par ID, slug, catégorie ou région.</p>
     
+        {# <p>La page /Contact Vous pouvez contacter l'admin et envoyer un message, en choississant un thème et en remplissant 
+        votre identité. TODO</p> #}
 
-      <p>La page /Admin renvoie sur une connexion obligatoire, une fois connecté l'admin à accès au dashboard qui permet 
-      de publier une vidéo, et de modifier ou de supprimer celle déjà présentes. Les pages attachées sont donc /Connexion et /Déconnexion.</p>
+        <p>Une barre de recherche est disponible pour trouver des vidéos en saisissant une lettre, un mot ou un chiffre. 
+        Si le terme recherché est présent dans la base de données (commentaire, titre, lieu d'intérêt, région), les vidéos 
+        correspondantes s'afficheront.</p>
+        {# <p>Pour améliorer la recherche, une fonction similaire à Elastic Search est intégrée, permettant de flouter les 
+        résultats. Cela signifie que même si le mot recherché contient des fautes, les résultats s'afficheront, car ils 
+        seront proches du mot clé. TODO</p> #}
+    
+    <h3 class="mb-4 my-3">En parcourant le footer :</h3>
 
-       <p>La page Suivez-nous ouvre une autre page sur Youtube, sur le compte BS qui est le compte publiant les vidéos en ligne.</p>
-
-       <p>La page /Contact Vous pouvez contacter l'admin et envoyer un message, en choississant un thème et en remplissant votre identité.</p>
-
-
-
-
-       <h3> En parcourant le footer : </h3>
-
-       <p>Plusieurs pages sont proposées, au click elles ouvriront une autre page sans perdre le site My Vlog tel que : Linkedin, Github, 
-       Mon portfolio, Mon CV.</p>
+       <p>Plusieurs pages sont proposées, au click elles ouvriront une autre page sans perdre le site My Vlog tel que : Mon 
+       Linkedin, Mon Git, Mon portfolio, Mon CV, et le lien Suivez-nous qui mène sur Youtube, sur le compte publiant les 
+       vidéos en ligne.</p>
 
        <p>La page /Mention-Legales permet de vous donnez des présicions sur le site en général.</p>
 
-       <p>La page /Recruteur (celle ci) permet de vous donner des détails (que vous êtes entrain de lire) sur la réalisation du site.</p>
+       <p>La page /Recruteur (celle ci) permet de vous donner des détails (que vous êtes entrain de lire) sur la réalisation 
+       du site.</p>
 
 
-    <h3>Divers :</h3>
-        <p>Il existe des pages partielles comme /Base qui permet de contenir tous les liens bootstrap, SEO, JavaScript, Metas, la Navbar
-         et le footer, ou encore la flèche back to up.</p>
+    <h3 class="mb-4 my-3">Sécurité, pagination, traitements du Formulaire, pages partielles, explications divers:</h3>
+
+        <p>La méthode des routes de chaque page est contrôlée pour maîtriser les GET, POST ou ANY. Par exemple, la page pour 
+        supprimer une vidéo utilise la méthode DELETE. Tout cela renforce la sécurité contre d'éventuelles attaques CSRF.</p>
+        
+        <p>Chaque page dispose d'une pagination des vidéos, réalisée avec le bundle KNP Paginator.</p>
+
+        <p>Les pages de création, d’édition et de suppression de vidéos, situées sous le chemin /admin, sont protégées par 
+        un contrôle d'accès défini dans le fichier security.yaml. Seuls les administrateurs (rôle ROLE_ADMIN) peuvent y 
+        accéder, renforçant ainsi la sécurité de ces actions administratives.</p>
+
+        <p>Le formulaire de publication de vidéos est soumis à des contraintes pour s'assurer que le format de la date et de la 
+        durée, ainsi que les éléments du slug, soient conformes. Afin de faciliter le remplissage, les minuscules et les 
+        majuscules sont toutes deux acceptées, car elles seront traitées lors de l'affichage avec Twig. Concernant la durée, 
+        elle doit être saisie au format heures.secondes (par exemple, 1.32 représentera 1 minute et 32 secondes lors du 
+        traitement). Dans la base de données, cette durée sera uniquement stockée en secondes. Lors de l'affichage, une 
+        reconversion en minutes et secondes sera de nouveau effectuée.</p>
+        
+        <p>Il existe des pages partielles comme /Base qui permet de contenir tous les liens bootstrap, SEO, JavaScript, 
+        Metas, la Navbar et le footer, ou encore la flèche back to up.</p>
 
         <p>Une page au nom de /Flash qui permet de produire les messages d'erreur en rouge ou de réussite en vert.</p>
 
-        <p>Une Flèche nommée arrow-up permet de remonter en haut de la page, elle se déclenche lorsque l'on commence à descendre.</p>
+        <p>Une Flèche nommée arrow-up permet de remonter en haut de la page, elle se déclenche lorsque l'on commence à 
+        descendre.</p>
 
 
+{# Faire un carousel de la page dashboard + creer un article + modifier un article et expliquer TODO #}
 
+    
 </div>
 {% endblock %}
