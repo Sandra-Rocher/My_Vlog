@@ -40,6 +40,7 @@ class LocationController extends AbstractController
        // Browse each video and capitalise the first letter of the title (slug)
         foreach ($videos as $video) {
             $video->setSlug(ucwords($video->getSlug()));
+            $video->setSubtitle(ucwords($video->getSubtitle()));
         }
 
         return $this->render('location/index.html.twig', [

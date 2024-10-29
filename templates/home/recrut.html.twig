@@ -27,7 +27,7 @@
 
     <h3 class="mb-4 my-3">En parcourant la navbar :</h3>
 
-        <p>La page /Voyage contient toutes les vidéos sur le thème Voyage (ici, aux usa). Ils peuvent être classé par 
+        <p>La page /Voyage contient toutes les vidéos sur le thème Voyage (ici, aux États-Unis.). Ils peuvent être classé par 
         ordre de date croissante, décroissante, ou par ordre alphabétique.</p>
         <p>Au click sur une vidéo voici le chemin crée : /Voyage/Titre de la vidéo sélectionnée.</p>
 
@@ -38,7 +38,8 @@
         ordre de date croissante, décroissante, ou par ordre alphabétique.</p> TODO #}
 
 
-        <p>L'administrateur dispose de pages spécifiques qui lui sont réservées. La page /Admin renvoie à une connexion 
+        <p>Le petit logo représentant un personnage dans la navbar est pour l'administrateur. Il dispose de pages spécifiques 
+        qui lui sont réservées. La page /Admin renvoie à une connexion 
         obligatoire (/Connexion). Une fois connecté, l'administrateur a accès au tableau de bord, lui permettant de publier 
         une vidéo, ainsi que de modifier ou supprimer celles déjà présentes. Il existe aussi la page Déconnexion (/Deconnexion).</p>
 
@@ -80,7 +81,8 @@
 
         <p>Le formulaire de publication de vidéos est soumis à des contraintes pour s'assurer que le format de la date et de la 
         durée, ainsi que les éléments du slug, soient conformes. Afin de faciliter le remplissage, les minuscules et les 
-        majuscules sont toutes deux acceptées, car elles seront traitées lors de l'affichage avec Twig. Concernant la durée, 
+        majuscules sont toutes deux acceptées, car elles seront traitées lors de l'affichage avec Twig. Le titre de la vidéo 
+        doit être unique, pour empêcher des doublons. La date sera au format jj/mm/aaaa. Concernant la durée, 
         elle doit être saisie au format heures.secondes (par exemple, 1.32 représentera 1 minute et 32 secondes lors du 
         traitement). Dans la base de données, cette durée sera uniquement stockée en secondes. Lors de l'affichage, une 
         reconversion en minutes et secondes sera de nouveau effectuée.</p>

@@ -54,7 +54,7 @@
                 width: 100%;
             }
 
-            /*dropdown toggle treatment for the css automaticcaly given fat-line*/
+            /*dropdown toggle in navbar treatment for the css automaticcaly given fat-line*/
             .dropdown-toggle::after {
                 /*css automatically given : we cancel all*/
                 /* border-top: .3em solid; 
@@ -67,9 +67,14 @@
                 border-left: none; 
             }
 
-            /* Color dropdown menu green */
+            /* Color dropdown menu in navbar green */
             .dropdown-menu{
                 background-color: #65b868;
+            }
+
+            /* menu burger */
+            .navbar-toggler-icon{
+                background-color: #28a745;
             }
 
             h1, h2, h3, h4, h5{
@@ -107,7 +112,7 @@
               margin: 1em auto;
               margin-top: 3rem;
               margin-bottom: 5rem;
-              width: 75%;
+              width: 85%;
               text-align: center;
             }
 
@@ -129,11 +134,6 @@
 
             #back-to-top:hover {
               background-color: #333;
-            }
-
-            /* menu burger */
-            .navbar-toggler-icon{
-              background-color: #28a745;
             }
 
             /* Pagination colors */
@@ -197,10 +197,10 @@
             </li>
 
           
-            {# <li class="nav-item"> 
-            {# Contact Form  #}
-                {#<a class="nav-link text-white {{app.current_route == 'contact.contact' ? 'active'}}" href="{{ path ('contact.contact') }}">Contact</a>
-            </li>   #}
+            <li class="nav-item"> 
+            {# Contact Form#}
+                <a class="nav-link text-white {{app.current_route == 'app_contact' ? 'active'}}" href="{{ path ('app_contact') }}">Contact</a>
+            </li>   
 
           </ul>
           {# SearchTerm for search by state, subtitle, or slug #}
