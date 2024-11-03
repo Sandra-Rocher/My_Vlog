@@ -1,11 +1,11 @@
 
 {# Page for partials messages in twig : sucess or error messages :
-Boucle For pour attraper les messages de app flashes stockés en session et créer une div alert avec le message 
-Le type (c'est une key : sur la documentation twig/ boucle for/ iterating over keys and values) peut etre error ou sucess 
-ce qui permettra a ma div alert- de devenir une alert-sucess ou une alert-error (pour trouver la couleur)
-le | join (a defaut d'implode, il existe join en twig, il se trouve dans docs / filter / join) il affiche tous les messages flash 
-du type actuel en les joignant avec un point (.) comme séparateur. 
-Si plusieurs messages sont liés à un même type, ils seront combinés et tous montrés en une seule chaîne de texte séparée par un point. TODO #}
+Boucle For for catch the messages of app flashes stocked in session and create a alert div with message 
+The type (it's a key : in documentation twig/ boucle for/ iterating over keys and values) can be error or sucess 
+and then the div alert- can become an alert-sucess or an alert-error (to sign the color red or green)
+The | join (in the absence of implode, it exist join in twig, it is in docs / filter / join) he show all the flash messages
+of the current type by joining them with a dot (.) as a separator. 
+If many messages are linked to the same type, they will be combined and all shown as a single text string separated by a (.) point) #}
 
 {%for type, messages in app.flashes %}
     <div class="alert alert-{{ type }}">

@@ -32,7 +32,7 @@ class Video
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     #[Assert\NotBlank()]
-    // #[Assert\Date] // In error => Date is not a string TODO
+    // #[Assert\Date] // In error => Date is not a string or object that implements \DateTimeInterface (symfony rules)
     private ?\DateTimeInterface $calendar = null;
 
     #[ORM\Column(type: Types::TEXT)]

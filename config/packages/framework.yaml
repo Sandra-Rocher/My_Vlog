@@ -1,7 +1,7 @@
 # see https://symfony.com/doc/current/reference/configuration/framework.html
 framework:
     secret: '%env(APP_SECRET)%'
-    #SR CSRF protection is open now
+    #SRO CSRF protection is open now
     #csrf_protection: true
     # form:
     #     csrf_protection:
@@ -14,7 +14,7 @@ framework:
     #esi: true
     #fragments: true
     
-#SR Here add a protection for the delete video
+#SRO Here add a protection for the delete video
     http_method_override: true
 
 when@test:

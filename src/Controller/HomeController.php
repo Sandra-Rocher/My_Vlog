@@ -17,6 +17,7 @@ use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 // use App\Pagination\PaginatorInterface;
 use Knp\Component\Pager\PaginatorInterface;
+use App\Entity\Video;
 
 class HomeController extends AbstractController
 {
@@ -39,11 +40,22 @@ class HomeController extends AbstractController
         //With getTotalDuration function in videorepository :
         $totalDuration = $repository->getTotalDuration();
 
+        // Convert hours and minutes to integers to avoid problems such as type "string" (App\Entity\Video)
+        $hours = (int) $totalDuration['hours'];
+        $minutes = (int) $totalDuration['minutes'];
+        $seconds = (int) $totalDuration['seconds'];
+        
+
+        // if necessary : add a 0 in front of the number
+        $minutes = str_pad($minutes, 2, '0', STR_PAD_LEFT);
+        $seconds = str_pad($seconds, 2, '0', STR_PAD_LEFT);
+        
+
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
-            'hours' => $totalDuration['hours'],
-            'minutes' => $totalDuration['minutes'],
-            'seconds' => $totalDuration['seconds'],
+            'hours' => $hours,
+            'minutes' => $minutes,
+            'seconds' => $seconds,
      ]);
     }
 

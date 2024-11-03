@@ -3,23 +3,14 @@
 namespace App\Form;
 
 use App\Entity\Video;
-//Obliger de supprimer la ligne ci dessous en ajoutant les 5 types en bas : TODO
-// use Doctrine\DBAL\Types\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-//Obliger de supprimer la ligne ci dessous en ajoutant les 5 types en bas :
-// use App\Form\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-// use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-// use Symfony\Component\Form\Extension\Core\Type\NumberType;
-// use Symfony\Component\Form\Extension\Core\Type\DecimalType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-// Link if regex here (but its better into the entity Video.php)
-// use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class VideoType extends AbstractType
@@ -66,10 +57,6 @@ class VideoType extends AbstractType
                     'placeholder' => 'Monument Valley, grand canyon, L-A,etc.',
                 ],
             ]) 
-
-            // ->add('category', TextType::class, [
-            //     'label' => 'Category Ex : Voyage' 
-            //     ])  TODO
 
             ->add('category', ChoiceType::class, [
                 'label' => 'Catégorie à choisir',

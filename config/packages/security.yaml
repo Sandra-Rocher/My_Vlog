@@ -19,9 +19,9 @@ security:
             custom_authenticator: App\Security\AppAuthenticator
             logout:
                 path: app_logout
-                #SR where to redirect after logout
-                target: /Home
-                #SR token of CSRF protection for logout
+                #SRO where to redirect after logout
+                target: /home
+                #SRO token of CSRF protection for logout
                 # csrf_parameter: token
 
                 # csrf_token_generator: security.csrf.token_manager
@@ -36,7 +36,7 @@ security:
 
                 #enable_csrf: true
 
-            #SR Option remember me for login : 604800 = 7 days
+            #SRO Option remember me for login : 604800 = 7 days
             remember_me:
                 secret: '%kernel.secret%'
                 lifetime: 604800
@@ -54,7 +54,7 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-    #SR Here i add a protection for all the path of create/edit/delete videos with admin control only
+    #SRO Here i add a protection for all the path of create/edit/delete videos with admin control only
         - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
 

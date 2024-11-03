@@ -13,7 +13,7 @@ use Knp\Component\Pager\Pagination\PaginationInterface;
  */
 class VideoRepository extends ServiceEntityRepository
 {
-    //SR Constructor basic :
+    //SRO Constructor basic :
     // public function __construct(ManagerRegistry $registry)
     public function __construct(ManagerRegistry $registry, private PaginatorInterface $paginator)
     {
@@ -65,7 +65,6 @@ class VideoRepository extends ServiceEntityRepository
         {
 
             $videos = $this->findAll();
-
             $totalDurationInSeconds = 0;
 
             // SUM of all duration videos (stored in seconds in the database)

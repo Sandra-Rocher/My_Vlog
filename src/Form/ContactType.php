@@ -49,11 +49,14 @@ class ContactType extends AbstractType
                     'Réclamation' => 'Réclamation',
                     'Recrutement' => 'Recrutement',
                     'J\'ai repéré une erreur' => 'Erreur',
+                    'Autre' => 'Autre',
                 ],
-                'label' => 'Sujet',
+                'label' => 'Sujet à choisir',
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'Envoyer',
+                // for custom button color we add class btn-custom
+                'attr' => ['class' => 'btn-custom'],
             ]);
         }
 

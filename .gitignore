@@ -1,5 +1,7 @@
 
 ###> symfony/framework-bundle ###
+# SRO add .env 30/10/24
+/.env
 /.env.local
 /.env.local.php
 /.env.*.local

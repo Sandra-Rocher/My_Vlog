@@ -147,6 +147,22 @@
         /* font-weight: bold; */
         color: #fff;
     }
+
+    .container-parallaxe {
+        background-image: 
+            linear-gradient(180deg, transparent 38%, black), /* dégradé linéaire */
+            linear-gradient(180deg, black 12%, rgba(13, 16, 25, 0) 72%), /* dégradé avec transparence */
+            radial-gradient(circle farthest-corner at 50% 50%, rgba(6, 7, 10, 0), black 91%), /* dégradé radial */
+        url('{{ asset('Index_Page_logo+img/Img_USA/roadmapwestcoast.png') }}'); /* image de fond */
+        background-position: 0 0, 0 0, 0 0, 50% 80%;
+        background-repeat: repeat, repeat, repeat, no-repeat;
+        background-size: auto, auto, auto, cover;
+        background-attachment: fixed; /* effet de parallaxe */
+        min-height: 100vh;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        color: white;
+    }
 </style>
 
 
@@ -199,11 +215,11 @@
             </div>
         </div>
 
-    <div class="container">
+    <div class="container container-parallaxe">
         <!-- Première ligne : Image à gauche, texte à droite -->
         <div class="row align-items-center mb-5">
             <div class="col-12 col-md-6 mb-2">
-                <img src="{{ asset('Index_Page_logo+img/Img_USA/IMG_20190904_173601.jpg') }}" class="img-fluid rounded" alt="Image Grand Canyon">
+                <img src="{{ asset('Index_Page_logo+img/Img_USA/grand-canyon.jpg') }}" class="img-fluid rounded" alt="Image Grand Canyon">
             </div>
             <div class="col-12 col-md-6">
                 <p>Commençons par le Grand Canyon, la première chose qui frappe dans ce lieu, c'est le silence qui y règne.</p>
@@ -215,7 +231,7 @@
         <!-- Deuxième ligne : Texte à gauche, image à droite -->
         <div class="row align-items-center mb-5">
             <div class="col-12 col-md-6 order-md-2 mb-2">
-                <img src="{{ asset('Index_Page_logo+img/Img_USA/IMG_20190918_132116.jpg') }}" class="img-fluid rounded" alt="Image Séquoias Park">
+                <img src="{{ asset('Index_Page_logo+img/Img_USA/sequoia-mustang.jpg') }}" class="img-fluid rounded" alt="Image Séquoias Park">
             </div>
             <div class="col-12 col-md-6">
                 <p>Dans le parc des séquoias géants et centenaires.</p>
@@ -242,11 +258,11 @@
     </div>
 
 
-    <div class="container">
+    <div class="container container-parallaxe">
         <!-- Première ligne : Image à gauche, texte à droite -->
         <div class="row align-items-center mb-5">
             <div class="col-12 col-md-6 mb-2">
-                <img src="{{ asset('Index_Page_logo+img/Img_USA/IMG_20190920_163603.jpg') }}" class="img-fluid rounded" alt="image Golden Gate Bridge">
+                <img src="{{ asset('Index_Page_logo+img/Img_USA/san-francisco.jpg') }}" class="img-fluid rounded" alt="image Golden Gate Bridge">
             </div>
             <div class="col-12 col-md-6">
                 <p>Le Golden Gate Bridge à San Francisco est tristement célèbre pour ses nombreux suicides, car les courants 
@@ -259,7 +275,7 @@
         <!-- Deuxième ligne : Texte à gauche, image à droite -->
         <div class="row align-items-center mb-5">
             <div class="col-12 col-md-6 order-md-2 mb-2">
-                <img src="{{ asset('Index_Page_logo+img/Img_USA/IMG_20190921_145037.jpg') }}" class="img-fluid rounded" alt="Image Facebook Silicon Valley">
+                <img src="{{ asset('Index_Page_logo+img/Img_USA/facebook.jpg') }}" class="img-fluid rounded" alt="Image Facebook Silicon Valley">
             </div>
             <div class="col-12 col-md-6">
                 <p>Dans la Silicon Valley, devant le siège de Facebook. Ici, les entreprises sont géantes, comme Apple Park, 

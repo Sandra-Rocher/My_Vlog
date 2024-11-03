@@ -180,7 +180,7 @@ class LocationController extends AbstractController
 
 
     //Create a new video in database
-    #[Route('/Admin/Edit', name: 'location.create', methods : ['GET', 'POST'])]
+    #[Route('/Admin/Creer', name: 'location.create', methods : ['GET', 'POST'])]
     public function createNewVideo(Request $request, EntityManagerInterface $em): Response
     {
 
@@ -224,7 +224,7 @@ class LocationController extends AbstractController
 
     
     //Update a video in database
-    #[Route('/Admin/{id}/Edit', name: 'location.edit', methods : ['GET', 'POST'], requirements: ['id' => '\d+'])]
+    #[Route('/Admin/{id}/Modifier', name: 'location.edit', methods : ['GET', 'POST'], requirements: ['id' => '\d+'])]
      public function editById(Video $video, Request $request, EntityManagerInterface $em): Response
     {
 

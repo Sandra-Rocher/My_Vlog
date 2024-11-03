@@ -11,25 +11,47 @@
         margin-bottom:20px;
     }
 
-    /* h1, h3 {
-        margin-top:30px;
-        margin-bottom:30px;
-    } */
+    /* H5 green color in carousel */
+    .pcarousel {
+        color: #65b868;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    /* span indicator previous and next page of the carousel */
+    .carousel-indicators [data-bs-target] {
+        box-shadow: 1px 1px 10px #65b868;
+        background-color: #65b868;
+    }
+
+    /* arrow button span previous and next page of the carousel */
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        box-shadow: 1px 1px 10px 5px #65b868;
+        border-radius: 50%;
+    }
 </style>
 
 <div class="general-div">
     <h1 class="mb-4">Page spéciale à l'attention des recruteurs</h1>
 
-    <h3 class="mb-4 my-3">Voici l'envers du décor ainsi que quelques explications :</h3>
+    <h3 class="mb-5 my-4">Voici l'envers du décor ainsi que quelques explications :</h3>
 
-        <p>L'entrée du site My Vlog se fait sur la page /Home, sur cette page une vidéo en mp4 anime le fond, une brand-carousel défile pour montrer les logos des différents parc nationnaux et villes visitées au cour du road trip. 
-        Un indice du total des heures, minutes et secondes de vidéos présentes sur le site est aussi affiché. </p>
+       <p>My Vlog est un site qui propose des vidéos, ici basé sur le thème du voyage. J'ai pour but de continuer d'apprendre 
+       les langages PHP ainsi que Symfony. Ce vlog est le moyen pour moi d'allier la continuité de ma formation en développement
+        web et ma passion pour le voyage. Le code source du site est consultable à cette adresse : 
+        <a href="https://github.com/Sandra-Rocher/My_Vlog" target="_blank">https://github.com/Sandra-Rocher/My_Vlog</a>.</p>
 
-    <h3 class="mb-4 my-3">En parcourant la navbar :</h3>
+        <p>L'entrée du site My Vlog se fait sur la page /home, sur cette page une vidéo en mp4 anime le fond, une brand-carousel
+         défile pour montrer les logos des différents parc nationnaux et villes visitées au cour du road trip. 
+        Un indice du total des heures, minutes et secondes de vidéos présentes sur le site est affiché. 
+        Un effet parallaxe est aussi présent pour donner de la profondeur qui apporte une dimension esthétique à cette page.</p>
 
-        <p>La page /Voyage contient toutes les vidéos sur le thème Voyage (ici, aux États-Unis.). Ils peuvent être classé par 
-        ordre de date croissante, décroissante, ou par ordre alphabétique.</p>
-        <p>Au click sur une vidéo voici le chemin crée : /Voyage/Titre de la vidéo sélectionnée.</p>
+    <h3 class="mb-5 my-5">En parcourant la navbar :</h3>
+
+        <p>La page /home permet (comme en cliquant sur l'icone du globe gris du site My Vlog) de se rendre sur la page d'entrée du site.</p>
+
+        <p>La page /Voyage affiche toutes les vidéos sur le thème Voyage (ici, aux États-Unis.).</p>
+        {# Ils peuvent être classé par 
+        ordre de date croissante, décroissante, ou par ordre alphabétique et inverse. TODO #}
 
         {# <p>La page /Sport contient toutes les vidéos sur le thème Sport (tournée sur la moto). Ils peuvent être classé par 
         ordre de date croissante, décroissante, ou par ordre alphabétique.</p> TODO #}
@@ -38,25 +60,22 @@
         ordre de date croissante, décroissante, ou par ordre alphabétique.</p> TODO #}
 
 
-        <p>Le petit logo représentant un personnage dans la navbar est pour l'administrateur. Il dispose de pages spécifiques 
-        qui lui sont réservées. La page /Admin renvoie à une connexion 
-        obligatoire (/Connexion). Une fois connecté, l'administrateur a accès au tableau de bord, lui permettant de publier 
+        <p>La page /Admin (pour l'administrateur) est sous forme de logo qui représente un personnage. Il dispose de pages spécifiques 
+        qui lui sont réservées. Cette page renvoie donc sur une connexion obligatoire (/Connexion). 
+        Une fois connecté, l'administrateur a accès au tableau de bord, lui permettant de publier 
         une vidéo, ainsi que de modifier ou supprimer celles déjà présentes. Il existe aussi la page Déconnexion (/Deconnexion).</p>
-
-        <p>Pour une utilisation plus ergonomique et intuitive, le tableau de bord est conçu avec KnpPaginator Sortable, ce qui permet 
-        un tri simple, rapide et facile des vidéos par ID, slug, catégorie ou région.</p>
     
-        {# <p>La page /Contact Vous pouvez contacter l'admin et envoyer un message, en choississant un thème et en remplissant 
-        votre identité. TODO</p> #}
+        <p>La page /Contact vous permet de contacter l'admin et envoyer un message, en choississant un thème et en remplissant 
+        votre identité.</p>
 
         <p>Une barre de recherche est disponible pour trouver des vidéos en saisissant une lettre, un mot ou un chiffre. 
-        Si le terme recherché est présent dans la base de données (commentaire, titre, lieu d'intérêt, région), les vidéos 
-        correspondantes s'afficheront.</p>
+        Si le terme recherché est présent dans la base de données (que ce soit dans un commentaire, un titre, un lieu d'intérêt 
+        ou une région), les vidéos correspondantes s'afficheront.</p>
         {# <p>Pour améliorer la recherche, une fonction similaire à Elastic Search est intégrée, permettant de flouter les 
         résultats. Cela signifie que même si le mot recherché contient des fautes, les résultats s'afficheront, car ils 
         seront proches du mot clé. TODO</p> #}
     
-    <h3 class="mb-4 my-3">En parcourant le footer :</h3>
+    <h3 class="mb-5 my-5">En parcourant le footer :</h3>
 
        <p>Plusieurs pages sont proposées, au click elles ouvriront une autre page sans perdre le site My Vlog tel que : Mon 
        Linkedin, Mon Git, Mon portfolio, Mon CV, et le lien Suivez-nous qui mène sur Youtube, sur le compte publiant les 
@@ -68,10 +87,12 @@
        du site.</p>
 
 
-    <h3 class="mb-4 my-3">Sécurité, pagination, traitements du Formulaire, pages partielles, explications divers:</h3>
+    <h3 class="mb-5 my-5">Sécurité, pagination, traitements du Formulaire, pages partielles, explications divers:</h3>
 
         <p>La méthode des routes de chaque page est contrôlée pour maîtriser les GET, POST ou ANY. Par exemple, la page pour 
         supprimer une vidéo utilise la méthode DELETE. Tout cela renforce la sécurité contre d'éventuelles attaques CSRF.</p>
+
+        <p>Tous les chemins sont en français, pour le code par contre tous est en anglais.</p>
         
         <p>Chaque page dispose d'une pagination des vidéos, réalisée avec le bundle KNP Paginator.</p>
 
@@ -87,17 +108,75 @@
         traitement). Dans la base de données, cette durée sera uniquement stockée en secondes. Lors de l'affichage, une 
         reconversion en minutes et secondes sera de nouveau effectuée.</p>
         
-        <p>Il existe des pages partielles comme /Base qui permet de contenir tous les liens bootstrap, SEO, JavaScript, 
+        <p>Il existe des pages partielles comme /Flash qui permet de produire les messages d'erreur en rouge ou de réussite en vert. 
+        Il existe aussi /Base qui permet de contenir tous les liens bootstrap, SEO, JavaScript, 
         Metas, la Navbar et le footer, ou encore la flèche back to up.</p>
-
-        <p>Une page au nom de /Flash qui permet de produire les messages d'erreur en rouge ou de réussite en vert.</p>
 
         <p>Une Flèche nommée arrow-up permet de remonter en haut de la page, elle se déclenche lorsque l'on commence à 
         descendre.</p>
 
+    <h3 class="mb-5 my-5">Tableau de bord de l'administrateur ci dessous</h3>
 
-{# Faire un carousel de la page dashboard + creer un article + modifier un article et expliquer TODO #}
+
+    <div id="carouselExampleCaptions" class="carousel slide carousel-fade my-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active" data-bs-interval="4000">
+            <img src="{{ asset('carousel/Dashboard.png') }}" class="d-block w-100" alt="image dashboard accueil">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="pcarousel">Dashboard - accueil</h5>
+            </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="4000">
+            <img src="{{ asset('carousel/Dashboard3.png') }}" class="d-block w-100" alt="image dashboard créer une vidéo">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="pcarousel">Dashboard - créer une vidéo</h5>
+            </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="4000">
+            <img src="{{ asset('carousel/Dashboard2.png') }}" class="d-block w-100" alt="image dashboard modifier une vidéo">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="pcarousel">Dashboard - modifier une vidéo</h5>
+            </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="4000">
+            <img src="{{ asset('carousel/Dashboard4.png') }}" class="d-block w-100" alt="image dashboard supprimer une vidéo">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="pcarousel">Dashboard - supprimer une vidéo</h5>
+            </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Précédent</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Suivant</span>
+        </button>
+    </div>
 
     
+        <p>Image 1 : Dashboard - accueil : Vu général du tableau de bord. Pour une utilisation plus ergonomique et intuitive, le tableau de bord est conçu avec 
+        KnpPaginator Sortable, ce qui permet un tri simple, rapide et facile des vidéos par ID, slug, catégorie ou région.</p>
+
+        <p>Image 2 : Dashboard - créer une vidéo : Tous les champs présents ont un placeholder permettant d'avoir un indice sur le format attendu.</p>
+
+        <p>Image 3 : Dashboard - modifier une vidéo : Les champs de la vidéo sélectionnée seront remplis et prêts à être modifiés.</p>
+
+        <p>Image 4 : Dashboard - supprimer une vidéo : Un pop-up en Bootstrap viendra demander la confirmation de la suppression.</p>
+
 </div>
 {% endblock %}
