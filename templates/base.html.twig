@@ -23,10 +23,14 @@
         {# Bootstrap icons #}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-        {% block stylesheets %}
-            {# <link rel="stylesheet" href="{{ asset('styles/app.css') }}"> #}
 
-        {# <link rel="stylesheet" href="{{ asset('assets/styles/app.css') }}"> #}
+        {# TODO <link rel="stylesheet" href="{{ asset('../assets/styles/app.css') }}"> #}
+        {% block stylesheets %}
+            
+        {# TODO <link rel="stylesheet" href="{{ asset('../assets/styles/app.css') }}"> #}
+
+        {# TODO liens bootstrap en import dans app.js .. pour enlever les link href pour bootstrap, js, et bootstrap icons #}
+
         <style>
             .nav-link{
                 color: white;
@@ -123,7 +127,8 @@
               position: fixed;
               bottom: 50px;
               right: 50px;
-              /* display: none; hide by default */
+              /* hide by default */
+              display: none; 
               background-color: black; 
               color: #65b868;
               box-shadow: 0px 0px 20px 5px rgba(101,184,104,0.5);
@@ -160,104 +165,37 @@
         {% endblock %}
 
         {% block javascripts %}
-            {% block importmap1 %}{{ importmap('app') }}{% endblock %}
-            {% block importmap2 %}{{ importmap('arrow') }}{% endblock %}
+            {% block importmap %} {{ importmap('app') }} {% endblock %}
+            {# {% block importmap2 %}{{ importmap('arrow') }}{% endblock %} #}
         {% endblock %}
 
     </head>
     <body>
 
-    {# Navbar #}
-    <nav class="navbar navbar-expand-lg" style="box-shadow: 0px 0px 20px #65b868;">
-      <div class="container-fluid">
-        <a class="navbar-brand ms-5 fs-2 text-white" href="/home"> 
-          <img src="{{ asset('/LOGO_myvlog.png') }}" width="100" height="auto" alt="My Vlog Logo">
+    
 
-        </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+    {# NAVBAR : before the body #}
+    {% include "partials/navbar.html.twig" %}
 
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5 mx-auto">
-
-
-            <li class="nav-item"> 
-            {# Home page #}
-                <a class="nav-link text-white {{app.current_route == 'home' ? 'active'}}" href="{{ path ('home') }}">Accueil</a>
-            </li> 
-
-            {# Travel dropdown toggle #}
-            <li class="nav-item dropdown">
-              <a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" href="" 
-                  role="button" aria-expanded="false">Voyage</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{{ path ('location.index') }}">Toutes les vidéos USA</a></li>
-                  <li><a class="dropdown-item" href="{{ path ('location.west.index') }}">Côte-Ouest-USA</a></li>
-                  <li><a class="dropdown-item" href="{{ path ('location.florida.index') }}">Floride-USA</a></li>
-                </ul>
-            </li>
-
-            {# here for the future page of Motor sport TODO #}
-
-            {# here for the future page of WW2 TODO #}
-
-            <li class="nav-item"> 
-            {# Admin page #}
-              <a class="nav-link text-white {{app.current_route == 'home.adminPage' ? 'active'}}" href="{{ path ('home.adminPage') }}"><i class="bi bi-person-vcard fs-4"></i></a>
-            </li>
-
-          
-            <li class="nav-item"> 
-            {# Contact Form #}
-                <a class="nav-link text-white {{app.current_route == 'app_contact' ? 'active'}}" href="{{ path ('app_contact') }}">Contact</a>
-            </li>   
-
-          </ul>
-          {# SearchTerm for search by state, subtitle, or slug #}
-          <form class="d-flex" role="searchTerm" method="GET" action="{{ path('location.searchTerm') }}">
-              <input class="form-control me-3" name="searchTerm" type="search" placeholder="Rechercher" aria-label="Search">
-              <button class="btn btn-outline-success me-4" type="submit">Valider</button>
-          </form>
-        </div>
-    </div>
-  </nav>
-
-{# Arrow up (green) #}
-<a href="#" id="back-to-top" title="Back to top"><i class="bi bi-arrow-up"></i></a>
+    {# Arrow up (green) #}
+    <a href="#" id="back-to-top" title="Back to top"><i class="bi bi-arrow-up"></i></a>
 
 
         <div class="container my-4">
-          {# (in Template) Partials page for partials messages : for answer sucess or error #}
+          {# Flash messages : for answer sucess or error #}
           {% include 'partials/flash.html.twig' %}
-            {% block body %}
-            {% endblock %}
+
+
+            {% block body %}  {% endblock %}
+            
         </div>
 
+    {# FOOTER after the body #}
+    {% include "partials/footer.html.twig" %}
 
-{# Footer links #}
-<footer class="text-center text-white" style="background-color: black; box-shadow: 0px 0px 17px #65b868">
-  <div class="container p-1 pb-0">
-    <section>
-        <ul class="nav justify-content-center border-0 mb-1">
-            <li class="nav-item"><a href="https://www.linkedin.com/in/sandra-rocher-376311264/" 
-                target="_blank" class="nav-link text-white px-2">Linkedin</a></li>
-            <li class="nav-item"><a href="https://github.com/Sandra-Rocher" 
-                target="_blank" class="nav-link text-white px-2">Github</a></li>
-            <li class="nav-item"><a href="https://sandra-rocher.github.io/Portfolio-perso/" 
-                target="_blank" class="nav-link text-white px-2">Portfolio</a></li>
-            <li class="nav-item"><a href="https://cvdesignr.com/p/6405d12b8a89d" 
-                target="_blank" class="nav-link text-white px-2">CV</a></li>
-            <li class="nav-item"><a href="https://www.youtube.com/@BS-xw1mb/videos" 
-                target="_blank" class="nav-link text-white px-2">Suivez-nous</a></li>
-            <li class="nav-item"><a href="/Mentions-Legales" class="nav-link px-2">Mentions légales</a></li>
-            <li class="nav-item"><a href="/Recruteur" class="nav-link px-2">Vous êtes recruteur ?</a></li>
-        </ul>
-    </section>
-  </div>
-    <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.2);">© 2024 Copyright Rocher Sandra</div>
-</footer>
+
+
 
 {# Script js bootstrap for delete modal #}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> 

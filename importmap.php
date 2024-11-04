@@ -16,19 +16,20 @@ return [
         'path' => './assets/app.js',
         'entrypoint' => true,
     ],
-    '@hotwired/stimulus' => [
-        'version' => '3.2.2',
-    ],
     '@symfony/stimulus-bundle' => [
         'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
     ],
-    '@hotwired/turbo' => [
-        'version' => '7.3.0',
-    ],
 
-    // Arrow up
+    // SRO Arrow up (confirmed with symfony console importmap:update (03.11.24))
     'arrow' => [
         'path' => './assets/arrow.js',
         'entrypoint' => true,
+    ],
+    '@hotwired/stimulus' => [
+        'version' => '3.2.2',
+    ],
+    '@hotwired/turbo' => [
+        // SRO before enter in console : symfony console importmap:update (03.11.24) it was : 'version' => '7.3.0',
+        'version' => '8.0.12',
     ],
 ];

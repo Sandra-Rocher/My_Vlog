@@ -1,0 +1,56 @@
+{# Navbar #}
+    <nav class="navbar navbar-expand-lg" style="box-shadow: 0px 0px 20px #65b868;">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-5 fs-2 text-white" href="/home"> 
+          <img src="{{ asset('/LOGO_myvlog.png') }}" width="100" height="auto" alt="My Vlog Logo">
+
+        </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5 mx-auto">
+
+
+            <li class="nav-item"> 
+            {# Home page #}
+                <a class="nav-link text-white {{app.current_route == 'home' ? 'active'}}" href="{{ path ('home') }}">Accueil</a>
+            </li> 
+
+            {# Travel dropdown toggle #}
+            <li class="nav-item dropdown">
+              <a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" href="" 
+                  role="button" aria-expanded="false">Voyage</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{{ path ('location.index') }}">Toutes les vidéos USA</a></li>
+                  <li><a class="dropdown-item" href="{{ path ('location.west.index') }}">Côte-Ouest-USA</a></li>
+                  <li><a class="dropdown-item" href="{{ path ('location.florida.index') }}">Floride-USA</a></li>
+                </ul>
+            </li>
+
+            {# here for the future page of Motor sport TODO #}
+
+            {# here for the future page of WW2 TODO #}
+
+            <li class="nav-item"> 
+            {# Admin page #}
+              <a class="nav-link text-white {{app.current_route == 'home.adminPage' ? 'active'}}" href="{{ path ('home.adminPage') }}"><i class="bi bi-person-vcard fs-4"></i></a>
+            </li>
+
+          
+            <li class="nav-item"> 
+            {# Contact Form #}
+                <a class="nav-link text-white {{app.current_route == 'app_contact' ? 'active'}}" href="{{ path ('app_contact') }}">Contact</a>
+            </li>   
+
+          </ul>
+          {# SearchTerm for search by state, subtitle, or slug #}
+          <form class="d-flex" role="searchTerm" method="GET" action="{{ path('location.searchTerm') }}">
+              <input class="form-control me-3" name="searchTerm" type="search" placeholder="Rechercher" aria-label="Search">
+              <button class="btn btn-outline-success me-4" type="submit">Valider</button>
+          </form>
+        </div>
+    </div>
+  </nav>
