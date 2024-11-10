@@ -107,7 +107,7 @@ class VideoRepository extends ServiceEntityRepository
         //  }
 
 
-        //KNP Paginator with or without states parameters
+        // KNP Paginator with or without states parameters
         public function paginateVideos(int $page, ?array $state = null): PaginationInterface
         {
             //For pagination with state (if it's west or florida) or without state (for all videos)
@@ -124,6 +124,12 @@ class VideoRepository extends ServiceEntityRepository
                 6 // number of videos per page
             );
         }
+
+
+
+
+
+
 
         
 

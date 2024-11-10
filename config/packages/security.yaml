@@ -21,20 +21,11 @@ security:
                 path: app_logout
                 #SRO where to redirect after logout
                 target: /home
-                #SRO token of CSRF protection for logout
-                # csrf_parameter: token
 
+                csrf_token_id: logout  # ID token CSRF for logout
+                enable_csrf: true  # Activation protection CSRF
                 # csrf_token_generator: security.csrf.token_manager
 
-                # csrf_token_id: 'logout'  # ID du token CSRF pour la déconnexion
-                # enable_csrf: true  # Activation de la protection CSRF
-
-                #form_login:
-                # # "app_login" is the name of the route created previously
-                # login_path: app_login
-                # check_path: app_login
-
-                #enable_csrf: true
 
             #SRO Option remember me for login : 604800 = 7 days
             remember_me:

@@ -56,12 +56,12 @@
 
     <p class="onRight"> {{ Video.state }} / {{ Video.calendar|date('d-m-Y') }} </p>
 
-    <a href="{{ path('location.index') }}" class="btn btn-secondary mt-5">Retour à la liste des vidéos</a>
+    {# <a href="{{ path('location.index') }}" class="btn btn-secondary mt-5">Retour à la liste des vidéos</a> #}
+    <a href="" id="return-last-page" class="btn btn-secondary mt-5">Retour à la page précédente</a>
+
     
 </div>
 {% endblock %}
-
-
 {# Explication des options :
 accelerometer : Autorise l'utilisation de l'accéléromètre de l'appareil (utile pour certaines interactions basées sur le mouvement).
 autoplay : Permet la lecture automatique de la vidéo une fois chargée.

@@ -2,10 +2,10 @@
 framework:
     secret: '%env(APP_SECRET)%'
     #SRO CSRF protection is open now
-    #csrf_protection: true
-    # form:
-    #     csrf_protection:
-    #         enabled: true
+    csrf_protection: true
+    form:
+        csrf_protection:
+            enabled: true
     #         field_name: 'custom_token_name'
 
     # Note that the session will be started ONLY if you read or write from it.
@@ -14,7 +14,8 @@ framework:
     #esi: true
     #fragments: true
     
-#SRO Here add a protection for the delete video
+    #SRO http_method_override : true for use _method in form
+    # permit symfony to recognize the request of HTTP like DELETE, PUT or all _method from form like POST => DELETE
     http_method_override: true
 
 when@test:

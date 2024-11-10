@@ -19,20 +19,21 @@
     <h1>Tableau de Bord :</h1>
     
     <div class="container">
-<div class="d-flex justify-content-evenly mb-5">
-    <a href="{{ url('location.create') }}" class="btn me-3">Créer une vidéo</a>
-    <a href="{{ url('app_logout') }}" class="btn">Se déconnecter</a>
-</div>
+        <div class="d-flex justify-content-evenly mb-5">
+            <a href="{{ url('location.create') }}" class="btn me-3">Créer une vidéo</a>
+            
+            <form action="{{ path('app_logout') }}" method="post" style="display:inline;">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('logout') }}">
+                <button type="submit" class="btn">Se déconnecter</button>
+            </form>
+
+        </div>
         <table class="table">
             <thead>
                 <tr>
-                    {# <th>ID</th> #}
                     <th>{{knp_pagination_sortable(videos, 'ID', 'v.id')}}</th>
-                    {# <th>Titres</th> #}
                     <th>{{knp_pagination_sortable(videos, 'Slug', 'v.slug')}}</th>
-                    {# <th>Catégorie</th> #}
                     <th>{{knp_pagination_sortable(videos, 'Catégorie', 'v.category')}}</th>
-                    {# <th>Région</th> #}
                     <th>{{knp_pagination_sortable(videos, 'Région', 'v.state')}}</th>
                     <th>Durée</th>
                     <th>Actions</th>
@@ -61,21 +62,7 @@
                             <div class="d-flex justify-content-center align-items-center gap-1">
                                  <a href="{{ url('location.edit', {id: video.id}) }}" class="btn">Modifier</a>
 
-                                {# <form action="{{url('location.delete', {id: video.id}) }}" method="post">
-                                     <input type="hidden" name="_method" value="DELETE">
-                                    <button type="submit" class="btn">Supprimer</button>
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</div>
-{% endblock %} #}
-
-{# Button to trigger the modal #}
+                                {# Button to trigger the modal #}
                                 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteModal{{ video.id }}">
                                     Supprimer
                                 </button>

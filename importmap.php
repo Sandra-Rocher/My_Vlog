@@ -19,17 +19,29 @@ return [
     '@symfony/stimulus-bundle' => [
         'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
     ],
-
-    // SRO Arrow up (confirmed with symfony console importmap:update (03.11.24))
     'arrow' => [
         'path' => './assets/arrow.js',
+        'entrypoint' => true,
+    ],
+    'previousPage' => [
+        'path' => './assets/previousPage.js',
         'entrypoint' => true,
     ],
     '@hotwired/stimulus' => [
         'version' => '3.2.2',
     ],
     '@hotwired/turbo' => [
-        // SRO before enter in console : symfony console importmap:update (03.11.24) it was : 'version' => '7.3.0',
         'version' => '8.0.12',
+    ],
+    'bootstrap/dist/css/bootstrap.min.css' => [
+        'version' => '5.3.3',
+        'type' => 'css',
+    ],
+    'bootstrap/dist/js/bootstrap.bundle.min.js' => [
+        'version' => '5.3.3',
+    ],
+    'bootstrap-icons/font/bootstrap-icons.css' => [
+        'version' => '1.11.3',
+        'type' => 'css',
     ],
 ];

@@ -16,28 +16,24 @@
 </style>
 
 <div class="general-div">
+
+    {% if app.user %}
+        <div class="mb-5">
+            Vous êtes connecté en tant que  {{ app.user.userIdentifier }} 
+
+            <form action="{{ path('app_logout') }}" method="post" style="display:inline;">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('logout') }}">
+                <button type="submit" class="btn">Se déconnecter</button>
+            </form>
+        </div>
+    {% endif %} 
+
     <form method="post">
         {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
 
-         <h1 class="mb-5">Connexion</h1>
-
-        {% if app.user %}
-            <div class="mb-5">
-                Vous êtes connecté en tant que  {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
-            </div>
-        {% endif %}
-
-        {# {% if app.user %}
-            <form method="post" action="{{ path('app_logout') }}">
-                <div class="mb-5">
-                    Vous êtes connecté en tant que {{ app.user.userIdentifier }}
-                    <button type="submit" class="btn btn-sm btn-danger">Se déconnecter</button>
-                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('logout') }}">
-                </div>
-            </form>
-        {% endif %}  TODO #}
+        <h1 class="mb-5">Connexion</h1>
 
         <div class="mb-5 container col-lg-3"> 
             <div class="row">

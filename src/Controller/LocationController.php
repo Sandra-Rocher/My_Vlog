@@ -13,6 +13,7 @@ use App\Entity\Video;
 use App\Form\VideoType;
 //use App\EntityManagerInterface;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Routing\RouterInterface;
 
 
 
@@ -47,6 +48,7 @@ class LocationController extends AbstractController
             'Videos' => $videos,
         ]);
     } 
+
 
 
     // //Browse all videos without pagination
@@ -131,13 +133,26 @@ class LocationController extends AbstractController
         //Replace the space in the slug by a " - " to avoid the url to be displayed as " %20 " and capitalise the first letter of each word
         $formattedSlug = ucwords(str_replace(' ', '-', $video->getSlug()));
     
-        // If slug is not equal to formatted slug, redirection to correct URL
+        // If slug is not equal to formatted slug, redirection to correct URL : permanently (301)
         if ($slug !== $formattedSlug) {
             return $this->redirectToRoute('location.showId', [
                 'slug' => $formattedSlug,
                 'id' => $id
             ], 301);  //Permanent redirection for navigator URL (code 301)
         }
+
+
+
+
+        // Pass the referer in the query parameters to preserve it after redirection
+            //     $referer = $request->headers->get('referer');
+            //     return $this->redirectToRoute('location.showId', [
+            //         'slug' => $formattedSlug,
+            //         'id' => $id,
+            //         'referer' => $referer // Add the referer as a query parameter
+            //     ], 301);  //Permanent redirection for navigator URL (code 301)
+            // }
+
 
         //Capitalise the first letter of each word in the subtitle and state
         $video->setSubtitle(ucwords($video->getSubtitle()));
@@ -150,7 +165,6 @@ class LocationController extends AbstractController
         // }
         return $this->render('location/show.html.twig', [
             'controller_name' => 'LocationController',
-            
             'Video' => $video,
         ]);
     }

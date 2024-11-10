@@ -1,0 +1,164 @@
+/* CSS page of home/index.html.twig */
+/* in this order : general-div2 / mp4 cadre video / H1 welcome all ! / brand carousel with little logos / time calculator / parallaxe effect */
+
+
+  /* Special general div custom */
+  .general-div2 {
+    position: relative;
+    overflow: hidden;
+    /* margin: 1em auto; */
+    /* margin-top: 3rem; */
+    margin-bottom: 3rem;
+    /* width: 75%; */
+    text-align: center;
+    }
+
+    /* Mp4 Index background */
+   #cadre{
+        display:flex;
+        flex-direction:column;
+        position:relative;
+        height:100vh;
+        width:100%;
+        overflow:hidden;
+    }
+
+    #cadre video{
+        width: 100%;
+        height: auto;
+        display: block;
+
+        position:absolute;
+        min-width:100%;
+        min-height:100%;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        -webkit-transform:translate(-50%, -50%);
+        -moz-transform:translate(-50%, -50%);
+        -ms-transform:translate(-50%, -50%);
+        -o-transform:translate(-50%, -50%);
+        z-index:-1;
+    }
+
+    /* H1 custom : Bonjour bienvenue ! */
+    .first{
+        z-index:1111;
+        margin-top:55px;
+    }
+
+    /* Brand Carousel Logos */
+    .logos {
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 20px 0;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .logos:before,
+    .logos:after {
+        position: absolute;
+        top: 0;
+        width: 100px;
+        height: 100%;
+        content: '';
+        z-index: 2;
+    }
+
+    .logos:before {
+        left: 0;
+        background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+    }
+
+    .logos:after {
+        right: 0;
+        background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+    }
+
+    .logo_items {
+        /* display: inline-block; */
+        display: inline-flex;
+        white-space: nowrap;
+        animation: slides 35s linear infinite;
+    }
+
+    .logo_items img {
+        height: 90px;
+        margin: 0 15px;
+    }
+
+    .logos:hover .logo_items {
+        animation-play-state: paused;
+    }
+
+    @keyframes slides {
+        from { transform: translateX(20%); }
+        to { transform: translateX(-100%); }
+    } 
+
+    /* Time calculator for hours minutes and seconds videos */
+    .custom-container * {
+        box-sizing: border-box;
+    }
+
+    .custom-body {
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Poppins';
+        color: #fff;
+        font-size: 8px;
+    }
+
+    .custom-heading {
+        text-align: center;
+        margin-top: 14rem;
+        font-size: 2rem;
+    }
+
+    .cd-timer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .cd-unit .time {
+        font-weight: bold;
+        padding: 1rem 2rem;
+        font-size: 2rem;
+        border: 2px solid #65b868;
+        box-shadow: 1px 1px 10px #65b868;
+        border-radius: 1rem;
+        margin: 0 1rem;
+    }
+
+    .cd-unit span {
+        font-size: 1rem;
+        /* font-weight: bold; */
+        color: #fff;
+    }
+
+    /* in twig, we use asset : url('{{ asset('Index_Page_logo+img/Img_USA/roadmapwestcoast.png') }}');  */
+    /* in css, we can't : url('/Index_Page_logo+img/Img_USA/roadmapwestcoast.png'); */
+    .container-parallaxe {
+        background-image: 
+            linear-gradient(180deg, transparent 38%, black), /* linear gradient */
+            linear-gradient(180deg, black 12%, rgba(13, 16, 25, 0) 72%), /* gradient with transparency */
+            radial-gradient(circle farthest-corner at 50% 50%, rgba(6, 7, 10, 0), black 91%), /* radial gradient */
+            url('/Index_Page_logo+img/Img_USA/roadmapwestcoast.png'); /* background image */
+        background-position: 0 0, 0 0, 0 0, 50% 80%;
+        background-repeat: repeat, repeat, repeat, no-repeat;
+        background-size: auto, auto, auto, cover;
+        background-attachment: fixed; /* parallaxe effect*/
+        min-height: 100vh;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        color: white;
+    }
+
