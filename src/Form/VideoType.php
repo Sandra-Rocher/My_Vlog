@@ -12,6 +12,9 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\Image;
+
 
 class VideoType extends AbstractType
 {
@@ -81,6 +84,11 @@ class VideoType extends AbstractType
                 'attr' => [
                     'placeholder' => '1.32',
                 ],
+            ])
+
+            // No not blank because the thumbnail can be null
+            ->add('thumbnailFile', FileType::class, [
+                'label' => 'Image parallaxe'
             ])
 
             ->add('save', SubmitType::class, [

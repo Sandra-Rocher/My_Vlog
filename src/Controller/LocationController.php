@@ -211,11 +211,9 @@ class LocationController extends AbstractController
 
                     // Catch the value of the ‘duration’ field in the form submitted ex :'1.30'
                     $durationString = $form->get('duration')->getData();
-
                     // Convert format like 'm:ss' into secondes
                     list($minutes, $seconds) = explode('.', $durationString);
                     $totalSeconds = ($minutes * 60) + $seconds;
-
                     //Enter the duration in the database
                     $newVideo->setDuration($totalSeconds);
 
@@ -250,6 +248,7 @@ class LocationController extends AbstractController
 
                 //If form is submitted and valid : redirection to home page with success message flashes (template/partials/flash.html.twig)
                 if ($form->isSubmitted() && $form->isValid()) {
+                    
                      $em->flush();
                     $this->addFlash('success', 'Votre video a bien été modifiée');
                     return $this->redirectToRoute('location.index');

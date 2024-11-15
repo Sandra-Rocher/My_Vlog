@@ -87,7 +87,7 @@
        du site.</p>
 
 
-    <h3 class="mb-5 my-5">Sécurité, pagination, traitements du Formulaire, pages partielles, explications divers:</h3>
+    <h3 class="mb-5 my-5">Sécurité, bundles, traitements du Formulaire, pages partielles, explications divers:</h3>
 
         <p>La méthode des routes de chaque page est contrôlée pour maîtriser les GET, POST ou ANY. Par exemple, la page pour 
         supprimer une vidéo utilise la méthode DELETE. Tout cela renforce la sécurité contre d'éventuelles attaques CSRF.</p>
@@ -96,6 +96,8 @@
         est entièrement en anglais, comme le conseillent les bonnes pratiques.</p>
         
         <p>Chaque page dispose d'une pagination des vidéos, réalisée avec le bundle KNP Paginator.</p>
+
+        <p>Utilisation du bundle VichUploader pour gérer l'upload des fichiers image servant à la parallaxe.</p>
 
         <p>Les pages de création, d’édition et de suppression de vidéos, situées sous le chemin /admin, sont protégées par 
         un contrôle d'accès défini dans le fichier security.yaml. Seuls les administrateurs (rôle ROLE_ADMIN) peuvent y 
@@ -132,28 +134,28 @@
         <div class="carousel-inner">
 
             <div class="carousel-item active" data-bs-interval="4000">
-            <img src="{{ asset('Admin_Page/carousel/Dashboard.png') }}" class="d-block w-100" alt="image dashboard accueil">
+            <img src="{{ asset('Admin_Page/Carousel/Dashboard.png') }}" class="d-block w-100" alt="image dashboard accueil">
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="pcarousel">Dashboard - accueil</h5>
             </div>
             </div>
 
             <div class="carousel-item" data-bs-interval="4000">
-            <img src="{{ asset('Admin_Page/carousel/Dashboard3.png') }}" class="d-block w-100" alt="image dashboard créer une vidéo">
+            <img src="{{ asset('Admin_Page/Carousel/Dashboard3.png') }}" class="d-block w-100" alt="image dashboard créer une vidéo">
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="pcarousel">Dashboard - créer une vidéo</h5>
             </div>
             </div>
 
             <div class="carousel-item" data-bs-interval="4000">
-            <img src="{{ asset('Admin_Page/carousel/Dashboard2.png') }}" class="d-block w-100" alt="image dashboard modifier une vidéo">
+            <img src="{{ asset('Admin_Page/Carousel/Dashboard2.png') }}" class="d-block w-100" alt="image dashboard modifier une vidéo">
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="pcarousel">Dashboard - modifier une vidéo</h5>
             </div>
             </div>
 
             <div class="carousel-item" data-bs-interval="4000">
-            <img src="{{ asset('Admin_Page/carousel/Dashboard4.png') }}" class="d-block w-100" alt="image dashboard supprimer une vidéo">
+            <img src="{{ asset('Admin_Page/Carousel/Dashboard4.png') }}" class="d-block w-100" alt="image dashboard supprimer une vidéo">
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="pcarousel">Dashboard - supprimer une vidéo</h5>
             </div>

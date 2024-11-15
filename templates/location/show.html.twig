@@ -27,6 +27,25 @@
         text-align: right;
         margin-top: 20px;
     }
+
+    /* Parallaxe of Show page (comm) */
+    /* in twig, we use asset : url('{{ asset('Show_Page/Thumbnails/ {{ Video.thumbnail }}') }}');  */
+    /* in css, we can't : url('/Show_Page/Thumbnails/ {{ Video.thumbnail }}'); */
+    .container-parallaxe2 {
+        background-image: 
+            linear-gradient(180deg, transparent 38%, black), /* linear gradient */
+            linear-gradient(180deg, black 12%, rgba(13, 16, 25, 0) 72%), /* gradient with transparency */
+            radial-gradient(circle farthest-corner at 50% 50%, rgba(6, 7, 10, 0), black 91%), /* radial gradient */
+            url('{{ asset('Show_Page/Thumbnails/' ~ Video.thumbnail) }}'); /* background image */
+        background-position: 0 0, 0 0, 0 0, 50% 80%;
+        background-repeat: repeat, repeat, repeat, no-repeat;
+        background-size: auto, auto, auto, cover;
+        background-attachment: fixed; /* parallaxe effect*/
+        min-height: 100vh;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        color: white;
+    }
 </style>
 
 <div class="general-div">
@@ -50,6 +69,8 @@
         allowfullscreen></iframe>
     </div>
 
+
+ <div class="container container-parallaxe2">
     <div class="com">
         <p>{{ Video.comm | nl2br }} </p>
     </div>
@@ -58,6 +79,7 @@
 
     <a href="{{ path('location.index') }}" class="btn btn-secondary mt-5">Retour à la liste des vidéos</a>
     {# <a href="" id="return-last-page" class="btn btn-secondary mt-5">Retour à la page précédente</a> #}
+</div>
 
     
 </div>

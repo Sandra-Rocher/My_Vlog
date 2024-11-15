@@ -19,18 +19,39 @@
 </style>
 
 <div class="general-div">
-    <h1 class="mb-5">Nous contacter</h1>
+    <div class="container mt-4">
+        <h1 class="mb-5">Nous contacter :</h1>
 
-    {{form_start(form)}}
-        <div class="d-flex justify-content-evenly">
-            {{form_row(form.lastName)}}
-            {{form_row(form.firstName)}}
-            {{form_row(form.subject)}}
+        {{ form_start(form) }}
+        
+        <div class="mb-2 row">
+            <div class="col-md-6 col-12 mb-3">
+                {{ form_row(form.lastName) }}
+            </div>
+            <div class="col-md-6 col-12 mb-3">
+                {{ form_row(form.firstName) }}
+            </div>
         </div>
-        <div class="d-flex justify-content-evenly">
-            {{form_row(form.city)}}
-            {{form_row(form.email)}}
+
+        <div class="mb-2 row">
+            <div class="col-md-6 col-12 mb-3">
+                {{ form_row(form.subject) }}
+            </div>
+            <div class="col-md-6 col-12 mb-3">
+                {{ form_row(form.city) }}
+            </div>
         </div>
-    {{form_end(form)}}
+
+        <div class="mb-2 row">
+            <div class="col-md-6 col-12 mb-3">
+                {{ form_row(form.email) }}
+            </div>
+            <div class="col-md-6 col-12 mb-3">
+                {{ form_row(form.phone) }}
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
 </div>
+
 {% endblock %}

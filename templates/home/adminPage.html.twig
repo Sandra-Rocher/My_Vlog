@@ -19,81 +19,86 @@
     <h1>Tableau de Bord :</h1>
     
     <div class="container">
-        <div class="d-flex justify-content-evenly mb-5">
-            <a href="{{ url('location.create') }}" class="btn me-3">Créer une vidéo</a>
-            
-            <form action="{{ path('app_logout') }}" method="post" style="display:inline;">
-                <input type="hidden" name="_csrf_token" value="{{ csrf_token('logout') }}">
-                <button type="submit" class="btn">Se déconnecter</button>
-            </form>
-
+        <div class="row mb-2">
+            <div class="col-md-6 col-12 mb-3">
+                 <a href="{{ url('location.create') }}" class="btn me-3">Créer une vidéo</a>
+            </div>
+            <div class="col-md-6 col-12 mb-3">
+                <form action="{{ path('app_logout') }}" method="post" style="display:inline;">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('logout') }}">
+                    <button type="submit" class="btn">Se déconnecter</button>
+                </form>
+            </div>
         </div>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>{{knp_pagination_sortable(videos, 'ID', 'v.id')}}</th>
-                    <th>{{knp_pagination_sortable(videos, 'Slug', 'v.slug')}}</th>
-                    <th>{{knp_pagination_sortable(videos, 'Catégorie', 'v.category')}}</th>
-                    <th>{{knp_pagination_sortable(videos, 'Région', 'v.state')}}</th>
-                    <th>Durée</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {# Boucle foreach vidéos #}
-                {% for video in videos %}
-                    <tr>
-                        <td>
-                            <p class="me-3">{{ video.id }}</p></a>
-                        </td>
-                        <td>
-                            <a href="{{ url('location.showId', {slug: video.slug, id: video.id}) }}" class="btn">{{video.slug}}</a>
-                        </td>
-                        <td>
-                            <p class="me-3">{{ video.category }}</p></a>
-                        </td>
-                        <td>
-                            <p class="me-3">{{ video.state }}</p></a>
-                        </td>
-                        <td>
-                            <p class="me-3">{{ video.duration }}</p></a>
-                        </td>
-                        <td>
-                            <div class="d-flex justify-content-center align-items-center gap-1">
-                                 <a href="{{ url('location.edit', {id: video.id}) }}" class="btn">Modifier</a>
-
-                                {# Button to trigger the modal #}
-                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteModal{{ video.id }}">
-                                    Supprimer
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    {# Modal for confirmation #}
-                    <div class="modal fade" id="deleteModal{{ video.id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ video.id }}" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content bg-dark">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="deleteModalLabel{{ video.id }}">Confirmation de suppression</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            Êtes-vous sûr(e) de vouloir supprimer cette vidéo : "{{ video.slug }}" ?
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                                <form action="{{ url('location.delete', {id: video.id}) }}" method="post">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <button type="submit" class="btn btn-danger">Supprimer</button>
-                                </form>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                {% endfor %}
-            </tbody>
-        </table>
     </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th>{{knp_pagination_sortable(videos, 'ID', 'v.id')}}</th>
+                        <th>{{knp_pagination_sortable(videos, 'Slug', 'v.slug')}}</th>
+                        <th>{{knp_pagination_sortable(videos, 'Catégorie', 'v.category')}}</th>
+                        <th>{{knp_pagination_sortable(videos, 'Région', 'v.state')}}</th>
+                        <th>Durée</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {# Boucle foreach vidéos #}
+                    {% for video in videos %}
+                        <tr>
+                            <td>
+                                <p class="me-3">{{ video.id }}</p></a>
+                            </td>
+                            <td>
+                                <a href="{{ url('location.showId', {slug: video.slug, id: video.id}) }}" class="btn">{{video.slug}}</a>
+                            </td>
+                            <td>
+                                <p class="me-3">{{ video.category }}</p></a>
+                            </td>
+                            <td>
+                                <p class="me-3">{{ video.state }}</p></a>
+                            </td>
+                            <td>
+                                <p class="me-3">{{ video.duration }}</p></a>
+                            </td>
+                            <td>
+                                <div class="d-flex justify-content-center align-items-center gap-1">
+                                    <a href="{{ url('location.edit', {id: video.id}) }}" class="btn">Modifier</a>
+
+                                    {# Button to trigger the modal #}
+                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteModal{{ video.id }}">
+                                        Supprimer
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        {# Modal for confirmation #}
+                        <div class="modal fade" id="deleteModal{{ video.id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ video.id }}" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content bg-dark">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel{{ video.id }}">Confirmation de suppression</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Êtes-vous sûr(e) de vouloir supprimer cette vidéo : "{{ video.slug }}" ?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                    <form action="{{ url('location.delete', {id: video.id}) }}" method="post">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                                    </form>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {# </div> #}
 </div>
 {% endblock %}

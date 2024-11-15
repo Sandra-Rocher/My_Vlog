@@ -5,12 +5,18 @@ namespace App\Entity;
 use App\Repository\VideoRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+// use PHPUnit\TextUI\XmlConfiguration\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: VideoRepository::class)]
 #[UniqueEntity('slug')]
 #[UniqueEntity('link')]
+//Create for vich uploader
+#[Vich\Uploadable()]
 class Video
 {
     #[ORM\Id]
@@ -58,6 +64,27 @@ class Video
     #[Assert\LessThan(value: 3600, message: 'La durée doit être inferieur à 3600.')]
     private ?int $duration = null;
 
+    //No not blank because the thumbnail can be null
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $thumbnail = null;
+
+    //Create for vich uploader :
+    #[Vich\UploadableField(mapping: 'Videos', fileNameProperty: 'thumbnail')]
+    #[Assert\Image()]
+    #[Assert\File(
+        maxSize: '5M',
+        maxSizeMessage: 'Le fichier est trop volumineux. La taille maximale est de 5 Mo.',
+        mimeTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml'],
+        mimeTypesMessage: 'Seuls les fichiers de type JPEG, PNG, GIF, WEBP et SVG sont autorisés.'
+    )]
+    private ?File $thumbnailFile = null;
+
+    //SRO WORKAROUND for update! See following link : https://github.com/dustin10/VichUploaderBundle/blob/master/docs/known_issues.md
+    //SRO The file is not updated if there are no other changes in the entity
+    //SRO Issue https://github.com/dustin10/VichUploaderBundle/issues/123
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $updatedAt = null;
+
 
     //Getter and Setter
     public function getId(): ?int
@@ -76,14 +103,6 @@ class Video
 
         return $this;
     }
-    // public function setSlugy(string $slug): static
-    // {
-    // //Trim remove all spaces before and after the string and preg_replace replace all spaces with -
-    //         $this->slug = trim(preg_replace('/\s+/', '-', $slug));
-
-    //         return $this;
-    // }
-
 
     public function getLink(): ?string
     {
@@ -165,6 +184,48 @@ class Video
     public function setDuration(int $duration): static
     {
         $this->duration = $duration;
+
+        return $this;
+    }
+
+    public function getThumbnail(): ?string
+    {
+        return $this->thumbnail;
+    }
+
+    public function setThumbnail(?string $thumbnail): static
+    {
+        $this->thumbnail = $thumbnail;
+
+        return $this;
+    }
+
+    //Create for vich uploader
+    public function getThumbnailFile(): ?file
+    {
+        return $this->thumbnailFile;
+    }
+
+    public function setThumbnailFile(?file $thumbnailFile): static
+    {
+        $this->thumbnailFile = $thumbnailFile;
+
+        // Only change the updatedAt property if the file is really uploaded to avoid database updates.
+        // This is needed when the file should be set when loading the entity.
+        if ($this->thumbnailFile instanceof UploadedFile) {
+            $this->updatedAt = new \DateTime('now');
+        }
+        return $this;
+    }
+
+    public function getUpdateAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdateAt(\DateTimeInterface $updatedAt): static
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

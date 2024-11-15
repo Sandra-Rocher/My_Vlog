@@ -16,18 +16,47 @@
 </style>
 
 <div class="general-div">
-    <h1>Formulaire de modification :</h1>
+    <div class="container mt-4">
+        <h1>Formulaire de modification :</h1>
 
-    {{ form_start(form) }}
-        <div class="d-flex justify-content-evenly"> 
-            {{ form_row(form.slug) }}
-            {{ form_row(form.state) }}
+        {{ form_start(form) }}
+        <div class="mb-2 row">
+            <div class="col-md-6 col-12 mb-3">
+                {{ form_row(form.slug) }}
+            </div>
+            <div class="col-md-6 col-12 mb-3">
+                {{ form_row(form.state) }}
+            </div>
         </div>
-        <div class="d-flex justify-content-evenly"> 
-            {{ form_row(form.duration) }}
-            {{ form_row(form.category) }}
-            {{ form_row(form.calendar) }}
+
+        <div class="mb-2 row">
+            <div class="col-md-4 col-12 mb-3">
+                {{ form_row(form.duration) }}
+            </div>
+            <div class="col-md-4 col-12 mb-3">
+                {{ form_row(form.category) }}
+            </div>
+            <div class="col-md-4 col-12 mb-3">
+                {{ form_row(form.calendar) }}
+            </div>
         </div>
-    {{ form_end(form) }}
+
+        <div class="mb-2 row">
+            <div class="col-md-6 col-12 mb-3">
+                {{ form_row(form.thumbnailFile) }}
+            </div>
+                {% if video.thumbnail %}
+            <div class="col-md-6 col-12 mb-3 text-center">
+                <p>Image actuelle :</p>
+                <img src="{{ asset('Show_Page/Thumbnails/' ~ video.thumbnail) }}" 
+                    alt="Thumbnail" 
+                    class="img-fluid" 
+                    style="max-width: 100px;">
+            </div>
+                {% endif %}
+        </div>
+
+        {{ form_end(form) }}
+    </div>
 </div>
 {% endblock %}
