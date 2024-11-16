@@ -50,7 +50,8 @@
                             </div>
                                 <h5 class="my-3">Lieux à voir :</h5>
                                 <p class="card-text">{{ Video.subtitle }}</p>
-                            <a href="{{ url('location.showId', {slug: Video.slug, id: Video.id}) }}" class="btn mt-auto">Voir cette vidéo</a>
+                            <a href="{{ url('location.showId', {slug: Video.slug, id: Video.id}) }}" 
+                                class="btn mt-auto">Voir cette vidéo</a>
                         </div>
                     </div>
                 {% endfor %}

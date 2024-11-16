@@ -142,18 +142,6 @@ class LocationController extends AbstractController
         }
 
 
-
-
-        // Pass the referer in the query parameters to preserve it after redirection
-            //     $referer = $request->headers->get('referer');
-            //     return $this->redirectToRoute('location.showId', [
-            //         'slug' => $formattedSlug,
-            //         'id' => $id,
-            //         'referer' => $referer // Add the referer as a query parameter
-            //     ], 301);  //Permanent redirection for navigator URL (code 301)
-            // }
-
-
         //Capitalise the first letter of each word in the subtitle and state
         $video->setSubtitle(ucwords($video->getSubtitle()));
         $video->setState(ucwords($video->getState()));

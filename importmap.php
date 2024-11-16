@@ -23,6 +23,10 @@ return [
         'path' => './assets/arrow.js',
         'entrypoint' => true,
     ],
+    'meteo' => [
+        'path' => './assets/meteo.js',
+        'entrypoint' => true,
+    ],
     'infiniteCarousel' => [
         'path' => './assets/infiniteCarousel.js',
         'entrypoint' => true,

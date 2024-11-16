@@ -13,8 +13,11 @@ import './styles/home.css';
 // SRO Import script arrow.js for arrow up
 import './arrow.js';
 
-// SRO Import script infiniteCarousel.js for back to the previous page
+// SRO Import script infiniteCarousel.js for have an infinite carousel on home page
 import './infiniteCarousel.js';
+
+// SRO Import script meteo.js to obtain the weather forecast for the selected city on show page
+import './meteo.js';
 
 
 // TODO SRO import script of bootstrap for css, js and icons for remplace the 3 links in head and down body.

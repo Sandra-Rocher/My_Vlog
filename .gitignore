@@ -1,6 +1,8 @@
 
 ###> symfony/framework-bundle ###
 # SRO add .env 30/10/24
+# SRO add meteo.js 16/11/24
+/assets/meteo.js
 /.env
 /.env.local
 /.env.local.php
