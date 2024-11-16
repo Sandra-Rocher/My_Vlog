@@ -23,8 +23,8 @@ return [
         'path' => './assets/arrow.js',
         'entrypoint' => true,
     ],
-    'previousPage' => [
-        'path' => './assets/previousPage.js',
+    'infiniteCarousel' => [
+        'path' => './assets/infiniteCarousel.js',
         'entrypoint' => true,
     ],
     '@hotwired/stimulus' => [

@@ -18,6 +18,7 @@ use Doctrine\ORM\EntityManagerInterface;
 // use App\Pagination\PaginatorInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use App\Entity\Video;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class HomeController extends AbstractController
 {
@@ -128,4 +129,9 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+
 }
+
+   
+

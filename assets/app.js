@@ -13,8 +13,8 @@ import './styles/home.css';
 // SRO Import script arrow.js for arrow up
 import './arrow.js';
 
-// SRO Import script previousPage.js for back to the previous page
-import './previousPage.js';
+// SRO Import script infiniteCarousel.js for back to the previous page
+import './infiniteCarousel.js';
 
 
 // TODO SRO import script of bootstrap for css, js and icons for remplace the 3 links in head and down body.

@@ -21,7 +21,7 @@
     <div class="container">
         <div class="row mb-2">
             <div class="col-md-6 col-12 mb-3">
-                 <a href="{{ url('location.create') }}" class="btn me-3">Créer une vidéo</a>
+                 <a href="{{ url('location.create') }}" class="btn">Créer une vidéo</a>
             </div>
             <div class="col-md-6 col-12 mb-3">
                 <form action="{{ path('app_logout') }}" method="post" style="display:inline;">
@@ -30,7 +30,7 @@
                 </form>
             </div>
         </div>
-    </div>
+
         <div class="table-responsive">
             <table class="table table-bordered table-striped table-sm">
                 <thead>
@@ -43,24 +43,25 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                {# For mobile responsive : vertical-align:center #}
+                <tbody class="align-middle">
                     {# Boucle foreach vidéos #}
                     {% for video in videos %}
                         <tr>
                             <td>
-                                <p class="me-3">{{ video.id }}</p></a>
+                                <p>{{ video.id }}</p></a>
                             </td>
                             <td>
                                 <a href="{{ url('location.showId', {slug: video.slug, id: video.id}) }}" class="btn">{{video.slug}}</a>
                             </td>
                             <td>
-                                <p class="me-3">{{ video.category }}</p></a>
+                                <p>{{ video.category }}</p></a>
                             </td>
                             <td>
-                                <p class="me-3">{{ video.state }}</p></a>
+                                <p>{{ video.state }}</p></a>
                             </td>
                             <td>
-                                <p class="me-3">{{ video.duration }}</p></a>
+                                <p>{{ video.duration }}</p></a>
                             </td>
                             <td>
                                 <div class="d-flex justify-content-center align-items-center gap-1">
@@ -99,6 +100,6 @@
                 </tbody>
             </table>
         </div>
-    {# </div> #}
+    </div>
 </div>
 {% endblock %}

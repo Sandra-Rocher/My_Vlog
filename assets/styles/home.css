@@ -83,6 +83,11 @@
         display: inline-flex;
         white-space: nowrap;
         animation: slides 35s linear infinite;
+            -webkit-animation: slides 35s linear infinite;
+            -moz-animation: slides 35s linear infinite;
+            -ms-animation: slides 35s linear infinite;
+            -o-animation: slides 35s linear infinite;
+        will-change:transform;
     }
 
     .logo_items img {
@@ -96,7 +101,11 @@
 
     @keyframes slides {
         from { transform: translateX(20%); }
-        to { transform: translateX(-100%); }
+        to { transform: translateX(-100%); 
+            -webkit-transform: translateX(-100%); 
+            -moz-transform: translateX(-100%); 
+            -ms-transform: translateX(-100%); 
+            -o-transform: translateX(-100%); }
     } 
 
     /* Time calculator for hours minutes and seconds videos */
