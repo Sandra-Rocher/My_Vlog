@@ -31,15 +31,15 @@
             </div>
         </div>
 
-        <div class="table-responsive">
-            <table class="table table-bordered table-striped table-sm">
+        <div class="table-responsive ">
+            <table class="table table-responsive table-bordered table-over table-striped table-sm">
                 <thead>
                     <tr>
-                        <th>{{knp_pagination_sortable(videos, 'ID', 'v.id')}}</th>
+                        <th class="d-none d-md-table-cell">{{knp_pagination_sortable(videos, 'ID', 'v.id')}}</th>
                         <th>{{knp_pagination_sortable(videos, 'Slug', 'v.slug')}}</th>
-                        <th>{{knp_pagination_sortable(videos, 'Catégorie', 'v.category')}}</th>
-                        <th>{{knp_pagination_sortable(videos, 'Région', 'v.state')}}</th>
-                        <th>Durée</th>
+                        <th class="d-none d-md-table-cell">{{knp_pagination_sortable(videos, 'Catégorie', 'v.category')}}</th>
+                        <th class="d-none d-md-table-cell">{{knp_pagination_sortable(videos, 'Région', 'v.state')}}</th>
+                        <th class="d-none d-md-table-cell">Durée</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -48,19 +48,19 @@
                     {# Boucle foreach vidéos #}
                     {% for video in videos %}
                         <tr>
-                            <td>
+                            <td class="d-none d-md-table-cell">
                                 <p>{{ video.id }}</p></a>
                             </td>
                             <td>
                                 <a href="{{ url('location.showId', {slug: video.slug, id: video.id}) }}" class="btn">{{video.slug}}</a>
                             </td>
-                            <td>
+                            <td class="d-none d-md-table-cell">
                                 <p>{{ video.category }}</p></a>
                             </td>
-                            <td>
+                            <td class="d-none d-md-table-cell">
                                 <p>{{ video.state }}</p></a>
                             </td>
-                            <td>
+                            <td class="d-none d-md-table-cell">
                                 <p>{{ video.duration }}</p></a>
                             </td>
                             <td>

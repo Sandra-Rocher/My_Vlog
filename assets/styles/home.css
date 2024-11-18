@@ -44,7 +44,7 @@
 
     .wave {
         position: absolute;
-        bottom: -30px;
+        bottom: -60px;
         width: 100%;
         height: auto;
         z-index: 10; /* for wave position */   
@@ -69,11 +69,11 @@
      @keyframes slideInLeft {
         0% {
             opacity: 0;
-            transform: translateX(-100%); /* Début de l'animation, complètement à gauche */
+            transform: translateX(-100%); /* start animation at left */
         }
         100% {
             opacity: 1;
-            transform: translateX(0); /* Fin de l'animation, à sa position d'origine */
+            transform: translateX(0); /* end of animation, in the origin position */
         }
     }
 
@@ -110,16 +110,16 @@
     }
 
     .logo_items {
-        /* display: inline-block; */
+        /*display: inline-block;*/
         display: inline-flex;
         white-space: nowrap;
-        animation: slides 35s linear infinite;
-            -webkit-animation: slides 35s linear infinite;
-            -moz-animation: slides 35s linear infinite;
-            -ms-animation: slides 35s linear infinite;
-            -o-animation: slides 35s linear infinite;
+        animation: slides 80s linear infinite;
+        -webkit-animation: slides 80s linear infinite;
+        -moz-animation: slides 80s linear infinite;
+        -ms-animation: slides 80s linear infinite;
+        -o-animation: slides 80s linear infinite;
         will-change:transform;
-    }
+}
 
     .logo_items img {
         height: 90px;
@@ -131,7 +131,7 @@
     }
 
     @keyframes slides {
-        from { transform: translateX(20%); }
+        from { transform: translateX(0%); -webkit-transform: translateX(0%); -moz-transform: translateX(0%); -ms-transform: translateX(0%); -o-transform: translateX(0%); }
         to { transform: translateX(-100%); 
             -webkit-transform: translateX(-100%); 
             -moz-transform: translateX(-100%); 

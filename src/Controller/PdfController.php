@@ -11,34 +11,6 @@ use App\Service\PdfGeneratorService;
 class PdfController extends AbstractController
 {
 
-    //Test for Show a PDF
-    // #[Route('/output-pdf', name: 'app_output_pdf')]
-    //     public function output(PdfGeneratorService $pdfGeneratorService): Response
-    //     {
-            
-    //         // $html = "<h1>Hello World</h1><p>This is a PDF document.</p>";
-    //         $html = $this->renderView('pdf/viewPdf.html.twig');
-    //         $content = $pdfGeneratorService->getPdf($html);
-
-    //         return new Response($content, 200, [
-    //             'Content-Type' => 'application/pdf',
-    //             // 'Content-Disposition' => 'inline; filename="output.pdf"',
-    //         ]);
-    //     }
-
-
-    //Test for Download a PDF
-    // #[Route('/stream-pdf', name: 'app_stream_pdf')]
-    //     public function streamPdf(PdfGeneratorService $pdfGeneratorService): Response
-    //     {
-    //         // $html = "<h1>Hello World</h1><p>This is a downloadable PDF document.</p>";
-    //         $html = $this->renderView('pdf/downloadPdf.html.twig');
-    //         $filename = 'download.pdf';
-    //         return $pdfGeneratorService->getStreamResponse($html, $filename);
-    //     }
-
-    
-
     //Show a PDF with ID
     #[Route('/view-pdf/{id}', name: 'app_view_pdf')]
     public function viewPdf(int $id, VideoRepository $videoRepository, PdfGeneratorService $pdfGeneratorService): Response
@@ -82,4 +54,31 @@ class PdfController extends AbstractController
             'Content-Disposition' => 'attachment; filename="' . $video->getSlug() . '.pdf"',
         ]);
     }
+
+    
+    //Test for Show a simply PDF
+    // #[Route('/output-pdf', name: 'app_output_pdf')]
+    //     public function output(PdfGeneratorService $pdfGeneratorService): Response
+    //     {
+            
+    //         // $html = "<h1>Hello World</h1><p>This is a PDF document.</p>";
+    //         $html = $this->renderView('pdf/viewPdf.html.twig');
+    //         $content = $pdfGeneratorService->getPdf($html);
+
+    //         return new Response($content, 200, [
+    //             'Content-Type' => 'application/pdf',
+    //             // 'Content-Disposition' => 'inline; filename="output.pdf"',
+    //         ]);
+    //     }
+
+
+    //Test for Download a simply PDF
+    // #[Route('/stream-pdf', name: 'app_stream_pdf')]
+    //     public function streamPdf(PdfGeneratorService $pdfGeneratorService): Response
+    //     {
+    //         // $html = "<h1>Hello World</h1><p>This is a downloadable PDF document.</p>";
+    //         $html = $this->renderView('pdf/downloadPdf.html.twig');
+    //         $filename = 'download.pdf';
+    //         return $pdfGeneratorService->getStreamResponse($html, $filename);
+    //     }
 }

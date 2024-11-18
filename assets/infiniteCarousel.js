@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (logoItems) {
         const clone = logoItems.innerHTML;
-        logoItems.innerHTML += clone;
+
+        // Ajouter 5 clones supplémentaires
+        for (let i = 0; i < 5; i++) {
+            logoItems.innerHTML += clone;
+        }
     }
 });

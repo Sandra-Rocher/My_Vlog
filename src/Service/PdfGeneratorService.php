@@ -28,41 +28,14 @@ class PdfGeneratorService
     }
 
 
-    public function output(string $html) : string
-    {
-        $dompdf = $this->factory->create();
-        $dompdf->loadHtml($html);
-        $dompdf->setPaper('A4', 'landscape');
-        $dompdf->render();
-        return $dompdf->output();
-    }
-
-    
-
-
-    // public function getStreamResponse(string $html, string $filename): StreamedResponse
+    // public function output(string $html) : string
     // {
-    //     // Créez une instance de Dompdf
     //     $dompdf = $this->factory->create();
-
-    //     // Activez l'option isRemoteEnabled pour charger les ressources distantes et locales
-    //     $options = $dompdf->getOptions();
-    //     $options->set('isRemoteEnabled', true); // Permet le chargement des ressources externes et locales
-    //     $options->set('chroot', '%kernel.project_dir%/public'); // Définit le répertoire pour accéder aux images locales
-
-    //     // Chargez le HTML dans Dompdf
     //     $dompdf->loadHtml($html);
-
-    //     // Définir la taille et l'orientation du papier
     //     $dompdf->setPaper('A4', 'landscape');
-
-    //     // Rendu du PDF
     //     $dompdf->render();
-
-    //     // Diffuser le PDF en réponse
-    //     return $this->wrapper->getStreamResponse($html, $filename); // Utilisation du wrapper pour envoyer la réponse
+    //     return $dompdf->output();
     // }
-
 
 }
     
