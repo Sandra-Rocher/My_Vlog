@@ -13,6 +13,7 @@ vich_uploader:
            uri_prefix: /Show_Page/Thumbnails
            upload_destination: '%kernel.project_dir%/public/Show_Page/Thumbnails'
            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+           inject_on_load: true
            # namer can be different : https://github.com/dustin10/VichUploaderBundle/blob/master/docs/namers.md 
            # here the namer is SmartUniqueNamer : originalNameOfFile + strong uniqueid + originalExtensionOfFileName
         

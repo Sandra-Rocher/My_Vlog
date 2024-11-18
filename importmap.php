@@ -27,6 +27,10 @@ return [
         'path' => './assets/meteo.js',
         'entrypoint' => true,
     ],
+    'tooltips' => [
+        'path' => './assets/tooltips.js',
+        'entrypoint' => true,
+    ],
     'infiniteCarousel' => [
         'path' => './assets/infiniteCarousel.js',
         'entrypoint' => true,

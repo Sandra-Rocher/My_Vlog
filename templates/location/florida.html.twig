@@ -30,6 +30,16 @@
     <h1>Road Trip en Floride</h1>
         
          <div class="container">
+
+            {# VideosCount with kpn paginator #}
+            <div class="container">
+                <div class="row mb-2">
+                    <div class="col-md-4 col-12">
+                        <div class="videosCount">Il y a {{ Videos.getTotalItemCount }} vidéos au total</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row d-flex flex-wrap justify-content-center">
                 {# Boucle foreach videos #}
                 {% for Video in Videos %}

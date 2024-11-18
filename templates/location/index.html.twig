@@ -24,12 +24,41 @@
     .btn{
         background-color:#65b868;
     }
+
+    .videosCount{
+        margin-left: 20px;
+    }
+
+    @media (max-width: 768px) {
+        /* for tablets */
+        .videosCount {
+            margin-left: 0px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        /* for mobiles */
+        .videosCount {
+            margin-left: 0px;
+        }
+    }
 </style>
 
 <div class="general-div">
     <h1>Voici la liste de toutes les vidéos sur les États-Unis</h1>
         
          <div class="container">
+            
+            {# VideosCount with kpn paginator #}
+            <div class="container">
+                <div class="row mb-2">
+                    <div class="col-md-4 col-12">
+                        <div class="videosCount">Il y a {{ Videos.getTotalItemCount }} vidéos au total</div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="row d-flex flex-wrap justify-content-center">
                 {# Boucle for show all videos #}
                 {% for Video in Videos %}

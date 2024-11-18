@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: VideoRepository::class)]
+// Slug and link must be unique 
 #[UniqueEntity('slug')]
 #[UniqueEntity('link')]
 //Create for vich uploader

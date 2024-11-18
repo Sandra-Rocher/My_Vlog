@@ -13,7 +13,7 @@
     color: white;
 }
 
-/* green underline on all navbar link */
+/* green underline in all navbar link */
 .nav-link::after {
     color:white;
     content: "";

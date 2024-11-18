@@ -88,7 +88,8 @@ class VideoType extends AbstractType
 
             // No not blank because the thumbnail can be null
             ->add('thumbnailFile', FileType::class, [
-                'label' => 'Image parallaxe'
+                'label' => 'Image parallaxe',
+                'required' => false,
             ])
 
             ->add('save', SubmitType::class, [

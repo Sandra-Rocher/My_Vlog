@@ -19,6 +19,9 @@ import './infiniteCarousel.js';
 // SRO Import script meteo.js to obtain the weather forecast for the selected city on show page
 import './meteo.js';
 
+// SRO Import script tooltips.js to obtain a tooltip message on location show page (on PDF buttons)
+import './tooltips.js';
+
 
 // TODO SRO import script of bootstrap for css, js and icons for remplace the 3 links in head and down body.
 // import 'bootstrap/dist/css/bootstrap.min.css';

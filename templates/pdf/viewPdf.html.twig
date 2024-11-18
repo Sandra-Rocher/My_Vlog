@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF de {{ Video.slug }}</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: black;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            border-bottom: 3px solid #65b868;
+            padding-bottom: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .logo {
+            position: absolute;
+            top: 5px;
+            left: 20px;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        .section p {
+            font-size: 16px;
+        }
+
+        .img {
+            text-align: center; 
+        }
+
+        .line{
+            border-bottom: 3px solid #65b868;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #65b868;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="">
+            <img src="Index_Page/LOGO_myvlog.png" class="logo" width="70px" height="auto"/> <h1> {{ Video.slug }}</h1>
+        </div>
+
+        <div class="section">
+            <p><strong>Lieux marquants à voir :</strong> {{ Video.subtitle }}</p>
+            <p><strong>État :</strong> {{ Video.state }} </p>
+            <p><strong>Date de publication :</strong> {{ Video.calendar|date('d/m/Y') }}</p>
+        </div>
+
+        <div class="section img">
+            {# Test real path : ok #}
+            {# <img src="Show_Page/Thumbnails/jurassicworldhollywood-6737c2e841e47508483903.png" width="400px" height="auto"> #}
+            <img src={{ "Show_Page/Thumbnails/" ~ Video.thumbnail }} width="400px" heigth="auto">
+        </div>
+
+        <div class="section line">
+            <p><strong>Commentaire :</strong> {{ Video.comm | nl2br }}</p>
+        </div>
+    </div>
+
+        <div class="footer">
+            <p>Créé par MyVlog - {{ "now"|date("Y") }}</p>
+        </div>
+
+</body>
+</html>
