@@ -239,7 +239,7 @@ class LocationController extends AbstractController
                     
                      $em->flush();
                     $this->addFlash('success', 'Votre video a bien été modifiée');
-                    return $this->redirectToRoute('location.index');
+                    return $this->redirectToRoute('home.adminPage');
                 }
                     
                 //If form is not submitted or invalid : redirection to edit page with error message flashes (template/partials/flash.html.twig)

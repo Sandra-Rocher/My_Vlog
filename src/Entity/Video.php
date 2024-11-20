@@ -80,7 +80,7 @@ class Video
     )]
     private ?File $thumbnailFile = null;
 
-    //SRO WORKAROUND for update! See following link : https://github.com/dustin10/VichUploaderBundle/blob/master/docs/known_issues.md
+    //SRO workaround for update! See following link : https://github.com/dustin10/VichUploaderBundle/blob/master/docs/known_issues.md
     //SRO The file is not updated if there are no other changes in the entity
     //SRO Issue https://github.com/dustin10/VichUploaderBundle/issues/123
     #[ORM\Column(type: Types::DATE_MUTABLE)]
