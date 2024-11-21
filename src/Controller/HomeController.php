@@ -18,7 +18,9 @@ use Doctrine\ORM\EntityManagerInterface;
 // use App\Pagination\PaginatorInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use App\Entity\Video;
-use Symfony\Component\HttpFoundation\RedirectResponse;
+// use App\Controller\BinaryFileResponse;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+
 
 class HomeController extends AbstractController
 {
@@ -128,6 +130,20 @@ class HomeController extends AbstractController
         return $this->render('home/mentions.html.twig', [
             'controller_name' => 'HomeController',
         ]);
+    }
+
+
+    //Route for show my CV in a PDF
+    #[Route('/CV', name: 'app_cv')]
+    public function showMyCV(): BinaryFileResponse
+    {
+        $filePath = $this->getParameter('kernel.project_dir') . '/public/Footer/CV_Sandra_Rocher.pdf';
+
+        if (!file_exists($filePath)) {
+            throw $this->createNotFoundException("Le fichier CV n'existe pas.");
+        }
+
+        return new BinaryFileResponse($filePath);
     }
 
 

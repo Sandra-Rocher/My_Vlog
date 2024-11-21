@@ -192,14 +192,12 @@
 
 
 
-
  <div class="container container-parallaxe2">
     <div class="com">
         <p>{{ Video.comm | nl2br }} </p>
     </div>
 
     <p class="onRight"> {{ Video.state }} / {{ Video.calendar|date('d-m-Y') }} </p>
-
 
     <p class="onRight">
         <a href="{{ path('app_view_pdf', { id: Video.id }) }}" class="pcolor" data-bs-toggle="tooltip" data-bs-placement="top" title="Voir PDF">
@@ -209,7 +207,6 @@
             <i class="btn bi bi-download"></i>
         </a>
     </p>
-
 
     <a href="javascript:void(0);" onclick="window.history.back();" class="btn mt-5">Retour à la page précédente</a>
 
