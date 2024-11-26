@@ -137,7 +137,11 @@ class HomeController extends AbstractController
     #[Route('/CV', name: 'app_cv')]
     public function showMyCV(): BinaryFileResponse
     {
-        $filePath = $this->getParameter('kernel.project_dir') . '/public/Footer/CV_Sandra_Rocher.pdf';
+        // My full CV :
+        // $filePath = $this->getParameter('kernel.project_dir') . '/public/Footer/CV_Sandra_Rocher.pdf';
+        // My CV special IT :
+        $filePath = $this->getParameter('kernel.project_dir') . '/public/Footer/SANDRA_ROCHER_CV.pdf';
+
 
         if (!file_exists($filePath)) {
             throw $this->createNotFoundException("Le fichier CV n'existe pas.");

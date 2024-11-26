@@ -23,7 +23,7 @@ import './meteo.js';
 import './tooltips.js';
 
 
-// TODO SRO import script of bootstrap for css, js and icons for remplace the 3 links in head and down body.
+// TODO SRO import links of bootstrap, css, js and icons for remplace the 3 links in head and down body.
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 // import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -31,11 +31,4 @@ import './tooltips.js';
 
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
-
-
-
-// SRO TODO import links bootstrap, css and js and icons :
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-// import 'bootstrap-icons/font/bootstrap-icons.css';
 
