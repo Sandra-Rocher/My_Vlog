@@ -140,7 +140,7 @@ class HomeController extends AbstractController
         // My full CV :
         // $filePath = $this->getParameter('kernel.project_dir') . '/public/Footer/CV_Sandra_Rocher.pdf';
         // My CV special IT :
-        $filePath = $this->getParameter('kernel.project_dir') . '/public/Footer/SANDRA_ROCHER_CV.pdf';
+        $filePath = $this->getParameter('kernel.project_dir') . '/public/Footer/Sandra_Rocher_CV.pdf';
 
 
         if (!file_exists($filePath)) {
