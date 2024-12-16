@@ -10,8 +10,8 @@ use App\Form\ContactType;
 use App\DTO\ContactDTO;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
-use Symfony\Component\Mime\Email;
-use Symfony\Component\Mailer\Mailer;
+// use Symfony\Component\Mime\Email;
+// use Symfony\Component\Mailer\Mailer;
 
 
 class ContactController extends AbstractController
