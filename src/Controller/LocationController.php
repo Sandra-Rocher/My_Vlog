@@ -7,13 +7,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
-//use Symfony\Flex\Video;
 use App\Entity\Video;
-// use App\Controller\VideoType;
 use App\Form\VideoType;
-//use App\EntityManagerInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Routing\RouterInterface;
 
 
 

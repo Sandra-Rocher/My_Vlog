@@ -5,20 +5,9 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-//For duration videos we need :
 use App\Repository\VideoRepository;
-use Doctrine\ORM\EntityManager;
-//for Admin page we need :
-// use App\Controller\Request;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-use App\Entity\User;
-//use App\Controller\EntityManagerInterface;
-use Doctrine\ORM\EntityManagerInterface;
-// use App\Pagination\PaginatorInterface;
 use Knp\Component\Pager\PaginatorInterface;
-use App\Entity\Video;
-// use App\Controller\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 
@@ -141,7 +130,6 @@ class HomeController extends AbstractController
         // $filePath = $this->getParameter('kernel.project_dir') . '/public/Footer/CV_Sandra_Rocher.pdf';
         // My CV special IT :
         $filePath = $this->getParameter('kernel.project_dir') . '/public/Footer/Sandra_Rocher_CV.pdf';
-
 
         if (!file_exists($filePath)) {
             throw $this->createNotFoundException("Le fichier CV n'existe pas.");

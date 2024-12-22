@@ -37,11 +37,12 @@
 
        <p>My Vlog est un site qui propose des vidéos, ici basé sur le thème du voyage. J'ai pour but de continuer d'apprendre 
        les langages PHP ainsi que Symfony. Ce vlog est le moyen pour moi d'allier la continuité de ma formation en développement
-        web et ma passion pour le voyage. Le code source du site est consultable à cette adresse : 
+        web et ma passion pour les USA. Le code source du site est consultable à cette adresse : 
         <a href="https://github.com/Sandra-Rocher/My_Vlog" target="_blank">https://github.com/Sandra-Rocher/My_Vlog</a>.</p>
 
-        <p>L'entrée du site My Vlog se fait sur la page /home, sur cette page une vidéo en mp4 anime le fond, une brand-carousel
-         défile pour montrer les logos des différents parc nationnaux et villes visitées au cour du road trip. 
+        <p>L'entrée du site My Vlog se fait sur la page /home, sur cette page une vidéo en mp4 anime le fond. Un brand-carousel
+         défile pour montrer les logos des différents parc nationnaux et villes visitées au cour du road trip.
+        Il s'arrête au survol de la souris et se fond dans une wave noire, pour apporter un style unique et audacieux.
         Un indice du total des heures, minutes et secondes de vidéos présentes sur le site est affiché. 
         Un effet parallaxe est aussi présent pour donner de la profondeur qui apporte une dimension esthétique à cette page.</p>
 
@@ -72,7 +73,7 @@
 
         <p>Une barre de recherche est disponible pour trouver des vidéos en saisissant une lettre, un mot ou un chiffre. 
         Si le terme recherché est présent dans la base de données (que ce soit dans un commentaire, un titre, un lieu d'intérêt 
-        ou une région), les vidéos correspondantes s'afficheront.</p>
+        ou un état), les vidéos correspondantes s'afficheront.</p>
         {# <p>Pour améliorer la recherche, une fonction similaire à Elastic Search est intégrée, permettant de flouter les 
         résultats. Cela signifie que même si le mot recherché contient des fautes, les résultats s'afficheront, car ils 
         seront proches du mot clé. TODO</p> #}
@@ -99,9 +100,9 @@
         
         <p>Chaque page dispose d'une pagination des vidéos, réalisée avec le bundle KNP Paginator.</p>
 
-        <p>Utilisation du bundle VichUploader pour gérer l'upload des fichiers image servant à la parallaxe.</p>
+        <p>Le bundle VichUploader est utilisé pour gérer l'upload des fichiers image servant aux effets parallaxe.</p>
 
-        <p>Utilisation du bundle Nucleos DomPDF pour générer et télécharger des fichiers PDF.</p>
+        <p>Le bundle Nucleos DomPDF est utilisé pour générer et télécharger des fichiers PDF.</p>
 
         <p>Les pages de création, d’édition et de suppression de vidéos, situées sous le chemin /admin, sont protégées par 
         un contrôle d'accès défini dans le fichier security.yaml. Seuls les administrateurs (rôle ROLE_ADMIN) peuvent y 
@@ -183,7 +184,7 @@
 
     
         <p>Image 1 : Dashboard - Accueil : Vu général du tableau de bord. Pour une utilisation plus ergonomique et intuitive, le tableau de bord est conçu avec 
-        KnpPaginator Sortable, ce qui permet un tri simple, rapide et facile des vidéos par ID, slug, catégorie ou région.</p>
+        KnpPaginator Sortable, ce qui permet un tri simple, rapide et facile des vidéos par ID, slug, catégorie ou état.</p>
 
         <p>Image 2 : Dashboard - Créer une vidéo : Tous les champs présents ont un placeholder permettant d'avoir un indice sur le format attendu.</p>
 
