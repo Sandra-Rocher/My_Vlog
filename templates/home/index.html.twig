@@ -6,23 +6,30 @@
 
 {% block body %}
 
-{# find all css style on assets/styles/home.css #}
-<style> </style>
-
-
-{# <div class="container test1">
-    <div class="row test2">
-        <video autoplay muted loop src="{{ asset('Index_Page/usa_monument-valley.mp4') }}"></video>
-        <h1 class="first">Bonjour et bienvenue !</h1>
-        <img src="{{ asset('Index_Page/wave.svg') }}" class="img-fluid wave" alt="Image de vague">
-    </div>
-</div> #}
-
-
+{# find all the rest of css style on assets/styles/home.css #}
+<style> 
+    /* Parallaxe of Index home page (image/text) */
+    /* in twig, we use asset : url("{{ asset('Index_Page/Img_USA/roadmapwestcoast.png') }}");  */
+    /* in css, we can't : url('/Index_Page/Img_USA/roadmapwestcoast.png'); */
+    .container-parallaxe {
+        background-image: 
+            linear-gradient(180deg, transparent 38%, black), /* linear gradient */
+            linear-gradient(180deg, black 12%, rgba(13, 16, 25, 0) 72%), /* gradient with transparency */
+            radial-gradient(circle farthest-corner at 50% 50%, rgba(6, 7, 10, 0), black 91%), /* radial gradient */
+            url("{{ asset('Index_Page/Img_USA/roadmapwestcoast.png') }}"); /* background image */
+        background-repeat: repeat, repeat, repeat, no-repeat;
+        background-size: auto, auto, auto, cover;
+        background-attachment: fixed; /* parallaxe effect*/
+        min-height: 100vh;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        color: white;
+    }
+    </style>
 
     <div class="general-div2" id="cadre">
         <video autoplay muted loop src="{{ asset('Index_Page/usa_monument-valley.mp4') }}"></video>
-        <h1 class="first">Bonjour et bienvenue !</h1>
+        <h1 class="first">Bienvenue sur My vlog ! Prêt ? Cliquez, regardez, voyagez !</h1>
         <img src="{{ asset('Index_Page/wave.svg') }}" class="img-fluid wave" alt="Image de vague">
 
         <div class="logos">
@@ -89,7 +96,7 @@
                 <p class="title">Grand Canyon</p>
                 <p>La première chose qui frappe dans ce lieu, c'est le silence qui y règne.</p>
                 <p>Ce jour-là, il y avait pourtant beaucoup de monde, mais vu l'immensité du lieu, la seule chose qu'on entend,
-                 c'est les aigles qui chassent, le vent léger et une personne qui écoutait de la musique indienne locale.</p>
+                 ce sont les aigles qui chassent, le vent léger, et une personne qui écoutait de la musique indienne locale.</p>
             </div>
         </div>
         
@@ -100,10 +107,10 @@
             </div>
             <div class="col-12 col-md-6">
                 <p class="title">Parc national de Séquoia</p>
-                <p>Ces arbres sont géants et centaires. Mais certains sont couchés et forment des tunnels pour les humains, 
-                d'ailleurs celui-ci est pour la voiture !</p>
-                <p>D'autres ont des racines géantes; et une fois le temps passé, cela devient une 
-                véritable œuvre d'art.</p>
+                <p>Ces arbres sont gigantesques et centenaires. Certains sont tombés et forment des tunnels pour les humains, 
+                d'ailleurs celui-ci laisse assez de place pour la voiture !</p>
+                <p>D'autres possèdent des racines impressionnantes qui, avec le temps, se transforment en véritables œuvres 
+                d'art.</p>
             </div>
         </div>
     </div>
@@ -132,10 +139,9 @@
             </div>
             <div class="col-12 col-md-6">
                 <p class="title">Golden Gate Bridge</p>
-                <p>A San Francisco est tristement célèbre pour ses nombreux suicides, car les courants 
+                <p>À San Francisco le Golden Gate Bridge est tristement célèbre pour ses nombreux suicides, car les courants 
                 marins situés en dessous sont extrêmes.</p>
-                <p>C'est ce qui explique en partie pourquoi la prison d'Alcatraz est réputée pour son caractère imprenable et 
-                son histoire fascinante.</p>
+                <p>C'est pourquoi il est si difficile de s'échapper de la prison d'Alcatraz, que l'on aperçoit au loin.</p>
             </div>
         </div>
         
@@ -146,7 +152,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <p class="title">Silicon Valley</p>
-                <p>Devant le siège de Facebook. Ici, les entreprises sont géantes, comme Apple Park, 
+                <p>Devant le siège de Facebook, ici, les entreprises sont géantes, comme Apple Park, 
                 où 12 000 personnes travaillent.</p>
                 <p>Il y a environ 11 500 entreprises high-tech qui emploient 420 000 personnes et réalisent environ 100 
                 milliards de dollars de chiffre d'affaires.</p>
