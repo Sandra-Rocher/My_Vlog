@@ -3,17 +3,18 @@
   <div class="container p-1 pb-0">
     <section>
         <ul class="nav justify-content-center border-0 mb-1">
+            {# <li class="nav-item"><a href="{{ path ('home.adminPage') }}" class="nav-link text-white"><i class="bi bi-person-vcard"></i></a></li> #}
             <li class="nav-item"><a href="https://www.linkedin.com/in/sandra-rocher-376311264/" 
                 target="_blank" class="nav-link text-white px-2">Linkedin</a></li>
             <li class="nav-item"><a href="https://github.com/Sandra-Rocher" 
                 target="_blank" class="nav-link text-white px-2">Github</a></li>
             <li class="nav-item"><a href="https://sandra-rocher.github.io/Portfolio-perso/" 
                 target="_blank" class="nav-link text-white px-2">Portfolio</a></li>
-            <li class="nav-item"><a href="/CV" class="nav-link text-white px-2">Mon CV</a></li>
+            <li class="nav-item"><a href="{{ path ('app_cv') }}" class="nav-link text-white px-2">Mon CV</a></li>
             <li class="nav-item"><a href="https://www.youtube.com/@BS-xw1mb/videos" 
                 target="_blank" class="nav-link text-white px-2">Suivez-nous</a></li>
-            <li class="nav-item"><a href="/Mentions-Legales" class="nav-link px-2">Mentions légales</a></li>
-            <li class="nav-item"><a href="/Recruteur" class="nav-link px-2">Vous êtes recruteur ?</a></li>
+            <li class="nav-item"><a href="{{ path ('home.mentions') }}" class="nav-link px-2">Mentions légales</a></li>
+            <li class="nav-item"><a href="{{ path ('home.recrut') }}" class="nav-link px-2">Vous êtes recruteur ?</a></li>
         </ul>
     </section>
   </div>
