@@ -37,7 +37,7 @@ time calculator / green underline for titles / parallaxe effect (on index.page.h
         z-index:-1;
     }
 
-    /* For tablets / mobile (test with iphone 14 pro) */
+    /* For tablet / mobile (test with iphone 14 pro) */
     @media (max-width: 1024px) {
         #cadre {
             min-height:42vh;
