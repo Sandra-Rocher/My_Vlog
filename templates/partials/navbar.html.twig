@@ -1,7 +1,8 @@
-{# Navbar #}
+
+ {# Navbar #}
     <nav class="navbar navbar-expand-lg" style="box-shadow: 0px 0px 20px #65b868;">
       <div class="container-fluid">
-        <a class="navbar-brand ms-5 fs-2 text-white" href="/home"> 
+        <a class="navbar-brand ms-5 fs-2 text-white" href="{{ path ('home') }}"> 
           <img src="{{ asset('Index_Page/LOGO_myvlog.png') }}" width="80" height="auto" alt="My Vlog Logo">
 
         </a>
@@ -19,28 +20,70 @@
                 <a class="nav-link text-white {{app.current_route == 'home' ? 'active'}}" href="{{ path ('home') }}">Accueil</a>
             </li> 
 
-            {# Travel dropdown toggle #}
-            <li class="nav-item dropdown">
-              <a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" href="" 
-                  role="button" aria-expanded="false">Voyage</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{{ path ('location.index') }}">Toutes les vidéos USA</a></li>
-                  <li><a class="dropdown-item" href="{{ path ('location.west.index') }}">Côte-Ouest-USA</a></li>
-                  <li><a class="dropdown-item" href="{{ path ('location.florida.index') }}">Floride-USA</a></li>
-                </ul>
+            {# Travel #}
+            {# If navbar with dropdown toogle system : #}
+            {# <li class="nav-item dropdown position-relative">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" 
+              data-bs-toggle="dropdown" aria-expanded="false">Voyage</a>
+
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li class="position-relative">
+                  <a class="dropdown-item" href="{{ path('location.index') }}">Tous les États-Unis</a>
+                  <div class="dropdown-image">
+                    <img src="{{ asset('Index_Page/map_usa_full.png') }}" alt="Tous les États-Unis" />
+                  </div>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li class="position-relative">
+                  <a class="dropdown-item" href="{{ path('location.west.index') }}">Côte-Ouest-USA</a>
+                  <div class="dropdown-image">
+                    <img src="{{ asset('Index_Page/map_usa_green_west_full.png') }}" alt="Côte-Ouest-USA" />
+                  </div>
+                </li>
+                <li class="position-relative">
+                  <a class="dropdown-item" href="{{ path('location.florida.index') }}">Floride-USA</a>
+                  <div class="dropdown-image">
+                    <img src="{{ asset('Index_Page/map_usa_green_east_full.png') }}" alt="Floride-USA" />
+                  </div>
+                </li>
+              </ul>
+            </li> #}
+            
+
+            {# If navbar with simple items without dropdown toogle system : #}
+            <li class="nav-item position-relative">
+              <a 
+                  class="nav-link text-white {{ app.request.attributes.get('_route') == 'location.index' ? 'active' }}" 
+                  href="{{ path('location.index') }}">Tous les États-Unis</a>
+              <div class="dropdown-image">
+                  <img src="{{ asset('Index_Page/map_usa_full.png') }}" alt="Tous les États-Unis" />
+              </div>
             </li>
+
+            <li class="nav-item position-relative">
+              <a 
+                  class="nav-link text-white {{ app.request.attributes.get('_route') == 'location.west.index' ? 'active' }}" 
+                  href="{{ path('location.west.index') }}">Côte-Ouest</a>
+              <div class="dropdown-image">
+                  <img src="{{ asset('Index_Page/map_usa_green_west_full.png') }}" alt="Côte-Ouest-USA" />
+              </div>
+            </li>
+
+            <li class="nav-item position-relative">
+              <a 
+                  class="nav-link text-white {{ app.request.attributes.get('_route') == 'location.florida.index' ? 'active' }}" 
+                  href="{{ path('location.florida.index') }}">Côte-Est</a>
+              <div class="dropdown-image">
+                  <img src="{{ asset('Index_Page/map_usa_green_east_full.png') }}" alt="Côte-Est-USA" />
+              </div>
+            </li>
+
 
             {# here for the future page of RoadBook TODO #}
 
             {# here for the future page of Motor sport TODO #}
 
             {# here for the future page of WW2 TODO #}
-
-            <li class="nav-item"> 
-            {# Admin page #}
-              <a class="nav-link text-white {{app.current_route == 'home.adminPage' ? 'active'}}" href="{{ path ('home.adminPage') }}"><i class="bi bi-person-vcard fs-4"></i></a>
-            </li>
-
           
             <li class="nav-item"> 
             {# Contact Form #}
@@ -54,5 +97,6 @@
               <button class="btn btn-outline-success me-4" type="submit">Valider</button>
           </form>
         </div>
+        
     </div>
-  </nav>
+  </nav> 

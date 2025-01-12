@@ -23,9 +23,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
         {# meteo script jquery #}
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        {# 3.6.0 better then 3.3.1 .. so delete 3.3.1 after test#}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        {# <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> #}
 
 
         {% block stylesheets %}
@@ -33,13 +31,14 @@
             <style> </style>
         {% endblock %}
 
-
-        {% block javascripts %}
-            {% block importmap %} {{ importmap('app') }} {% endblock %}
-        {% endblock %}
-
     </head>
     <body>
+
+    {# Script js bootstrap for delete modal #}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script data-navigate-once src="bootstrap.js"></script>
+    {# <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> #}
+
 
         {# NAVBAR : before the body #}
         {% include "partials/navbar.html.twig" %}
@@ -52,7 +51,7 @@
         <div class="container my-4">
             {# Flash messages : for answer sucess or error #}
             {% include 'partials/flash.html.twig' %}
-
+            
             {% block body %}  {% endblock %}
         </div>
 
@@ -61,8 +60,9 @@
         {% include "partials/footer.html.twig" %}
 
 
-    {# Script js bootstrap for delete modal #}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> 
+        {% block javascripts %}
+            {% block importmap %} {{ importmap('app') }} {% endblock %}
+        {% endblock %}
 
     </body>
 </html>

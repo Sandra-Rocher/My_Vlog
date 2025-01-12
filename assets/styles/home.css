@@ -1,14 +1,10 @@
 /* CSS page of home/index.html.twig */
-/* in this order : general-div2 / mp4 cadre video / wave on image / H1 welcome all ! / brand carousel with little logos / time calculator 
-/ parallaxe effect */
+/* in this order : general-div2 / mp4 cadre video / wave on image / H1 welcome all ! / brand carousel with little logos / 
+time calculator / green underline for titles / parallaxe effect (on index.page.html.twig because of asset)*/
 
 
   /* Special general div custom */
   .general-div2 {
-        /* position: relative; */
-        /* overflow: hidden; */
-        /* margin: 1em auto; */
-        /* margin-top: 3rem; */
         margin-bottom: 3rem;
         /* width: 75%; */
         text-align: center;
@@ -41,36 +37,22 @@
         z-index:-1;
     }
 
-    /* for tablet */
+    /* For tablets / mobile (test with iphone 14 pro) */
     @media (max-width: 1024px) {
         #cadre {
-            min-height:55vh;
-        }
-    }
-
-    /* not tested */
-    /* @media (max-width: 768px) {
-        #cadre {
-            min-height:47vh;
-        }
-    } */
-
-    /* For mobile */
-    @media (max-width: 391px) {
-        #cadre {
-            min-height:40vh;
+            min-height:42vh;
         }
     }
 
     .wave {
         position: absolute;
-        bottom: -60px; /* try 45px for wave position on mobile-iphone 12/391px and 60px for 1024px/tablet-ipad */ 
+        bottom: -60px;
         width: 100%;
         height: auto;
         z-index: 10; /* for wave position */   
     }
 
-    /* H1 custom : Bonjour bienvenue ! */
+    /* H1 custom : Bienvenue sur my vlog blabla ! */
     .first{
         z-index: 1111;
         margin-top: 55px;
@@ -97,7 +79,7 @@
         }
     }
 
-    /* for tablet */
+    /* for tablet / mobile (test with iphone 14 pro) */
     @media (max-width: 1024px) {
         .first {
             font-size: 5vw;
@@ -201,7 +183,7 @@
         /* for mobile */
         .logos{
             padding: 0px 0;
-        }
+        } 
     }
 
     /* Time calculator for hours minutes and seconds videos */
@@ -254,25 +236,6 @@
         .cd-unit .time {
         font-size: 1rem;
         }
-    }
-
-    /* Parallaxe of Index home page (image/text) */
-    /* in twig, we use asset : url('{{ asset('Index_Page/Img_USA/roadmapwestcoast.png') }}');  */
-    /* in css, we can't : url('/Index_Page/Img_USA/roadmapwestcoast.png'); */
-    .container-parallaxe {
-        background-image: 
-            linear-gradient(180deg, transparent 38%, black), /* linear gradient */
-            linear-gradient(180deg, black 12%, rgba(13, 16, 25, 0) 72%), /* gradient with transparency */
-            radial-gradient(circle farthest-corner at 50% 50%, rgba(6, 7, 10, 0), black 91%), /* radial gradient */
-            url('/Index_Page/Img_USA/roadmapwestcoast.png'); /* background image */
-        background-position: 0 0, 0 0, 0 0, 50% 80%;
-        background-repeat: repeat, repeat, repeat, no-repeat;
-        background-size: auto, auto, auto, cover;
-        background-attachment: fixed; /* parallaxe effect*/
-        min-height: 100vh;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        color: white;
     }
 
     /* Greens and underline titles of alternate images on Home Page */

@@ -1,6 +1,6 @@
 /* CSS page of base.html.twig */
-/* in this order : navbar / dropdown toggle / menu burger / text-shadow on all H / green underline of H / body /
- general-div / arrow up / pagination */
+/* in this order : navbar links with greenline / navbar image of usa.png dropdown / dropdown toggle colors / menu burger / 
+text-shadow on all H / green underline of all H1  / body / general-div / arrow up / pagination */
 
 .nav-link {
     color: white;
@@ -18,7 +18,7 @@
     color:white;
     content: "";
     position: absolute;
-    bottom: -10px;
+    bottom: 3px;
     left: 0;
     width: 0%;
     height: 1px;
@@ -30,10 +30,55 @@
     width: 100%;
 }
 
+/* image of usa.png drop down when hover navbar items : configured with navbar items simple, 
+but can be configured with navbar dropdown toogle */
+.nav-item .dropdown-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+} 
 
+.nav-item .dropdown-image {
+    display: none;
+    position: absolute;
+    /* left: 0; */
+    top: calc(100% + 5px);
+    /* if navbar items simple : for have a drop top-down effect on image_usa.png */
+    width: 110px;
+    height: auto;
+    /* if dropdown : for have a left effect on image_usa.png */
+    /* width: auto; */
+    /* max-width: 110px; */
+    /* max-height: 110px; */
+    overflow: hidden;
+    transition: all 0.5s ease;
+    opacity: 0;
+    /* if navbar items simple : for have a drop top-down effect on image_usa.png */
+     transform: translateY(0px);
+    /* if dropdown : for have a left effect on image_usa.png */
+    /* transform: translateX(0px); */
+    z-index:1000;
+}
+
+/* if navbar item simple : for have a drop top-down effect on image_usa.png */
+.nav-item:hover .dropdown-image {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* if dropdown : for have a left effect on image_usa.png */
+/* .dropdown-menu .position-relative:hover .dropdown-image {
+    display: block;
+    opacity: 1;
+    transform: translateX(+190px);
+}  */
+
+
+/*navbar dropdown toogle treatment : */
 /*dropdown toggle in navbar treatment for the css automaticcaly given fat-line*/
 .dropdown-toggle::after {
-    /*css automatically given : we cancel all*/
+    /*css automatically given : then i transform */
     /* border-top: .3em solid; 
     border-right: .3em solid transparent; 
     border-bottom: 0; 
@@ -85,6 +130,7 @@ h1:hover::after {
 body {
     background-color: #000;
     color: #fff;
+    min-height: 100vh;
 }
 
 .general-div {
