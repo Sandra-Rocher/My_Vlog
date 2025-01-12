@@ -35,23 +35,23 @@
 
     <h3 class="mb-5 my-4">Voici l'envers du décor ainsi que quelques explications :</h3>
 
-       <p>My Vlog est un site qui propose des vidéos, ici basé sur le thème du voyage. J'ai pour but de continuer d'apprendre 
+       <p>My Vlog est un site qui propose des vidéos, basé ici sur le thème du voyage. J'ai pour but de continuer d'apprendre 
        les langages PHP ainsi que Symfony. Ce vlog est le moyen pour moi d'allier la continuité de ma formation en développement
         web et ma passion pour les USA. Le code source du site est consultable à cette adresse : 
         <a href="https://github.com/Sandra-Rocher/My_Vlog" target="_blank">https://github.com/Sandra-Rocher/My_Vlog</a>.</p>
 
-        <p>L'entrée du site My Vlog se fait sur la page /home, sur cette page une vidéo en mp4 anime le fond. Un brand-carousel
-         défile pour montrer les logos des différents parc nationnaux et villes visitées au cour du road trip.
+        <p>L'entrée du site My Vlog se fait sur la page d'accueil /home, sur cette page une vidéo en mp4 anime le fond. Un brand-carousel
+         défile pour montrer les logos des différents parc nationaux et villes visitées au cours du road trip.
         Il s'arrête au survol de la souris et se fond dans une wave noire, pour apporter un style unique et audacieux.
-        Un indice du total des heures, minutes et secondes de vidéos présentes sur le site est affiché. 
+        Un indice du total des heures, minutes et secondes des vidéos présentes sur le site est affiché. 
         Un effet parallaxe est aussi présent pour donner de la profondeur qui apporte une dimension esthétique à cette page.</p>
 
     <h3 class="mb-5 my-5">En parcourant la navbar :</h3>
 
         <p>La page /home permet (comme en cliquant sur l'icone du globe gris du site My Vlog) de se rendre sur la page d'entrée du site.</p>
 
-        <p>La page /Voyage affiche toutes les vidéos sur le thème Voyage (ici, aux États-Unis.).</p>
-        {# Ils peuvent être classé par 
+        <p>La page /Voyage affiche toutes les vidéos sur le thème Voyage (ici, aux États-Unis).</p>
+        {# Elles peuvent être classées par 
         ordre de date croissante, décroissante, ou par ordre alphabétique et inverse. TODO #}
 
         {# <p>La page /RoadBook contient tous les roadbooks des voyages, les plans à voir ou télécharger en PDF.</p> TODO #}
@@ -63,13 +63,13 @@
         ordre de date croissante, décroissante, ou par ordre alphabétique.</p> TODO #}
 
 
-        <p>La page /Admin (pour l'administrateur) est sous forme de logo qui représente un personnage. Il dispose de pages spécifiques 
+        <p>L'administrateur dispose de pages spécifiques 
         qui lui sont réservées. Cette page renvoie donc sur une connexion obligatoire (/Connexion). 
         Une fois connecté, l'administrateur a accès au tableau de bord, lui permettant de publier 
         une vidéo, ainsi que de modifier ou supprimer celles déjà présentes. Il existe aussi la page Déconnexion (/Deconnexion).</p>
     
         <p>La page /Contact vous permet de contacter l'admin (créateur du site) et d'envoyer un message, en choississant un thème 
-        et en remplissant votre identité.</p>
+        et en remplissant votre identité, permettant de vous apporter une réponse.</p>
 
         <p>Une barre de recherche est disponible pour trouver des vidéos en saisissant une lettre, un mot ou un chiffre. 
         Si le terme recherché est présent dans la base de données (que ce soit dans un commentaire, un titre, un lieu d'intérêt 
@@ -86,7 +86,7 @@
 
        <p>La page /Mention-Legales permet de vous donnez des présicions sur le site en général.</p>
 
-       <p>La page /Recruteur (celle ci) permet de vous donner des détails (que vous êtes entrain de lire) sur la réalisation 
+       <p>La page /Recruteur (celle-ci) permet de vous donner des détails (que vous êtes entrain de lire) sur la réalisation 
        du site.</p>
 
 
@@ -104,7 +104,8 @@
 
         <p>Le bundle Nucleos DomPDF est utilisé pour générer et télécharger des fichiers PDF.</p>
 
-        <p>Les pages de création, d’édition et de suppression de vidéos, situées sous le chemin /admin, sont protégées par 
+        <p>Les pages de création, d’édition et de suppression de vidéos, situées sous le chemin /spécifique à l'administrateur, 
+        sont protégées par 
         un contrôle d'accès défini dans le fichier security.yaml. Seuls les administrateurs (rôle ROLE_ADMIN) peuvent y 
         accéder, renforçant ainsi la sécurité de ces actions administratives.</p>
 
@@ -116,17 +117,20 @@
         traitement). Dans la base de données, cette durée sera uniquement stockée en secondes. Lors de l'affichage, une 
         reconversion en minutes et secondes sera de nouveau effectuée.</p>
         
-        <p>Il existe des pages partielles comme /Flash qui permet de produire les messages d'erreur en rouge ou de réussite en vert. 
-        Il existe aussi /Base qui permet de contenir tous les liens bootstrap, SEO, JavaScript, 
-        Metas. La navbar et le footer sont également dans une page partielle portant leurs noms.
+        <p>Il existe des pages partielles permettant de produire les messages d'erreur en rouge ou de réussite en vert. 
+        Il existe aussi une page servant de Base et qui contient tous les liens bootstrap, SEO, JavaScript, 
+        Metas. La navbar et le footer sont également dans une page partielle portant leur nom.
         Les styles CSS et JS respectent également ce type de page pour plus de clarté.
 
         <p>Une Flèche nommée arrow-up permet de remonter en haut de la page, elle se déclenche lorsque l'on commence à 
         descendre. Elle fait partie des pages partielles.</p>
 
         <p>Le logo du site My Vlog a été créé par une IA, après une dizaine d'essais. La demande portait sur des thèmes comme : 
-        un globe pour l'esprit voyage, une route pour rappeler le roadtrip, et des mots-clés comme : métal, noir et blanc, My Vlog.</p>
+        un globe pour l'esprit voyage, une route pour rappeler le road trip, et des mots-clés comme : métal, noir et blanc, My Vlog.</p>
 
+        <p>Les vidéos sur ce site sont réalisées avec une GoPro 7 et le logiciel de montage DaVinci Resolve.</p>
+
+        <p>Ce site est en constante évolution.</p>
 
 
     <h3 class="mb-5 my-5">Tableau de bord de l'administrateur ci dessous</h3>
