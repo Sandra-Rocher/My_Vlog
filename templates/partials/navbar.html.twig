@@ -15,11 +15,6 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5 mx-auto">
 
 
-            <li class="nav-item"> 
-            {# Home page #}
-                <a class="nav-link text-white {{app.current_route == 'home' ? 'active'}}" href="{{ path ('home') }}">Accueil</a>
-            </li> 
-
             {# Travel #}
             {# If navbar with dropdown toogle system : #}
             {# <li class="nav-item dropdown position-relative">
@@ -48,7 +43,7 @@
                 </li>
               </ul>
             </li> #}
-            
+
 
             {# If navbar with simple items without dropdown toogle system : #}
             <li class="nav-item position-relative">
@@ -92,7 +87,7 @@
 
           </ul>
           {# SearchTerm for search by state, subtitle, comm or slug #}
-          <form class="d-flex" role="searchTerm" method="GET" action="{{ path('location.searchTerm') }}">
+          <form class="d-flex" role="search" method="GET" action="{{ path('location.searchTerm') }}">
               <input class="form-control me-3" name="searchTerm" type="search" placeholder="Rechercher" aria-label="Search">
               <button class="btn btn-outline-success me-4" type="submit">Valider</button>
           </form>

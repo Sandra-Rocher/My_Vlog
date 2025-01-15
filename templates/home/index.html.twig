@@ -28,8 +28,12 @@
     </style>
 
     <div class="general-div2" id="cadre">
-        <video autoplay muted loop src="{{ asset('Index_Page/usa_monument-valley.mp4') }}"></video>
-        <h1 class="first">Bienvenue sur My vlog ! Prêt ? Cliquez, regardez, voyagez !</h1>
+        <video autoplay muted loop src="{{ asset('Index_Page/usa_monument-valley.mp4') }}">
+            <track src="{{ asset('Index_Page/subtitles-en.vtt') }}" kind="captions" srclang="en" label="English">
+            <track src="{{ asset('Index_Page/subtitles-fr.vtt') }}" kind="captions" srclang="fr" label="Français">
+        </video>
+        <h1 class="first">Bienvenue sur My vlog ! Découvrez l'immensité des États-Unis à travers des
+         vidéos captivantes et immersives !</h1>
         <img src="{{ asset('Index_Page/wave.svg') }}" class="img-fluid wave" alt="Image de vague">
 
         <div class="logos">
@@ -90,27 +94,35 @@
         <!-- Première ligne : Image à gauche, texte à droite -->
         <div class="row align-items-center mb-5">
             <div class="col-12 col-md-6 mb-2">
-                <img src="{{ asset('Index_Page/Img_USA/grand-canyon.jpg') }}" class="img-fluid rounded" alt="Image Grand Canyon">
+                <a href="{{ asset('Index_Page/Img_USA/grand-canyon.jpg') }}" target="_blank">
+                    <img src="{{ asset('Index_Page/Img_USA/grand-canyon.jpg') }}" class="img-fluid rounded" alt="Image Grand Canyon">
+                </a> 
             </div>
             <div class="col-12 col-md-6">
                 <p class="title">Grand Canyon</p>
-                <p>La première chose qui frappe dans ce lieu, c'est le silence qui y règne.</p>
-                <p>Ce jour-là, il y avait pourtant beaucoup de monde, mais vu l'immensité du lieu, la seule chose qu'on entend,
-                 ce sont les aigles qui chassent, le vent léger, et une personne qui écoutait de la musique indienne locale.</p>
+                <p>La première chose qui frappe lorsque l'on arrive au Grand Canyon, c'est le silence majestueux qui enveloppe cet 
+                espace grandiose.</p>
+                <p>Ce jour-là, il y avait pourtant beaucoup de monde, mais vu l'immensité du site, les seuls bruits que l'on pouvait 
+                percevoir étaient les aigles en vol, le bruissement du vent léger et une personne qui écoutait de la musique indienne 
+                locale. Ce moment suspendu invitait à la contemplation et au respect de cette merveille naturelle intemporelle, qui a 
+                des millions d'années.</p>
             </div>
         </div>
         
         <!-- Deuxième ligne : Texte à gauche, image à droite -->
         <div class="row align-items-center mb-5">
             <div class="col-12 col-md-6 order-md-2 mb-2">
-                <img src="{{ asset('Index_Page/Img_USA/sequoia-mustang.jpg') }}" class="img-fluid rounded" alt="Image Séquoias Park">
+                <a href="{{ asset('Index_Page/Img_USA/sequoia-mustang.jpg') }}" target="_blank">
+                    <img src="{{ asset('Index_Page/Img_USA/sequoia-mustang.jpg') }}" class="img-fluid rounded" alt="Image Séquoias Park">
+                </a>
             </div>
             <div class="col-12 col-md-6">
                 <p class="title">Parc national de Séquoia</p>
-                <p>Ces arbres sont gigantesques et centenaires. Certains sont tombés et forment des tunnels pour les humains, 
-                d'ailleurs celui-ci laisse assez de place pour la voiture !</p>
-                <p>D'autres possèdent des racines impressionnantes qui, avec le temps, se transforment en véritables œuvres 
-                d'art.</p>
+                <p>Ces arbres sont gigantesques et centenaires. Certains sont tombés et forment des tunnels où l'on peut passer à pied.
+                Le tunnel-log, âgé de 2 000 ans, s'effondra en 1937. Plutôt que de le couper et de l'enlever de la route, les autorités 
+                décidèrent de le sculpter en forme de tunnel pour permettre le passage des véhicules !</p>
+                <p>Leurs racines impressionnantes, qui avec le temps se transforment en véritables œuvres d'art, offrent des photos 
+                insolites et uniques.</p>
             </div>
         </div>
     </div>
@@ -119,13 +131,19 @@
     <div class ="container">
         <div class ="row d-flex justify-content-center mb-5">
             <div class ="col-12 col-sm-6 col-md-4 mb-3 text-center">
+                <a href="{{ asset('Index_Page/Img_USA/daytonabeachcamaro.jpg') }}" target="_blank">
                     <img src="{{ asset('Index_Page/Img_USA/daytonabeachcamaro.jpg') }}" class="img-fluid rounded mx-auto" alt="image Daytona Beach camaro">
+                </a>
             </div>
             <div class ="col-12 col-sm-6 col-md-4 mb-3 text-center">
+                <a href="{{ asset('Index_Page/Img_USA/angelslanding.jpg') }}" target="_blank">
                     <img src="{{ asset('Index_Page/Img_USA/angelslanding.jpg') }}" class="img-fluid rounded mx-auto" alt="image Angels Landing">
+                </a>
             </div>
             <div class ="col-12 col-sm-6 col-md-4 mb-3 text-center">
+                <a href="{{ asset('Index_Page/Img_USA/horseshoebend.jpg') }}" target="_blank">
                     <img src="{{ asset('Index_Page/Img_USA/horseshoebend.jpg') }}" class="img-fluid rounded mx-auto" alt="image Horseshoe Bend">
+                </a>
             </div>
         </div>
     </div>
@@ -135,25 +153,34 @@
         <!-- Première ligne : Image à gauche, texte à droite -->
         <div class="row align-items-center mb-5">
             <div class="col-12 col-md-6 mb-2">
-                <img src="{{ asset('Index_Page/Img_USA/san-francisco.jpg') }}" class="img-fluid rounded" alt="image Golden Gate Bridge">
+                <a href="{{ asset('Index_Page/Img_USA/san-francisco.jpg') }}" target="_blank">
+                    <img src="{{ asset('Index_Page/Img_USA/san-francisco.jpg') }}" class="img-fluid rounded" alt="image Golden Gate Bridge">
+                </a>
             </div>
             <div class="col-12 col-md-6">
                 <p class="title">Golden Gate Bridge</p>
-                <p>À San Francisco le Golden Gate Bridge est tristement célèbre pour ses nombreux suicides, car les courants 
-                marins situés en dessous sont extrêmes.</p>
-                <p>C'est pourquoi il est si difficile de s'échapper de la prison d'Alcatraz, que l'on aperçoit au loin.</p>
+                <p>À San Francisco, le Golden Gate Bridge est un emblème à la fois majestueux et tragique. Il est tristement célèbre 
+                pour ses nombreux suicides, notamment en raison des 
+                courants marins extrêmes qui se trouvent en dessous.</p> 
+                <p>Non loin de là, on aperçoit l'île d'Alcatraz, un lieu chargé d'histoire. Bien qu'elle ne soit située qu'à 1,92 km 
+                du port de San Francisco, les eaux glaciales et les courants puissants ont renforcé la réputation de cette prison 
+                autrefois considérée comme inéluctable.</p>
             </div>
         </div>
         
         <!-- Deuxième ligne : Texte à gauche, image à droite -->
         <div class="row align-items-center mb-5">
             <div class="col-12 col-md-6 order-md-2 mb-2">
-                <img src="{{ asset('Index_Page/Img_USA/facebook.jpg') }}" class="img-fluid rounded" alt="Image Facebook Silicon Valley">
+                <a href="{{ asset('Index_Page/Img_USA/facebook.jpg') }}" target="_blank">
+                    <img src="{{ asset('Index_Page/Img_USA/facebook.jpg') }}" class="img-fluid rounded" alt="Image Facebook Silicon Valley">
+                </a>
             </div>
             <div class="col-12 col-md-6">
                 <p class="title">Silicon Valley</p>
-                <p>Devant le siège de Facebook, ici, les entreprises sont géantes, comme Apple Park, 
-                où 12 000 personnes travaillent.</p>
+                <p>La Silicon Valley incarne le rêve américain à travers l'innovation, la collaboration et l'ambition sans limite. 
+                Devant le siège de Facebook, ici, les 
+                entreprises sont géantes, Parmi elles, Apple Park se distingue avec son immense campus circulaire, surnommé "l'anneau", 
+                où près de 12 000 employés collaborent pour façonner l'avenir de la technologie.</p>
                 <p>Il y a environ 11 500 entreprises high-tech qui emploient 420 000 personnes et réalisent environ 100 
                 milliards de dollars de chiffre d'affaires.</p>
             </div>
