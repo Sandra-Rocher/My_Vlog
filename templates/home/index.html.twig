@@ -20,6 +20,8 @@
         background-repeat: repeat, repeat, repeat, no-repeat;
         background-size: auto, auto, auto, cover;
         background-attachment: fixed; /* parallaxe effect*/
+        /* transition: background-position 0.3s ease-in-out;  */
+        transition: all 0.3s ease;
         min-height: 100vh;
         padding-top: 50px;
         padding-bottom: 50px;
@@ -32,8 +34,7 @@
             <track src="{{ asset('Index_Page/subtitles-en.vtt') }}" kind="captions" srclang="en" label="English">
             <track src="{{ asset('Index_Page/subtitles-fr.vtt') }}" kind="captions" srclang="fr" label="Français">
         </video>
-        <h1 class="first">Bienvenue sur My vlog ! Découvrez l'immensité des États-Unis à travers des
-         vidéos captivantes et immersives !</h1>
+        <h1 class="first">Bienvenue sur My vlog !</h1>
         <img src="{{ asset('Index_Page/wave.svg') }}" class="img-fluid wave" alt="Image de vague">
 
         <div class="logos">
@@ -67,6 +68,8 @@
         </div>
     </div> 
 
+    <h3 class="mb-5 text-center">Découvrez l'immensité des États-Unis à travers des vidéos captivantes et immersives !</h3>
+
     <div class="custom-container text-center mb-5">
         <div class="time-text mb-3">- Temps de vidéos présent sur le site -</div>
             <div class="cd-timer">
@@ -95,7 +98,7 @@
         <div class="row align-items-center mb-5">
             <div class="col-12 col-md-6 mb-2">
                 <a href="{{ asset('Index_Page/Img_USA/grand-canyon.jpg') }}" target="_blank">
-                    <img src="{{ asset('Index_Page/Img_USA/grand-canyon.jpg') }}" class="img-fluid rounded" alt="Image Grand Canyon">
+                    <img src="{{ asset('Index_Page/Img_USA/grand-canyon.jpg') }}" loading="lazy" class="img-fluid rounded" alt="Image Grand Canyon">
                 </a> 
             </div>
             <div class="col-12 col-md-6">
@@ -113,7 +116,7 @@
         <div class="row align-items-center mb-5">
             <div class="col-12 col-md-6 order-md-2 mb-2">
                 <a href="{{ asset('Index_Page/Img_USA/sequoia-mustang.jpg') }}" target="_blank">
-                    <img src="{{ asset('Index_Page/Img_USA/sequoia-mustang.jpg') }}" class="img-fluid rounded" alt="Image Séquoias Park">
+                    <img src="{{ asset('Index_Page/Img_USA/sequoia-mustang.jpg') }}" loading="lazy" class="img-fluid rounded" alt="Image Séquoias Park">
                 </a>
             </div>
             <div class="col-12 col-md-6">
@@ -132,17 +135,17 @@
         <div class ="row d-flex justify-content-center mb-5">
             <div class ="col-12 col-sm-6 col-md-4 mb-3 text-center">
                 <a href="{{ asset('Index_Page/Img_USA/daytonabeachcamaro.jpg') }}" target="_blank">
-                    <img src="{{ asset('Index_Page/Img_USA/daytonabeachcamaro.jpg') }}" class="img-fluid rounded mx-auto" alt="image Daytona Beach camaro">
+                    <img src="{{ asset('Index_Page/Img_USA/daytonabeachcamaro.jpg') }}" loading="lazy" class="img-fluid rounded mx-auto" alt="image Daytona Beach camaro">
                 </a>
             </div>
             <div class ="col-12 col-sm-6 col-md-4 mb-3 text-center">
                 <a href="{{ asset('Index_Page/Img_USA/angelslanding.jpg') }}" target="_blank">
-                    <img src="{{ asset('Index_Page/Img_USA/angelslanding.jpg') }}" class="img-fluid rounded mx-auto" alt="image Angels Landing">
+                    <img src="{{ asset('Index_Page/Img_USA/angelslanding.jpg') }}" loading="lazy" class="img-fluid rounded mx-auto" alt="image Angels Landing">
                 </a>
             </div>
             <div class ="col-12 col-sm-6 col-md-4 mb-3 text-center">
                 <a href="{{ asset('Index_Page/Img_USA/horseshoebend.jpg') }}" target="_blank">
-                    <img src="{{ asset('Index_Page/Img_USA/horseshoebend.jpg') }}" class="img-fluid rounded mx-auto" alt="image Horseshoe Bend">
+                    <img src="{{ asset('Index_Page/Img_USA/horseshoebend.jpg') }}" loading="lazy" class="img-fluid rounded mx-auto" alt="image Horseshoe Bend">
                 </a>
             </div>
         </div>
@@ -154,7 +157,7 @@
         <div class="row align-items-center mb-5">
             <div class="col-12 col-md-6 mb-2">
                 <a href="{{ asset('Index_Page/Img_USA/san-francisco.jpg') }}" target="_blank">
-                    <img src="{{ asset('Index_Page/Img_USA/san-francisco.jpg') }}" class="img-fluid rounded" alt="image Golden Gate Bridge">
+                    <img src="{{ asset('Index_Page/Img_USA/san-francisco.jpg') }}" loading="lazy" class="img-fluid rounded" alt="image Golden Gate Bridge">
                 </a>
             </div>
             <div class="col-12 col-md-6">
@@ -172,7 +175,7 @@
         <div class="row align-items-center mb-5">
             <div class="col-12 col-md-6 order-md-2 mb-2">
                 <a href="{{ asset('Index_Page/Img_USA/facebook.jpg') }}" target="_blank">
-                    <img src="{{ asset('Index_Page/Img_USA/facebook.jpg') }}" class="img-fluid rounded" alt="Image Facebook Silicon Valley">
+                    <img src="{{ asset('Index_Page/Img_USA/facebook.jpg') }}" loading="lazy" class="img-fluid rounded" alt="Image Facebook Silicon Valley">
                 </a>
             </div>
             <div class="col-12 col-md-6">
