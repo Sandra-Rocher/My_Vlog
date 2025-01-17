@@ -21,31 +21,31 @@ class ContactType extends AbstractType
         $builder
             ->add('lastName', TextType::class, [
                 'empty_data' => '',
-                'label' => 'Votre nom',
+                'label' => 'Nom',
             ])
 
             ->add('firstName', TextType::class, [
                 'empty_data' => '',
-                'label' => 'Votre prénom',
+                'label' => 'Prénom',
             ])
 
             ->add('city', TextType::class, [
                 'empty_data' => '',
-                'label' => 'Votre ville',
+                'label' => 'Ville',
             ])
 
             ->add('phone', TextType::class, [
                 'empty_data' => '',
-                'label' => 'Votre téléphone',
+                'label' => 'Téléphone',
             ])
 
             ->add('email', EmailType::class, [
                 'empty_data' => '',
-                'label' => 'Votre email',])
+                'label' => 'Email',])
 
             ->add('message', TextareaType::class, [
                 'empty_data' => '',
-                'label' => 'Votre message',
+                'label' => 'Message',
                 ])
 
             ->add('subject', ChoiceType::class, [
@@ -53,7 +53,7 @@ class ContactType extends AbstractType
                     'Question' => 'Question',
                     'Réclamation' => 'Réclamation',
                     'Recrutement' => 'Recrutement',
-                    'J\'ai repéré une erreur' => 'Erreur',
+                    'J\'ai repéré une erreur' => 'Erreur repérée',
                     'Autre' => 'Autre',
                 ],
                 'label' => 'Sujet à choisir',
