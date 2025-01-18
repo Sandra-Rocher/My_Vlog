@@ -7,3 +7,12 @@ window.onscroll = function() {
         backToTopButton.style.display = "none";
     }
 };
+
+// Add a smooth scroll back to top when the arrow is clicked
+document.getElementById("back-to-top").addEventListener("click", function(event) {
+    event.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});

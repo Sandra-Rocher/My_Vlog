@@ -3,267 +3,267 @@
 time calculator / green underline for titles / parallaxe effect (on index.page.html.twig because of asset)*/
 
 
-  /* Special general div custom */
-  .general-div2 {
-        margin-bottom: 3rem;
-        /* width: 75%; */
-        text-align: center;
-    }
+/* Special general div custom */
+.general-div2 {
+    margin-bottom: 3rem;
+    /* width: 75%; */
+    text-align: center;
+}
 
-    /* Mp4 Index background */
-   #cadre{
-        display:flex;
-        flex-direction:column;
-        position:relative;
-        min-height:80vh; /* not 100 vh */
-        width:100%;
-        overflow:hidden;
-    }
+/* Mp4 Index background */
+#cadre{
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    min-height:80vh; /* not 100 vh */
+    width:100%;
+    overflow:hidden;
+}
 
-    #cadre video{
-        width: 100%;
-        height: auto;
-        display: block;
-        position:absolute;
-        /* min-width:100%; */
-        /* min-height:100%; */
-        top:50%;
-        left:50%;
-        transform:translate(-50%, -50%);
-        -webkit-transform:translate(-50%, -50%);
-        -moz-transform:translate(-50%, -50%);
-        -ms-transform:translate(-50%, -50%);
-        -o-transform:translate(-50%, -50%);
-        z-index:1;
-    }
+#cadre video{
+    width: 100%;
+    height: auto;
+    display: block;
+    position:absolute;
+    /* min-width:100%; */
+    /* min-height:100%; */
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%);
+    -moz-transform:translate(-50%, -50%);
+    -ms-transform:translate(-50%, -50%);
+    -o-transform:translate(-50%, -50%);
+    z-index:1;
+}
 
-    /* For tablet / mobile (test with iphone 14 pro) */
-    @media (max-width: 1024px) {
-        #cadre {
-            min-height:42vh;
-        }
+/* For tablet / mobile (test with iphone 14 pro) */
+@media (max-width: 1024px) {
+    #cadre {
+        min-height:42vh;
     }
+}
 
-    .wave {
-        position: absolute;
-        bottom: -60px;
-        width: 100%;
-        /* height: auto; */
-        z-index: 2;  
-    }
+.wave {
+    position: absolute;
+    bottom: -60px;
+    width: 100%;
+    /* height: auto; */
+    z-index: 2;  
+}
 
-    /* H1 custom : Bienvenue sur my vlog blabla ! */
-    .first{
-        z-index: 2;
-        /* margin-top: 55px; */
-        /* Animation for H1 */
+/* H1 custom : Bienvenue sur my vlog blabla ! */
+.first{
+    z-index: 2;
+    /* margin-top: 55px; */
+    /* Animation for H1 */
+    opacity: 0;
+    transform: translateX(-100%);
+    -webkit-transform:translateX(-100%);
+    -moz-transform:translateX(-100%);
+    -ms-transform:translateX(-100%);
+    -o-transform:translateX(-100%);
+    -webkit-transform:translateX(-100%);
+    -webkit-animation: slideInLeft 2.3s ease-out forwards;
+    animation: slideInLeft 2.3s ease-out forwards;
+}
+        
+@keyframes slideInLeft {
+    0% {
         opacity: 0;
         transform: translateX(-100%);
-        -webkit-transform:translateX(-100%);
-        -moz-transform:translateX(-100%);
-        -ms-transform:translateX(-100%);
-        -o-transform:translateX(-100%);
-        -webkit-transform:translateX(-100%);
-        -webkit-animation: slideInLeft 2.5s ease-out forwards;
-        animation: slideInLeft 3s ease-out forwards;
+        /* start animation at left */        
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
     }
-        
-     @keyframes slideInLeft {
-        0% {
-            opacity: 0;
-            transform: translateX(-100%);
-             /* start animation at left */        
-            -webkit-transform: translateX(-100%);
-            -moz-transform: translateX(-100%);
-            -ms-transform: translateX(-100%);
-            -o-transform: translateX(-100%);
-}
-        100% {
-            opacity: 1;
-            transform: translateX(0);
-             /* end of animation, in the origin position */        
-            -webkit-transform: translateX(0);
-            -moz-transform: translateX(0);
-            -ms-transform: translateX(0);
-            -o-transform: translateX(0);
-}
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        /* end of animation, in the origin position */        
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
     }
-
-    /* for tablet / mobile (test with iphone 14 pro) */
-    @media (max-width: 1024px) {
-        .first {
-            font-size: 5vw;
-            margin-top: 0px;
-        }
-    }
-
-    /* not tested */
-    /* @media (max-width: 768px) {
-        .first {
-        font-size: 6vw;
-        }
-    } */
-
-    /* For mobile */
-    @media (max-width: 391px) {
-        .first{
-            font-size: 8vw;
-            margin-top: 0px;
-        }
-    }
-
-    /* Brand Carousel Logos */
-    .logos {
-        position: absolute;
-        bottom: 0%; /* for carousel position */
-        width: 100%;
-        background-color: transparent;
-        /* padding: 20px 0; */
-        overflow: hidden;
-        text-align: center;
-        z-index: 3;
-    }
-
-    .logos:before,
-    .logos:after {
-        position: absolute;
-        top: 0;
-        width: 100px;
-        height: 100%;
-        content: '';
-        z-index: 3;
-    }
-
-    .logos:before {
-        left: 0;
-        background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    }
-
-    .logos:after {
-        right: 0;
-        background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-    }
-
-    .logo_items {
-        /*display: inline-block;*/
-        display: inline-flex;
-        white-space: nowrap;
-        animation: slides 70s linear infinite;
-        -webkit-animation: slides 70s linear infinite;
-        -moz-animation: slides 70s linear infinite;
-        -ms-animation: slides 70s linear infinite;
-        -o-animation: slides 70s linear infinite;
-        will-change:transform;
 }
 
+/* for tablet / mobile (test with iphone 14 pro) */
+@media (max-width: 1024px) {
+    .first {
+        font-size: 5vw;
+        margin-top: 0px;
+    }
+}
+
+/* not tested */
+/* @media (max-width: 768px) {
+    .first {
+    font-size: 6vw;
+    }
+} */
+
+/* For mobile */
+@media (max-width: 391px) {
+    .first{
+        font-size: 8vw;
+        margin-top: 0px;
+    }
+}
+
+/* Brand Carousel Logos */
+.logos {
+    position: absolute;
+    bottom: 0%; /* for carousel position */
+    width: 100%;
+    background-color: transparent;
+    /* padding: 20px 0; */
+    overflow: hidden;
+    text-align: center;
+    z-index: 3;
+}
+
+.logos:before,
+.logos:after {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    content: '';
+    z-index: 3;
+}
+
+.logos:before {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+.logo_items {
+    /*display: inline-block;*/
+    display: inline-flex;
+    white-space: nowrap;
+    animation: slides 70s linear infinite;
+    -webkit-animation: slides 70s linear infinite;
+    -moz-animation: slides 70s linear infinite;
+    -ms-animation: slides 70s linear infinite;
+    -o-animation: slides 70s linear infinite;
+    will-change:transform;
+}
+
+.logo_items img {
+    /* height: auto; */
+    height: 90px;
+    /* max width added */
+    /* max-width:100%; */
+    margin: 0 15px;
+}
+
+.logos:hover .logo_items {
+    animation-play-state: paused;
+}
+
+@keyframes slides {
+    from { transform: translateX(0%); -webkit-transform: translateX(0%); -moz-transform: translateX(0%); -ms-transform: translateX(0%); -o-transform: translateX(0%); }
+    to { transform: translateX(-100%); 
+        -webkit-transform: translateX(-100%); 
+        -moz-transform: translateX(-100%); 
+        -ms-transform: translateX(-100%); 
+        -o-transform: translateX(-100%); }
+} 
+
+/* for tablet 768 => 1024 px too */
+@media (max-width: 1200px) {
     .logo_items img {
-        /* height: auto; */
-        height: 90px;
-        /* max width added */
-        /* max-width:100%; */
-        margin: 0 15px;
+        height: 70px;
     }
+}
 
-    .logos:hover .logo_items {
-        animation-play-state: paused;
-    }
-
-    @keyframes slides {
-        from { transform: translateX(0%); -webkit-transform: translateX(0%); -moz-transform: translateX(0%); -ms-transform: translateX(0%); -o-transform: translateX(0%); }
-        to { transform: translateX(-100%); 
-            -webkit-transform: translateX(-100%); 
-            -moz-transform: translateX(-100%); 
-            -ms-transform: translateX(-100%); 
-            -o-transform: translateX(-100%); }
-    } 
-
-     /* for tablet 768 => 1024 px too */
-    @media (max-width: 1200px) {
-        .logo_items img {
-            height: 70px;
-        }
+/* for mobile */
+@media (max-width: 768px) {
+    .logo_items img {
+        height: 50px;
     }
 
     /* for mobile */
-    @media (max-width: 768px) {
-        .logo_items img {
-            height: 50px;
-        }
+    .logos{
+        padding: 0px 0;
+    } 
+}
 
-        /* for mobile */
-        .logos{
-            padding: 0px 0;
-        } 
-    }
+/* Time calculator for hours minutes and seconds videos */
+.custom-container * {
+    box-sizing: border-box;
+}
 
-    /* Time calculator for hours minutes and seconds videos */
-    .custom-container * {
-        box-sizing: border-box;
-    }
+.custom-body {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins';
+    color: #fff;
+    font-size: 8px;
+}
 
-    .custom-body {
-        background-color: #000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100vh;
-        font-family: 'Poppins';
-        color: #fff;
-        font-size: 8px;
-    }
+.custom-heading {
+    text-align: center;
+    margin-top: 14rem;
+    font-size: 2rem;
+}
 
-    .custom-heading {
-        text-align: center;
-        margin-top: 14rem;
-        font-size: 2rem;
-    }
+.cd-timer {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    text-align: center;
+}
 
-    .cd-timer {
-        display: flex;
-        /* flex-wrap: wrap; */
-        justify-content: center;
-        text-align: center;
-    }
+.cd-unit .time {
+    font-weight: bold;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    border: 2px solid #65b868;
+    box-shadow: 1px 1px 10px #65b868;
+    border-radius: 1rem;
+    margin: 0 1rem;
+}
 
+.cd-unit span {
+    font-size: 1rem;
+    /* font-weight: bold; */
+    color: #fff;
+}
+
+/* for mobile 361 => 768 px */
+@media (max-width: 768px) {
     .cd-unit .time {
-        font-weight: bold;
-        padding: 1rem 2rem;
-        font-size: 2rem;
-        border: 2px solid #65b868;
-        box-shadow: 1px 1px 10px #65b868;
-        border-radius: 1rem;
-        margin: 0 1rem;
+    font-size: 1rem;
     }
+}
 
-    .cd-unit span {
-        font-size: 1rem;
-        /* font-weight: bold; */
-        color: #fff;
-    }
+/* Greens and underline titles of alternate images on Home Page */
+.title{
+    color:#65b868;
+    font-weight: bold;
+    font-size: 2rem;
+    position: relative;
+    margin-bottom: 50px;
+}
 
-    /* for mobile 361 => 768 px */
-    @media (max-width: 768px) {
-        .cd-unit .time {
-        font-size: 1rem;
-        }
-    }
-
-    /* Greens and underline titles of alternate images on Home Page */
-    .title{
-        color:#65b868;
-        font-weight: bold;
-        font-size: 2rem;
-        position: relative;
-        margin-bottom: 50px;
-    }
-
-    .title::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #65b868;
-    }
+.title::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #65b868;
+}
     

@@ -1,6 +1,7 @@
 /* CSS page of base.html.twig */
-/* in this order : navbar links with greenline / navbar image of usa.png dropdown / dropdown toggle colors / menu burger / 
-text-shadow on all H / green underline of all H1  / body / general-div / arrow up / pagination */
+/* in this order : navbar links with greenline / dropdown toggle colors / menu burger / text-shadow on all H / 
+green underline of all H1  / body / general-div / arrow up / pagination / usa image maps next underline titles on toutes
+les vidéos des USA, côte-ouest et côte-est */
 
 .nav-link {
     color: white;
@@ -34,58 +35,6 @@ text-shadow on all H / green underline of all H1  / body / general-div / arrow u
     width: 100%;
 }
 
-/* image of usa.png drop down when hover navbar items : configured with navbar items simple, 
-but can be configured with navbar dropdown toogle */
-.nav-item .dropdown-image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-} 
-
-.nav-item .dropdown-image {
-    display: none;
-    position: absolute;
-    top: calc(100% + 5px);
-    /* if navbar items simple : for have a drop top-down effect on image_usa.png */
-    width: 110px;
-    height: auto;
-    /* if dropdown : for have a left effect on image_usa.png */
-    /* width: auto; */
-    /* max-width: 110px; */
-    /* max-height: 110px; */
-    overflow: hidden;
-    transition: all 0.5s ease;
-    opacity: 0;
-    /* if navbar items simple : for have a drop top-down effect on image_usa.png */
-     transform: translateY(0px);
-    /* if dropdown : for have a left effect on image_usa.png */
-    /* transform: translateX(0px); */
-    z-index:1000;
-}
-
-/* if navbar item simple : for have a drop top-down effect on image_usa.png */
-.nav-item:hover .dropdown-image {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
-}
-
-/* if dropdown : for have a left effect on image_usa.png */
-/* .dropdown-menu .position-relative:hover .dropdown-image {
-    display: block;
-    opacity: 1;
-    transform: translateX(+190);
-    -webkit-transform: translateX(+190);
-    -moz-transform: translateX(+190);
-    -ms-transform: translateX(+190);
-    -o-transform: translateX(+190);
-}  */
-
-
 /*navbar dropdown toogle treatment : */
 /*dropdown toggle in navbar treatment for the css automaticcaly given fat-line*/
 .dropdown-toggle::after {
@@ -110,7 +59,6 @@ but can be configured with navbar dropdown toogle */
     background-color: #28a745;
 }
 
-
 h1, h2, h3, h4, h5 {
     text-shadow: 0px 0px 20px #65b868;
 }
@@ -129,13 +77,16 @@ h1::after {
     width: 0%;
     height: 1px;
     background-color: #65b868;
-    transition: width 0.5s ease-in-out; 
+    transition: width 0.3s ease-in-out;
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -ms-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
 }
 
 h1:hover::after {
     width: 100%;
 }
-
 
 body {
     background-color: #000;
@@ -150,7 +101,6 @@ body {
     width: 85%;
     text-align: center;
 }
-
 
 /* Arrow up */
 #back-to-top {
@@ -173,7 +123,6 @@ body {
     background-color: #333;
 }
 
-
 /* Pagination colors */
 .pagination .page-link {
     background-color: #000;
@@ -191,4 +140,66 @@ body {
     background-color: #fff;
     color: #65b868;
     border: 1px solid #65b868;
+}
+
+/* Image of USA map on Toutes les vidéos des USA, Côte-Ouest and Côte-Est, animation just after the green underline*/
+.road-trip-container {
+    position: relative;
+}
+
+.road-trip-title {
+    position: relative;
+}
+
+.road-trip-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background-color: #65b868;
+    transition: width 0.3s ease-in-out;
+    transform: translateX(0%);
+}
+
+.road-trip-title:hover::after {
+    width: 100%;
+}
+
+.road-trip-image {
+    position: absolute;
+    top: calc(100% - 115px);
+    left: 50%;
+    transform: translateX(0%);
+    opacity: 0;
+    width: 110px;
+    height: auto;
+    pointer-events: none;
+}
+
+.road-trip-title:hover + .road-trip-image {
+    animation: fadeInRight 1.2s ease forwards;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(160px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(230px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(190px);
+    }
+}
+
+/* Hide usa map image on mobile screen (less than 768px) */
+@media screen and (max-width: 768px) {
+    .road-trip-image {
+        display: none;
+    }
 }
