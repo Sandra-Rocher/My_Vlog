@@ -23,7 +23,11 @@ text-shadow on all H / green underline of all H1  / body / general-div / arrow u
     width: 0%;
     height: 1px;
     background-color: #65b868;
-    transition: width 0.5s ease-in-out; 
+    transition: width 0.3s ease-in-out;
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -ms-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
 }
 
 .nav-link:hover::after {
@@ -41,7 +45,6 @@ but can be configured with navbar dropdown toogle */
 .nav-item .dropdown-image {
     display: none;
     position: absolute;
-    /* left: 0; */
     top: calc(100% + 5px);
     /* if navbar items simple : for have a drop top-down effect on image_usa.png */
     width: 110px;
@@ -65,13 +68,21 @@ but can be configured with navbar dropdown toogle */
     display: block;
     opacity: 1;
     transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
 }
 
 /* if dropdown : for have a left effect on image_usa.png */
 /* .dropdown-menu .position-relative:hover .dropdown-image {
     display: block;
     opacity: 1;
-    transform: translateX(+190px);
+    transform: translateX(+190);
+    -webkit-transform: translateX(+190);
+    -moz-transform: translateX(+190);
+    -ms-transform: translateX(+190);
+    -o-transform: translateX(+190);
 }  */
 
 
@@ -108,7 +119,6 @@ h1, h2, h3, h4, h5 {
 h1 {
     position: relative;
     display: inline-block;
-    cursor: pointer;
 }
 
 h1::after {

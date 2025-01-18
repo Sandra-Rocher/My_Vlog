@@ -15,7 +15,7 @@ time calculator / green underline for titles / parallaxe effect (on index.page.h
         display:flex;
         flex-direction:column;
         position:relative;
-        min-height:100vh;
+        min-height:80vh; /* not 100 vh */
         width:100%;
         overflow:hidden;
     }
@@ -34,7 +34,7 @@ time calculator / green underline for titles / parallaxe effect (on index.page.h
         -moz-transform:translate(-50%, -50%);
         -ms-transform:translate(-50%, -50%);
         -o-transform:translate(-50%, -50%);
-        z-index:-1;
+        z-index:1;
     }
 
     /* For tablet / mobile (test with iphone 14 pro) */
@@ -48,14 +48,14 @@ time calculator / green underline for titles / parallaxe effect (on index.page.h
         position: absolute;
         bottom: -60px;
         width: 100%;
-        height: auto;
-        z-index: 10; /* for wave position */   
+        /* height: auto; */
+        z-index: 2;  
     }
 
     /* H1 custom : Bienvenue sur my vlog blabla ! */
     .first{
-        z-index: 1111;
-        margin-top: 55px;
+        z-index: 2;
+        /* margin-top: 55px; */
         /* Animation for H1 */
         opacity: 0;
         transform: translateX(-100%);
@@ -71,12 +71,22 @@ time calculator / green underline for titles / parallaxe effect (on index.page.h
      @keyframes slideInLeft {
         0% {
             opacity: 0;
-            transform: translateX(-100%); /* start animation at left */
-        }
+            transform: translateX(-100%);
+             /* start animation at left */        
+            -webkit-transform: translateX(-100%);
+            -moz-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+            -o-transform: translateX(-100%);
+}
         100% {
             opacity: 1;
-            transform: translateX(0); /* end of animation, in the origin position */
-        }
+            transform: translateX(0);
+             /* end of animation, in the origin position */        
+            -webkit-transform: translateX(0);
+            -moz-transform: translateX(0);
+            -ms-transform: translateX(0);
+            -o-transform: translateX(0);
+}
     }
 
     /* for tablet / mobile (test with iphone 14 pro) */
@@ -108,10 +118,10 @@ time calculator / green underline for titles / parallaxe effect (on index.page.h
         bottom: 0%; /* for carousel position */
         width: 100%;
         background-color: transparent;
-        padding: 20px 0;
+        /* padding: 20px 0; */
         overflow: hidden;
         text-align: center;
-        z-index: 20; /* for wave position */
+        z-index: 3;
     }
 
     .logos:before,
@@ -121,7 +131,7 @@ time calculator / green underline for titles / parallaxe effect (on index.page.h
         width: 100px;
         height: 100%;
         content: '';
-        z-index: 2;
+        z-index: 3;
     }
 
     .logos:before {
