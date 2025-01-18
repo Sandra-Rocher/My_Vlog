@@ -149,6 +149,7 @@ body {
 
 .road-trip-title {
     position: relative;
+    display: inline-block;
 }
 
 .road-trip-title::after {
@@ -169,8 +170,7 @@ body {
 
 .road-trip-image {
     position: absolute;
-    top: calc(100% - 115px);
-    left: 50%;
+    top: -15px;
     transform: translateX(0%);
     opacity: 0;
     width: 110px;
@@ -185,16 +185,28 @@ body {
 @keyframes fadeInRight {
     from {
         opacity: 0;
-        transform: translateX(160px);
-    }
+        transform: translateX(-70px);
+        -webkit-transform: translateX(-70px);
+        -moz-transform: translateX(-70px);
+        -ms-transform: translateX(-70px);
+        -o-transform: translateX(-70px);
+}
     50% {
         opacity: 1;
-        transform: translateX(230px);
-    }
+        transform: translateX(13px);
+        -webkit-transform: translateX(13px);
+        -moz-transform: translateX(13px);
+        -ms-transform: translateX(13px);
+        -o-transform: translateX(13px);
+}
     to {
         opacity: 1;
-        transform: translateX(190px);
-    }
+        transform: translateX(8px);
+        -webkit-transform: translateX(8px);
+        -moz-transform: translateX(8px);
+        -ms-transform: translateX(8px);
+        -o-transform: translateX(8px);
+}
 }
 
 /* Hide usa map image on mobile screen (less than 768px) */
