@@ -23,30 +23,8 @@ class HomeController extends AbstractController
     //     ]);
     // }
 
+    //Route home AND ROOT = SAME : index with duration
     #[Route('/', name: 'root')]
-    public function root(VideoRepository $repository): Response
-    {
-        //With getTotalDuration function in videorepository :
-        $totalDuration = $repository->getTotalDuration();
-
-        // Convert hours and minutes to integers to avoid problems such as type "string" (App\Entity\Video)
-        $hours = (int) $totalDuration['hours'];
-        $minutes = (int) $totalDuration['minutes'];
-        $seconds = (int) $totalDuration['seconds'];
-
-        // if necessary : add a 0 in front of the number
-        $minutes = str_pad($minutes, 2, '0', STR_PAD_LEFT);
-        $seconds = str_pad($seconds, 2, '0', STR_PAD_LEFT);
-        
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-            'hours' => $hours,
-            'minutes' => $minutes,
-            'seconds' => $seconds,
-     ]);
-    }
-
-    //Route home index with duration
     #[Route('/home', name: 'home')]
     public function index(VideoRepository $repository): Response
     {

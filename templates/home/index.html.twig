@@ -9,14 +9,14 @@
 {# find all the rest of css style on assets/styles/home.css #}
 <style> 
     /* Parallaxe of Index home page (image/text) */
-    /* in twig, we use asset : url("{{ asset('Index_Page/Img_USA/roadmapwestcoast.png') }}");  */
-    /* in css, we can't : url('/Index_Page/Img_USA/roadmapwestcoast.png'); */
+    /* in twig, we use asset : url("{{ asset('Index_Page/Img_USA/roadmapwestcoast.jpg') }}");  */
+    /* in css, we can't : url('/Index_Page/Img_USA/roadmapwestcoast.jpg'); */
     .container-parallaxe {
         background-image: 
             linear-gradient(180deg, transparent 38%, black), /* linear gradient */
             linear-gradient(180deg, black 12%, rgba(13, 16, 25, 0) 72%), /* gradient with transparency */
             radial-gradient(circle farthest-corner at 50% 50%, rgba(6, 7, 10, 0), black 91%), /* radial gradient */
-            url("{{ asset('Index_Page/Img_USA/roadmapwestcoast.png') }}"); /* background image */
+            url("{{ asset('Index_Page/Img_USA/roadmapwestcoast.jpg') }}"); /* background image */
         background-repeat: repeat, repeat, repeat, no-repeat;
         background-size: auto, auto, auto, cover;
         background-attachment: fixed; /* parallaxe effect*/
