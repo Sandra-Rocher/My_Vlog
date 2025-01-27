@@ -35,7 +35,7 @@ class ContactType extends AbstractType
             ])
 
             ->add('phone', TextType::class, [
-                'empty_data' => '',
+                'empty_data' => '+33',
                 'label' => 'Téléphone',
             ])
 
