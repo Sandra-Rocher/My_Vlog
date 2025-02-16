@@ -107,11 +107,14 @@ class VideoRepository extends ServiceEntityRepository
         //  }
 
 
-        // KNP Paginator with or without states parameters
-        public function paginateVideos(int $page, ?array $state = null): PaginationInterface
+        // KNP Paginator with or without states parameters 
+        // AND it's in ASC order by default (for west and east pages only, index page is with DESC order)
+        public function paginateVideos(int $page, ?array $state = null, string $sortOrder = 'ASC'): PaginationInterface
         {
             //For pagination with state (if it's west or florida) or without state (for all videos)
-            $queryBuilder = $this->createQueryBuilder('v');
+            $queryBuilder = $this->createQueryBuilder('v')
+                //Here we verify the sortOrder parameters on LocationController for ASC or DESC
+                ->orderBy('v.id', $sortOrder);
 
             if ($state) {
                 $queryBuilder->where('v.state IN (:state)')

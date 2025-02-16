@@ -148,11 +148,11 @@ time calculator / green underline for titles / parallaxe effect (on index.page.h
     /*display: inline-block;*/
     display: inline-flex;
     white-space: nowrap;
-    animation: slides 70s linear infinite;
-    -webkit-animation: slides 70s linear infinite;
-    -moz-animation: slides 70s linear infinite;
-    -ms-animation: slides 70s linear infinite;
-    -o-animation: slides 70s linear infinite;
+    animation: slides 150s linear infinite;
+    -webkit-animation: slides 150s linear infinite;
+    -moz-animation: slides 150s linear infinite;
+    -ms-animation: slides 150s linear infinite;
+    -o-animation: slides 150s linear infinite;
     will-change:transform;
 }
 

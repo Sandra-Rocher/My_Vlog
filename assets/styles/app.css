@@ -1,7 +1,11 @@
 /* CSS page of base.html.twig */
-/* in this order : logo_myvlog_ia1 / navbar links with greenline / dropdown toggle colors / menu burger / text-shadow on all H / 
-green underline of all H1  / body / general-div / arrow up / pagination / usa image maps next underline titles on toutes
-les vidéos des USA, côte-ouest et côte-est */
+/* in this order : btn green colors on every pages /logo_myvlog_ia1 / navbar links with greenline / dropdown toggle colors / 
+menu burger / text-shadow on all H / green underline of all H1  / body / general-div / arrow up / pagination / 
+usa image maps next underline titles on every USA videos, west and east coasts. */
+
+.btn{
+    background-color: #65b868;
+}
 
 .logo_myvlog_ia1 {
     width: 80px;

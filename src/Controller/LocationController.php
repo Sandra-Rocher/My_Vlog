@@ -26,13 +26,13 @@ class LocationController extends AbstractController
     // }
 
 
-    //Browse all videos with pagination
+    //Browse all videos with pagination. We add DESC for order only on Index Page
     #[Route('/Voyage', name: 'location.index')]
     public function index(Request $request, VideoRepository $repository): Response
     {
         //Paginator
         $page = $request->query->getInt('page', 1);
-        $videos = $repository->paginateVideos($page);
+        $videos = $repository->paginateVideos($page, null, 'DESC');
 
        // Browse each video and capitalise the first letter of the title (slug)
         foreach ($videos as $video) {
@@ -65,7 +65,7 @@ class LocationController extends AbstractController
 
 
 
-    //Browse all videos of WEST COAST USA
+    //Browse all videos of WEST COAST USA. ASC order by default
     #[Route('/Voyage/Cote-Ouest', name: 'location.west.index')]
     public function voyageWestCoast(Request $request, VideoRepository $repository): Response
     {
@@ -89,7 +89,7 @@ class LocationController extends AbstractController
         ]);
     } 
 
-    //Browse all videos of FLORIDA
+    //Browse all videos of FLORIDA. ASC order by default
     #[Route('/Voyage/Floride', name: 'location.florida.index')]
     public function voyageFlorida(Request $request, VideoRepository $repository): Response
     {

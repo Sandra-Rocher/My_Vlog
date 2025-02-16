@@ -92,9 +92,13 @@ class VideoType extends AbstractType
                 'required' => false,
             ])
 
+            // We add a class .btn for the color of all buttons on all pages (otherwise its btn-primary by default)
             ->add('save', SubmitType::class, [
-                'label' => 'Enregistrer'
-                ])
+                'label' => 'Enregistrer',
+                'attr' => [
+                    'class' => 'btn'
+                ]
+            ])
             ;
     }
 
