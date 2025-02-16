@@ -1,7 +1,11 @@
 /* CSS page of home/index.html.twig */
-/* in this order : general-div2 / mp4 cadre video / wave on image / H1 welcome all ! / brand carousel with little logos / 
-time calculator / green underline for titles / parallaxe effect (on index.page.html.twig because of asset)*/
+/* in this order : btn green colors on every pages / general-div2 / mp4 cadre video / wave on image / H1 welcome all ! / 
+brand carousel with little logos / time calculator / green underline for titles / parallaxe effect 
+(on index.page.html.twig because of asset)*/
 
+.btn{
+    background-color: #65b868;
+}
 
 /* Special general div custom */
 .general-div2 {
