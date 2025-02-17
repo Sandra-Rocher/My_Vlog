@@ -1,7 +1,8 @@
 /* CSS page of base.html.twig */
-/* in this order : btn green colors on every pages /logo_myvlog_ia1 / navbar links with greenline / dropdown toggle colors / 
-menu burger / text-shadow on all H / green underline of all H1  / body / general-div / arrow up / pagination / 
-usa image maps next underline titles on every USA videos, west and east coasts. */
+/* in this order : btn green colors on every pages / logo_myvlog_ia1 / navbar links with greenline / dropdown toggle colors / 
+menu burger / green text-shadow on all H / green underline of all H1  / body / general-div / arrow up / pagination / 
+usa image maps next underline titles on every USA videos, west and east coast. / new green badge effect on first card for home page
+and on last card on west and east coast. */
 
 .btn{
     background-color: #65b868;
@@ -151,7 +152,7 @@ body {
     border: 1px solid #65b868;
 }
 
-/* Image of USA map on Toutes les vidéos des USA, Côte-Ouest and Côte-Est, animation just after the green underline*/
+/* Image of USA map on every USA pages, animation just after the green underline*/
 .road-trip-container {
     position: relative;
 }
@@ -199,7 +200,7 @@ body {
         -moz-transform: translateX(-70px);
         -ms-transform: translateX(-70px);
         -o-transform: translateX(-70px);
-}
+    }
     50% {
         opacity: 1;
         transform: translateX(13px);
@@ -207,7 +208,7 @@ body {
         -moz-transform: translateX(13px);
         -ms-transform: translateX(13px);
         -o-transform: translateX(13px);
-}
+    }
     to {
         opacity: 1;
         transform: translateX(8px);
@@ -215,7 +216,7 @@ body {
         -moz-transform: translateX(8px);
         -ms-transform: translateX(8px);
         -o-transform: translateX(8px);
-}
+    }
 }
 
 /* Hide usa map image on mobile screen (less than 768px) */
@@ -223,4 +224,62 @@ body {
     .road-trip-image {
         display: none;
     }
+}
+
+/* Green new badge on first card on home page and on last card on west and east coast */
+.badge{
+    background-color: #65b868;
+}
+
+.badge1 {
+    position: absolute;
+    display: inline-block;
+    top: 20px;
+    left: -5px;
+    transform: rotate(-45deg);
+    transform-origin: center center;
+    font-size: 0.8em;
+    overflow: hidden; /* To prevent the badge from overflowing (go out) the card */
+}
+
+.triangle-badge {
+    position: absolute;
+    display : inline-block;
+    top: 0px;
+    left: 0px;
+    width: 0;
+    height: 0;
+    border-top: 50px solid #65b868;
+    border-right: 50px solid transparent;
+}
+
+.hover-badge1, .hover-badge2 {
+    position: absolute;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+    top: 50%;
+    font-size: 1.1em;
+    padding: 0.2em 1em;
+    white-space: nowrap;
+    transform-origin: center center;
+}
+
+.hover-badge1 {
+    right: -65px; /* For the right */
+    transform: translateX(-100px) rotate(90deg);
+}
+
+.card:hover .hover-badge1 {
+    transform: translateX(0) rotate(90deg);
+    opacity: 1;
+}
+
+.hover-badge2 {
+    left: -65px; /* For the left */
+    transform: translateX(100px) rotate(270deg);
+}
+
+.card:hover .hover-badge2 {
+    transform: translateX(0) rotate(270deg);
+    opacity: 1;
 }

@@ -30,6 +30,9 @@ class LocationController extends AbstractController
     #[Route('/Voyage', name: 'location.index')]
     public function index(Request $request, VideoRepository $repository): Response
     {
+        // Take ID of first video (order by ID DESC)
+        $latestVideo = $repository->findOneBy([], ['id' => 'DESC']);
+
         //Paginator
         $page = $request->query->getInt('page', 1);
         $videos = $repository->paginateVideos($page, null, 'DESC');
@@ -42,6 +45,8 @@ class LocationController extends AbstractController
 
         return $this->render('location/index.html.twig', [
             'Videos' => $videos,
+            //For know the total of videos and add badge "New" on the last card
+            'latestVideoId' => $latestVideo ? $latestVideo->getId() : null,
         ]);
     } 
 
@@ -86,9 +91,14 @@ class LocationController extends AbstractController
 
         return $this->render('location/west.html.twig', [
             'Videos' => $videos,
+            //For know the total of videos and add badge "New" on the last card
+            'totalCount' => $videos->getTotalItemCount(),
+            'currentPage' => $videos->getCurrentPageNumber(), 
+            'perPage' => $videos->getItemNumberPerPage(),
         ]);
     } 
 
+    
     //Browse all videos of FLORIDA. ASC order by default
     #[Route('/Voyage/Floride', name: 'location.florida.index')]
     public function voyageFlorida(Request $request, VideoRepository $repository): Response
@@ -110,6 +120,10 @@ class LocationController extends AbstractController
 
         return $this->render('location/florida.html.twig', [
             'Videos' => $videos,
+            //For know the total of videos and add badge "New" on the last card
+            'totalCount' => $videos->getTotalItemCount(),
+            'currentPage' => $videos->getCurrentPageNumber(), 
+            'perPage' => $videos->getItemNumberPerPage(),
         ]);
     } 
 

@@ -113,7 +113,7 @@ class VideoRepository extends ServiceEntityRepository
         {
             //For pagination with state (if it's west or florida) or without state (for all videos)
             $queryBuilder = $this->createQueryBuilder('v')
-                //Here we verify the sortOrder parameters on LocationController for ASC or DESC
+                //Here we verify the sortOrder parameters on Controller for ASC or DESC
                 ->orderBy('v.id', $sortOrder);
 
             if ($state) {
@@ -127,14 +127,6 @@ class VideoRepository extends ServiceEntityRepository
                 6 // number of videos per page
             );
         }
-
-
-
-
-
-
-
-        
 
 }
 
